@@ -1,0 +1,144 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:37+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "video_readiness_status": "ready_for_recording_review",
+  "public_video_approval_ready": true,
+  "submission_url_apply_plan_status": "waiting_for_external_urls",
+  "missing_evidence": [],
+  "evidence": [
+    {
+      "path": "reports/latest_demo_tour.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_readiness.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_readiness.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_recording_preview.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_recording_preview.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_upload_metadata.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_upload_metadata.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_video_upload_preflight.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_video_upload_preflight.json",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_UPLOAD_METADATA.md",
+      "exists": true
+    },
+    {
+      "path": "submission/DEMO_VIDEO_SCRIPT.md",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_external_approval_packet.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_apply_plan.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_artifact_url_readback.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_artifact_url_readback.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_final_copy.md",
+      "exists": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "Refresh safe demo tour",
+      "command": "python scripts\\build_demo_tour.py",
+      "purpose": "Regenerate the browser walkthrough used for the recording path."
+    },
+    {
+      "name": "Refresh video readiness",
+      "command": "python scripts\\build_video_readiness_report.py",
+      "purpose": "Confirm timing, screen safety, claim wording, and upload approval gate."
+    },
+    {
+      "name": "Build screen-safe localhost recording preview",
+      "command": "python scripts\\build_video_recording_preview.py",
+      "purpose": "Copy the public candidate to an isolated temporary preview stage, scan recording files, and produce a localhost preview command template."
+    },
+    {
+      "name": "Review video upload metadata",
+      "command": "python scripts\\build_video_upload_metadata.py",
+      "purpose": "Confirm the upload title, description, tags, visibility, expected readback, and public video stop conditions before any upload."
+    },
+    {
+      "name": "Public video upload preflight gate",
+      "command": "python scripts\\verify_public_video_upload_gate.py --approval-phrase \"Approve recording and public upload of the Agentic Incident Command Center demo video.\" --screen-safety-confirmed --duration-confirmed --claim-boundary-confirmed --content-rights-confirmed --upload-visibility-confirmed",
+      "purpose": "Require the exact public demo video approval phrase plus screen, duration, claim, rights, and visibility confirmations before manual capture or upload."
+    },
+    {
+      "name": "Open recording review artifacts",
+      "command": "start reports\\latest_demo_tour.html && start reports\\latest_video_readiness.html && start reports\\latest_video_recording_preview.html && start reports\\latest_video_upload_metadata.html && start reports\\latest_public_video_upload_preflight.html",
+      "purpose": "Review the demo path, readiness report, localhost preview preflight, upload metadata, and public video upload gate before any capture."
+    },
+    {
+      "name": "Capture local recording after approval",
+      "command": "manual: record reports\\latest_demo_tour.html using submission\\VIDEO_RECORDING_RUNBOOK.md",
+      "purpose": "Record only the approved browser path with synthetic data and no private screens."
+    },
+    {
+      "name": "Review recording before upload",
+      "command": "manual: watch the recording and check duration, screen safety, and claim wording",
+      "purpose": "Hold upload if private paths, credentials, account pages, or live Splunk/MCP overclaims appear."
+    },
+    {
+      "name": "Upload public video after approval",
+      "command": "manual: upload the reviewed video to an approved public video host and capture the URL",
+      "purpose": "Create the public Devpost video URL only after explicit approval."
+    },
+    {
+      "name": "Verify public artifact URLs before writeback",
+      "command": "python scripts\\verify_public_artifact_urls.py --repository-url <public-repo-url> --demo-video-url <public-video-url> --live-readback",
+      "purpose": "Confirm the public GitHub repository and public demo video URL are reachable before writing them into local submission artifacts."
+    },
+    {
+      "name": "Apply approved URLs locally",
+      "command": "python scripts\\prepare_submission_urls.py --repository-url <public-repo-url> --demo-video-url <public-video-url> --write-approved --approval-note \"user approved public URLs\"",
+      "purpose": "Update the local Devpost URL source only after both public URLs are approved."
+    },
+    {
+      "name": "Final local validation",
+      "command": "python scripts\\validate_submission_packet.py",
+      "purpose": "Confirm the submission packet is ready for final Devpost review."
+    }
+  ],
+  "boundary": "This command plan is advisory only. It does not record, upload, publish, write URLs, update Devpost, or submit anything.",
+  "approval_required": "Explicit user approval is required before recording capture, public video upload, or writing approved public URLs."
+}

@@ -1,0 +1,173 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:33+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "candidate_path": ".",
+  "candidate_file_count": 248,
+  "approval_phrase": "Approve public GitHub publication for the clean agentops-control-tower candidate.",
+  "final_submit_ready": false,
+  "approved_public_urls_exists": false,
+  "dry_run_actions": [
+    "copy public candidate to an isolated temporary staging folder outside the private workspace",
+    "run git init -b main without remote",
+    "configure a temporary local git identity",
+    "run git add -A",
+    "run a local git commit rehearsal",
+    "inspect git status --short",
+    "scan temporary copy for internal paths and secret-like strings"
+  ],
+  "rehearsal": {
+    "temp_root_removed_after_run": true,
+    "git_status_line_count": 248,
+    "git_staged_file_count": 248,
+    "git_tracked_file_count": 248,
+    "git_post_commit_status_line_count": 0,
+    "git_branch": "main",
+    "git_commit_created": true,
+    "git_commit_sha": "ad1488b77f81",
+    "git_remote_output": "",
+    "git_post_commit_remote_output": "",
+    "staging_location_policy": "system_temp_outside_private_workspace",
+    "staging_isolated_from_private_workspace": true
+  },
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "candidate source exists",
+      "status": "pass",
+      "detail": "."
+    },
+    {
+      "name": "candidate required files",
+      "status": "pass",
+      "detail": "all required files present"
+    },
+    {
+      "name": "candidate top-level allowlist",
+      "status": "pass",
+      "detail": "top-level entries expected"
+    },
+    {
+      "name": "candidate has no git directory",
+      "status": "pass",
+      "detail": ".git absent"
+    },
+    {
+      "name": "candidate has no release directory",
+      "status": "pass",
+      "detail": "release absent"
+    },
+    {
+      "name": "approved URL writeback absent",
+      "status": "pass",
+      "detail": "approved_public_urls.json absent"
+    },
+    {
+      "name": "approval phrase stable",
+      "status": "pass",
+      "detail": "Approve public GitHub publication for the clean agentops-control-tower candidate."
+    },
+    {
+      "name": "snapshot final gate closed",
+      "status": "pass",
+      "detail": "False"
+    },
+    {
+      "name": "URL validation final gate closed",
+      "status": "pass",
+      "detail": "False"
+    },
+    {
+      "name": "Go/No-Go final gate closed",
+      "status": "pass",
+      "detail": "False"
+    },
+    {
+      "name": "pending repo and video URLs",
+      "status": "pass",
+      "detail": "repository_url, demo_video_url"
+    },
+    {
+      "name": "staging copy outside private workspace",
+      "status": "pass",
+      "detail": "outside private workspace"
+    },
+    {
+      "name": "git init main-branch rehearsal",
+      "status": "pass",
+      "detail": "Initialized empty Git repository in <local-path>"
+    },
+    {
+      "name": "git branch rehearsal uses main",
+      "status": "pass",
+      "detail": "main"
+    },
+    {
+      "name": "git remote list remains empty",
+      "status": "pass",
+      "detail": "no remotes"
+    },
+    {
+      "name": "git dry-run user.name configured",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "git dry-run user.email configured",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "git add rehearsal",
+      "status": "pass",
+      "detail": "165 line-ending warnings suppressed"
+    },
+    {
+      "name": "git status rehearsal",
+      "status": "pass",
+      "detail": "248 staged files"
+    },
+    {
+      "name": "git status has no private workspace names",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "git commit rehearsal",
+      "status": "pass",
+      "detail": " mode 100644 submission/REQUIREMENTS_MATRIX.md\n create mode 100644 submission/SPLUNK_MCP_PROMPT_PACK.md\n create mode 100644 submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md\n create mode 100644 submission/SPLUNK_MCP_RUNBOOK.md\n create mode 100644 submission/SPL_QUERIES.md\n create mode 100644 submission/SUBMISSION_DEADLINE_BURNDOWN.md\n create mode 100644 submission/SUBMISSION_LAUNCH_RUNBOOK.md\n create mode 100644 submission/SUBMISSION_REVIEW_QA.md\n create mode 100644 submission/USER_APPROVAL_GATES.md\n create mode 100644 submission/VIDEO_RECORDING_RUNBOOK.md\n create mode 100644 submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md\n create mode 100644 submission/VIDEO_UPLOAD_METADATA.md\n create mode 100644 tests/test_agentops_control_tower.py\n create mode 100644 tests/test_submission_safety_boundaries.py"
+    },
+    {
+      "name": "git commit hash exists",
+      "status": "pass",
+      "detail": "ad1488b77f81"
+    },
+    {
+      "name": "git tracked files rehearsal",
+      "status": "pass",
+      "detail": "tracked=248 staged=248"
+    },
+    {
+      "name": "git post-commit status clean",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "git remote remains empty after commit",
+      "status": "pass",
+      "detail": "no remotes"
+    },
+    {
+      "name": "rehearsal internal path scan",
+      "status": "pass",
+      "detail": "no internal patterns"
+    },
+    {
+      "name": "rehearsal secret-like scan",
+      "status": "pass",
+      "detail": "no secret-like patterns"
+    }
+  ],
+  "boundary": "This dry run is local publication rehearsal only. It copies the reviewed public candidate to an isolated temporary staging folder outside the private workspace and runs git init/add/commit/status without creating a remote, pushing commits, publishing files, writing approved URLs, uploading video, updating Devpost, or submitting anything.",
+  "next_required_external_approval": "public_github_repository"
+}

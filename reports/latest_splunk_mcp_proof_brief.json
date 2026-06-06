@@ -1,0 +1,178 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:51+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "live_splunk_mcp_verified": false,
+  "live_splunk_verified": false,
+  "mcp_protocol_adapter_verified": false,
+  "official_splunk_mcp_server_verified": false,
+  "live_proof_status": "missing",
+  "live_proof_rows": {
+    "synthetic_row_count": "missing",
+    "indexed_row_count": "missing",
+    "failed_query_count": "missing"
+  },
+  "approval_phrase": "Approve optional live Splunk and Splunk MCP proof using synthetic data only.",
+  "grant_fit": "The live Docker proof strengthens the Splunk data story, and the local MCP SDK adapter demonstrates read-only cited investigation behavior. The official Splunk MCP Server bonus claim remains pending until the Splunkbase app is installed and verified with approved credential handling.",
+  "missing_evidence": [],
+  "evidence": [
+    {
+      "path": "reports/latest_splunk_mcp_command_plan.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_splunk_app_package_manifest.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_live_splunk_docker_proof.html",
+      "exists": false,
+      "required": false
+    },
+    {
+      "path": "reports/latest_live_splunk_docker_proof.json",
+      "exists": false,
+      "required": false
+    },
+    {
+      "path": "reports/latest_live_splunk_docker_proof.md",
+      "exists": false,
+      "required": false
+    },
+    {
+      "path": "reports/latest_local_spl_query_results.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_local_spl_query_results.json",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_claim_boundary_validation.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_claim_boundary_validation.json",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_mcp_investigation.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "submission/SPLUNK_MCP_RUNBOOK.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "submission/SPL_QUERIES.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "data/splunk_agentops_events.csv",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "splunk_app/agentops_control_tower/default/savedsearches.conf",
+      "exists": true,
+      "required": true
+    }
+  ],
+  "proof_success_criteria": [
+    {
+      "criterion": "Synthetic data isolation",
+      "evidence": "Only data/splunk_agentops_events.csv is imported into the approved agentops_events index.",
+      "acceptance": "No real workspace logs, customer data, local paths, credentials, or account pages are shown."
+    },
+    {
+      "criterion": "Live SPL query proof",
+      "evidence": "Incident timeline, root-cause evidence, MCP Remediation Ledger, Splunk MCP investigation context, and blast-radius SPL queries return rows.",
+      "acceptance": "Returned rows include incident IDs, services, risk scores, root-cause candidates, policy decisions, approval states, and evidence refs."
+    },
+    {
+      "criterion": "Splunk app proof",
+      "evidence": "The local Splunk app candidate or copied dashboard shows the Agentic Incident Command Center view.",
+      "acceptance": "The dashboard points only at the approved synthetic index and mirrors the local proof story."
+    },
+    {
+      "criterion": "MCP-assisted investigation proof",
+      "evidence": "Splunk MCP Server answers the approval-priority question from indexed synthetic events.",
+      "acceptance": "The answer cites event IDs and evidence refs instead of making unsupported recommendations."
+    },
+    {
+      "criterion": "Claim boundary upgrade",
+      "evidence": "Claim validation and submission validation pass after any wording changes.",
+      "acceptance": "Live Splunk/MCP wording is used only after the live evidence above is captured and reviewed."
+    }
+  ],
+  "approval_steps": [
+    {
+      "step": "Approve live proof scope",
+      "owner": "User",
+      "action": "Approve optional live Splunk and Splunk MCP proof using synthetic data only.",
+      "verification": "Approval explicitly covers account/license use, synthetic import, read-only MCP scope, and proof capture."
+    },
+    {
+      "step": "Prepare local proof inputs",
+      "owner": "Codex/local",
+      "action": "Run the local demo, SPL-equivalent query pack, Splunk app validation, and package manifest.",
+      "verification": "latest_local_spl_query_results and latest_splunk_app_package_manifest are ready_for_user_review."
+    },
+    {
+      "step": "Create approved Splunk scope",
+      "owner": "User/manual",
+      "action": "Use approved Splunk access and create/import only the synthetic agentops_events dataset.",
+      "verification": "The index contains the expected synthetic rows and no private or account data."
+    },
+    {
+      "step": "Capture SPL proof",
+      "owner": "User/manual",
+      "action": "Run the SPL queries from submission/SPL_QUERIES.md.",
+      "verification": "Screenshots or recording show incident timeline, root-cause evidence, remediation ledger, MCP investigation context, and blast-radius rows."
+    },
+    {
+      "step": "Configure Splunk MCP read-only proof",
+      "owner": "User/manual",
+      "action": "Configure Splunk MCP Server with approved read-only scope for the synthetic index.",
+      "verification": "The MCP answer cites event IDs and evidence refs and does not perform external actions."
+    },
+    {
+      "step": "Upgrade public claims only after proof",
+      "owner": "Codex/local",
+      "action": "Update Devpost/video wording only if proof evidence is reviewed, then rerun validators.",
+      "verification": "validate_claim_boundaries.py and validate_submission_packet.py pass."
+    }
+  ],
+  "screen_safety_checks": [
+    "Show only the Splunk search/dashboard, local demo pages, and synthetic event evidence needed for the proof.",
+    "Hide browser tabs, account settings, billing, tokens, hostnames, private paths, terminals with secrets, and personal data.",
+    "Use synthetic event IDs and evidence refs as the narration anchor.",
+    "Do not show credential setup screens or MCP configuration secrets in the video.",
+    "Do not imply live Splunk/MCP verification unless the proof has actually been captured."
+  ],
+  "stop_conditions": [
+    "Stop if Splunk access, cost, license, or credential scope is not explicitly approved.",
+    "Stop if the data source is anything other than the generated synthetic CSV.",
+    "Stop if any screenshot or recording exposes credentials, account pages, local paths, or private data.",
+    "Stop if MCP can access more than the approved read-only synthetic-data scope.",
+    "Stop if claim-boundary validation fails after wording changes.",
+    "Stop before public repo publication, video upload, URL writeback, or Devpost submit unless those separate gates are approved."
+  ],
+  "claim_upgrade_rule": "Use verified-through-Splunk-MCP wording only after the official Splunk MCP Server app is installed, read-only synthetic-index answers are captured, reviewed, and claim-boundary validation passes. The current approved evidence supports only 'live Splunk Docker proof captured' and 'local MCP SDK adapter verified'.",
+  "boundary": "This brief is local proof-decision support only. The brief builder does not create accounts, configure credentials, import data, install apps, connect MCP, capture screenshots, publish, upload, update claims, write approved URLs, update Devpost, or submit anything. When live proof evidence exists, it is limited to approved ephemeral Docker Splunk, synthetic data, and a local read-only MCP SDK adapter unless the official Splunk MCP Server field says otherwise."
+}

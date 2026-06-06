@@ -1,0 +1,106 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:57+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "license": {
+    "path": "LICENSE",
+    "spdx": "Apache-2.0",
+    "present": true
+  },
+  "assets": [
+    {
+      "path": "assets/dashboard_preview.png",
+      "suffix": ".png",
+      "size_bytes": 75210,
+      "role": "Dashboard screenshot generated from the local synthetic-data demo."
+    }
+  ],
+  "bundled_audio_video_media": [],
+  "public_video_ready": false,
+  "screen_safety_sources": [
+    "submission/VIDEO_RECORDING_RUNBOOK.md",
+    "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+    "reports/latest_video_readiness.html",
+    "reports/latest_video_cue_sheet.html"
+  ],
+  "trademark_note": "Splunk and Devpost names are used only to describe the hackathon, platform fit, and interoperability target. No sponsor logo, third-party music, stock footage, or account screenshots are bundled in the local package.",
+  "wording_scan": {
+    "suspicious_terms": [
+      "uses royalty-free music",
+      "includes background music",
+      "contains stock footage",
+      "uses stock footage",
+      "copyrighted song included",
+      "licensed track included",
+      "Getty Images asset",
+      "Shutterstock asset"
+    ],
+    "hits": [],
+    "clean": true
+  },
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "Apache-2.0 license present",
+      "status": "pass",
+      "detail": "LICENSE"
+    },
+    {
+      "name": "dashboard preview PNG present",
+      "status": "pass",
+      "detail": "assets/dashboard_preview.png"
+    },
+    {
+      "name": "asset inventory limited",
+      "status": "pass",
+      "detail": "assets/dashboard_preview.png"
+    },
+    {
+      "name": "no bundled audio or video media",
+      "status": "pass",
+      "detail": "no audio/video files bundled"
+    },
+    {
+      "name": "video runbook synthetic-data boundary",
+      "status": "pass",
+      "detail": "synthetic-data screen safety"
+    },
+    {
+      "name": "video runbook account/privacy boundary",
+      "status": "pass",
+      "detail": "account screen safety"
+    },
+    {
+      "name": "video screen checklist pending review",
+      "status": "pass",
+      "detail": "screen safety checklist stays gated"
+    },
+    {
+      "name": "video screen checklist privacy boundary",
+      "status": "pass",
+      "detail": "secret screen safety"
+    },
+    {
+      "name": "video readiness not final public video",
+      "status": "pass",
+      "detail": "public video still requires approval/upload"
+    },
+    {
+      "name": "official audit content rights note",
+      "status": "pass",
+      "detail": "official requirements audit rights note"
+    },
+    {
+      "name": "public wording rights scan",
+      "status": "pass",
+      "detail": "no suspicious media-license terms"
+    },
+    {
+      "name": "boundary text",
+      "status": "pass",
+      "detail": "This content rights audit is local review evidence only. It does not publish a repository, record or upload video, write approved URLs, update Devpost, request trademark permission, or submit anything."
+    }
+  ],
+  "boundary": "This content rights audit is local review evidence only. It does not publish a repository, record or upload video, write approved URLs, update Devpost, request trademark permission, or submit anything.",
+  "recommended_next_step": "Before public video upload, watch the final recording end to end and confirm no private tabs, accounts, copyrighted music, unlicensed third-party marks, or unrelated media appear."
+}

@@ -1,0 +1,257 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:28+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "claim_boundary_status": "pass",
+  "validation_status": "ready_for_user_review",
+  "validation_failed_count": "missing",
+  "validation_source": "reports/latest_final_go_no_go.json",
+  "final_submit_ready": false,
+  "approved_public_urls_exists": false,
+  "claims": [
+    {
+      "key": "synthetic_data_boundary",
+      "public_claim": "The demo uses synthetic incident data only.",
+      "support_status": "locally_supported",
+      "allowed_wording": "The current demo uses synthetic checkout-incident events only; no real secrets, accounts, customer data, cloud accounts, or private logs are used.",
+      "avoid_wording": "Avoid implying the demo uses real customer logs, production secrets, or live private operations.",
+      "evidence": [
+        {
+          "path": "data/synthetic_agentops_events.jsonl",
+          "exists": true,
+          "reason": "Synthetic source events used by the local demo."
+        },
+        {
+          "path": "data/agentops_event_schema.json",
+          "exists": true,
+          "reason": "Schema describing the synthetic event model."
+        },
+        {
+          "path": "data/splunk_agentops_events.csv",
+          "exists": true,
+          "reason": "Splunk-ready export generated from synthetic events."
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true,
+          "reason": "Records the synthetic-data-only public demo boundary."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "None for local demo evidence; keep the same boundary in public video and Devpost text.",
+      "ready": true
+    },
+    {
+      "key": "splunk_ready_event_model",
+      "public_claim": "Agentic Incident Command Center produces Splunk-ready incident data and SPL query examples.",
+      "support_status": "locally_supported",
+      "allowed_wording": "The package exports Splunk-ready CSV and includes SPL examples plus a local SPL-equivalent proof report.",
+      "avoid_wording": "Avoid saying the data has already been imported into live Splunk unless approved live proof exists.",
+      "evidence": [
+        {
+          "path": "data/splunk_agentops_events.csv",
+          "exists": true,
+          "reason": "CSV intended for an agentops_events index after approval."
+        },
+        {
+          "path": "submission/SPL_QUERIES.md",
+          "exists": true,
+          "reason": "SPL examples for incident timeline, root-cause evidence, remediation ledger, MCP investigation context, and blast radius."
+        },
+        {
+          "path": "reports/latest_local_spl_query_results.html",
+          "exists": true,
+          "reason": "Local SPL-equivalent proof over the generated CSV."
+        },
+        {
+          "path": "architecture_diagram.md",
+          "exists": true,
+          "reason": "Shows the Splunk data-flow architecture."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "Live Splunk import requires explicit account/license approval.",
+      "ready": true
+    },
+    {
+      "key": "mcp_remediation_ledger",
+      "public_claim": "The MCP Remediation Ledger ranks proposed incident actions and cites evidence for human review.",
+      "support_status": "locally_supported",
+      "allowed_wording": "The local dashboard and analysis show rollback, WAF watch, stakeholder update, ticketing, and blocked credential-boundary items with evidence references.",
+      "avoid_wording": "Avoid claiming fully autonomous remediation, production enforcement, or real incident execution.",
+      "evidence": [
+        {
+          "path": "reports/latest_analysis.json",
+          "exists": true,
+          "reason": "Analysis output containing incident summary, root-cause candidates, remediation ledger, approval queue, and MCP preview."
+        },
+        {
+          "path": "reports/latest_control_tower.html",
+          "exists": true,
+          "reason": "Dashboard surface for root-cause ranking, blast radius, remediation ledger, and approval queue."
+        },
+        {
+          "path": "reports/latest_mcp_investigation.md",
+          "exists": true,
+          "reason": "Evidence-backed MCP investigation preview with event IDs."
+        },
+        {
+          "path": "prototype/agentops_control_tower.py",
+          "exists": true,
+          "reason": "Generates the ledger, recommendations, SPL examples, and dashboard."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "No external gate for local proof; keep real external actions human-approved.",
+      "ready": true
+    },
+    {
+      "key": "human_approval_gates",
+      "public_claim": "High-impact remediation remains behind explicit human approval gates.",
+      "support_status": "locally_supported",
+      "allowed_wording": "Rollback, WAF changes, stakeholder updates, public repo publication, video upload, URL writeback, live Splunk/MCP proof, and Devpost submission are modeled as explicit approval gates.",
+      "avoid_wording": "Avoid saying remediation, publication, upload, URL writeback, live proof, or final submission has happened before readback evidence exists.",
+      "evidence": [
+        {
+          "path": "reports/latest_submission_gate_ledger.html",
+          "exists": true,
+          "reason": "Gate ledger for public repo, video, optional live proof, and Devpost final submission."
+        },
+        {
+          "path": "reports/latest_external_approval_packet.html",
+          "exists": true,
+          "reason": "Explains purpose, benefits, risks, and verification for each external action."
+        },
+        {
+          "path": "reports/latest_post_action_evidence_brief.html",
+          "exists": true,
+          "reason": "Defines completion/readback evidence after each external action."
+        },
+        {
+          "path": "submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md",
+          "exists": true,
+          "reason": "Template for recording approved external-action readback without secrets."
+        },
+        {
+          "path": "reports/latest_submission_url_validation.html",
+          "exists": true,
+          "reason": "Shows public repo and video URLs are pending until approved."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "All external actions require explicit user approval before execution.",
+      "ready": true
+    },
+    {
+      "key": "splunk_app_candidate",
+      "public_claim": "The package includes a local Splunk app candidate.",
+      "support_status": "locally_supported",
+      "allowed_wording": "The package includes a local .spl app candidate with dashboard XML and saved searches for review.",
+      "avoid_wording": "Avoid saying the app has been installed, uploaded, or accepted by Splunk unless that proof is captured.",
+      "evidence": [
+        {
+          "path": "dist/agentops-control-tower-splunk-app.spl",
+          "exists": true,
+          "reason": "Local .spl package artifact."
+        },
+        {
+          "path": "reports/latest_splunk_app_package_manifest.html",
+          "exists": true,
+          "reason": "Package member list, SHA256, and no-install/no-upload boundary."
+        },
+        {
+          "path": "splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+          "exists": true,
+          "reason": "Simple XML dashboard candidate."
+        },
+        {
+          "path": "splunk_app/agentops_control_tower/default/savedsearches.conf",
+          "exists": true,
+          "reason": "Saved search candidates for AgentOps queries."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "Install/upload/use in Splunk requires explicit approval.",
+      "ready": true
+    },
+    {
+      "key": "splunk_mcp_design",
+      "public_claim": "The project is designed for Splunk MCP Server investigation.",
+      "support_status": "designed_pending_live_proof",
+      "allowed_wording": "Agentic Incident Command Center is designed for Splunk MCP Server, with synthetic incident data, SPL examples, local SPL proof, and a live proof runbook.",
+      "avoid_wording": "Avoid saying verified through Splunk MCP Server until approved live setup and proof capture are complete.",
+      "evidence": [
+        {
+          "path": "submission/SPLUNK_MCP_RUNBOOK.md",
+          "exists": true,
+          "reason": "Post-approval runbook for live Splunk MCP setup and proof capture."
+        },
+        {
+          "path": "reports/latest_splunk_mcp_command_plan.html",
+          "exists": true,
+          "reason": "Command plan for account/license, synthetic import, app install, MCP setup, and proof."
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_brief.html",
+          "exists": true,
+          "reason": "Success criteria and claim-upgrade rules for live proof."
+        },
+        {
+          "path": "reports/latest_splunk_mcp_prompt_pack.html",
+          "exists": true,
+          "reason": "Prompt pack with SPL, expected event citations, success readbacks, and stop conditions."
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_capture_manifest.html",
+          "exists": true,
+          "reason": "Capture slots, expected readback, stop conditions, and claim-upgrade gate for optional live proof."
+        },
+        {
+          "path": "reports/latest_claim_boundary_validation.html",
+          "exists": true,
+          "reason": "Checks that public copy does not overclaim live Splunk/MCP proof."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "Optional live Splunk/MCP proof requires approved Splunk account/license and MCP configuration.",
+      "ready": true
+    },
+    {
+      "key": "submission_state",
+      "public_claim": "The local package is ready for user review, but final submission is not complete.",
+      "support_status": "ready_for_user_review_external_gates_pending",
+      "allowed_wording": "The local package is ready for user review; final submission is pending public repo URL, public video URL, approved URL writeback, and final Devpost approval.",
+      "avoid_wording": "Avoid saying submitted, public, final, or approved until post-action evidence confirms it.",
+      "evidence": [
+        {
+          "path": "reports/latest_final_go_no_go.html",
+          "exists": true,
+          "reason": "Separates local readiness from pending external gates."
+        },
+        {
+          "path": "scripts/validate_submission_packet.py",
+          "exists": true,
+          "reason": "Validator that reports final_submit_ready false and pending actions."
+        },
+        {
+          "path": "reports/latest_launch_decision_brief.html",
+          "exists": true,
+          "reason": "Approval order, approval phrases, and blocked final gates."
+        },
+        {
+          "path": "reports/latest_devpost_manual_fill_brief.html",
+          "exists": true,
+          "reason": "Devpost field fill and readback brief with pending URL fields."
+        }
+      ],
+      "missing_evidence": [],
+      "remaining_gate": "Public repo, public video, URL writeback, and Devpost final submission remain pending.",
+      "ready": true
+    }
+  ],
+  "missing_evidence": [],
+  "ready_claim_count": 7,
+  "total_claim_count": 7,
+  "safe_copy_rule": "Use local-proof and designed-for wording until public URL, live Splunk/MCP, or Devpost submit evidence has been explicitly approved and read back.",
+  "boundary": "This matrix is local claim-support evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything."
+}

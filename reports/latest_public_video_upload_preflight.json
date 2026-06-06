@@ -1,0 +1,131 @@
+{
+  "generated_at_utc": "2026-06-06T13:09:07+00:00",
+  "status": "ready_for_user_review",
+  "gate_status": "blocked_by_video_approval_gate",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "duration_seconds": 180,
+  "public_video_upload_allowed": false,
+  "approval_phrase_accepted": false,
+  "approval_phrase_required": "Approve recording and public upload of the Agentic Incident Command Center demo video.",
+  "manual_confirmations": {
+    "screen_safety_confirmed": false,
+    "duration_confirmed": false,
+    "claim_boundary_confirmed": false,
+    "content_rights_confirmed": false,
+    "upload_visibility_confirmed": false
+  },
+  "missing_manual_confirmations": [
+    "screen_safety_confirmed",
+    "duration_confirmed",
+    "claim_boundary_confirmed",
+    "content_rights_confirmed",
+    "upload_visibility_confirmed"
+  ],
+  "missing_evidence": [],
+  "gate_issues": [
+    "approval phrase is required before manual recording or public upload",
+    "manual screen, duration, claim, rights, and visibility confirmations are required before upload"
+  ],
+  "evidence": [
+    {
+      "path": "reports/latest_demo_tour.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_readiness.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_readiness.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_cue_sheet.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_cue_sheet.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_recording_preview.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_recording_preview.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_upload_metadata.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_upload_metadata.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_content_rights_audit.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_content_rights_audit.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_claim_boundary_validation.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_claim_boundary_validation.json",
+      "exists": true
+    },
+    {
+      "path": "submission/DEMO_VIDEO_SCRIPT.md",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_UPLOAD_METADATA.md",
+      "exists": true
+    }
+  ],
+  "external_actions_attempted": false,
+  "external_actions_completed": false,
+  "public_video_upload_safe_readback": {
+    "action_key": "public_demo_video",
+    "gate_status": "blocked_by_video_approval_gate",
+    "public_video_upload_allowed": false,
+    "approval_phrase_accepted": false,
+    "ready_for_public_upload": false,
+    "ready_for_recording_review": true,
+    "final_recording_review_required": true,
+    "duration_seconds": 180,
+    "screen_safety_checklist": "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+    "evidence_note_target": "submission/post_action_evidence/YYYY-MM-DD_public_demo_video_readback.md",
+    "public_video_url": "PENDING_USER_APPROVAL_PUBLIC_VIDEO_URL",
+    "external_actions_attempted": false,
+    "external_actions_completed": false,
+    "forbidden_content": [
+      "credentials",
+      "tokens",
+      "account screenshots",
+      "browser tabs",
+      "billing pages",
+      "OAuth screens",
+      "local absolute paths",
+      "private workspace material",
+      "private logs",
+      "customer data"
+    ],
+    "copy_policy": "Use this pre-upload safe readback plus the recording-preview safe readback and a short manual final-recording review summary. Do not copy screenshots, browser state, account pages, raw recording output, credentials, tokens, or local absolute paths."
+  },
+  "boundary": "This public video upload gate is a local preflight only. It does not record video, upload video, publish media, open accounts, write approved URLs, update Devpost, connect to Splunk, configure MCP, or submit anything."
+}

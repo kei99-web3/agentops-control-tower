@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Repo Dry Run</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { width: 240px; color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #a33a00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public Repo Dry Run</h1>
+    <p>Local-only rehearsal for publishing the clean Agentic Incident Command Center candidate.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <table>
+        <tbody>
+          <tr><th>Status</th><td class="ready">ready_for_user_review</td></tr>
+          <tr><th>Candidate</th><td><code>.</code></td></tr>
+          <tr><th>Candidate file count</th><td>248</td></tr>
+          <tr><th>Git branch</th><td>main</td></tr>
+          <tr><th>Git staged file count</th><td>248</td></tr>
+          <tr><th>Git tracked file count</th><td>248</td></tr>
+          <tr><th>Git commit created</th><td>True</td></tr>
+          <tr><th>Post-commit status lines</th><td>0</td></tr>
+          <tr><th>Staging location policy</th><td>system_temp_outside_private_workspace</td></tr>
+          <tr><th>Staging isolated</th><td>True</td></tr>
+          <tr><th>Final submit ready</th><td>False</td></tr>
+          <tr><th>Approved public URLs</th><td>False</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Dry Run Actions</h2>
+      <ul><li>copy public candidate to an isolated temporary staging folder outside the private workspace</li>
+<li>run git init -b main without remote</li>
+<li>configure a temporary local git identity</li>
+<li>run git add -A</li>
+<li>run a local git commit rehearsal</li>
+<li>inspect git status --short</li>
+<li>scan temporary copy for internal paths and secret-like strings</li></ul>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>candidate source exists</td><td class="ready">pass</td><td>.</td></tr>
+<tr><td>candidate required files</td><td class="ready">pass</td><td>all required files present</td></tr>
+<tr><td>candidate top-level allowlist</td><td class="ready">pass</td><td>top-level entries expected</td></tr>
+<tr><td>candidate has no git directory</td><td class="ready">pass</td><td>.git absent</td></tr>
+<tr><td>candidate has no release directory</td><td class="ready">pass</td><td>release absent</td></tr>
+<tr><td>approved URL writeback absent</td><td class="ready">pass</td><td>approved_public_urls.json absent</td></tr>
+<tr><td>approval phrase stable</td><td class="ready">pass</td><td>Approve public GitHub publication for the clean agentops-control-tower candidate.</td></tr>
+<tr><td>snapshot final gate closed</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>URL validation final gate closed</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>Go/No-Go final gate closed</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>pending repo and video URLs</td><td class="ready">pass</td><td>repository_url, demo_video_url</td></tr>
+<tr><td>staging copy outside private workspace</td><td class="ready">pass</td><td>outside private workspace</td></tr>
+<tr><td>git init main-branch rehearsal</td><td class="ready">pass</td><td>Initialized empty Git repository in &lt;local-path&gt;</td></tr>
+<tr><td>git branch rehearsal uses main</td><td class="ready">pass</td><td>main</td></tr>
+<tr><td>git remote list remains empty</td><td class="ready">pass</td><td>no remotes</td></tr>
+<tr><td>git dry-run user.name configured</td><td class="ready">pass</td><td>ok</td></tr>
+<tr><td>git dry-run user.email configured</td><td class="ready">pass</td><td>ok</td></tr>
+<tr><td>git add rehearsal</td><td class="ready">pass</td><td>165 line-ending warnings suppressed</td></tr>
+<tr><td>git status rehearsal</td><td class="ready">pass</td><td>248 staged files</td></tr>
+<tr><td>git status has no private workspace names</td><td class="ready">pass</td><td>clean</td></tr>
+<tr><td>git commit rehearsal</td><td class="ready">pass</td><td> mode 100644 submission/REQUIREMENTS_MATRIX.md
+ create mode 100644 submission/SPLUNK_MCP_PROMPT_PACK.md
+ create mode 100644 submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md
+ create mode 100644 submission/SPLUNK_MCP_RUNBOOK.md
+ create mode 100644 submission/SPL_QUERIES.md
+ create mode 100644 submission/SUBMISSION_DEADLINE_BURNDOWN.md
+ create mode 100644 submission/SUBMISSION_LAUNCH_RUNBOOK.md
+ create mode 100644 submission/SUBMISSION_REVIEW_QA.md
+ create mode 100644 submission/USER_APPROVAL_GATES.md
+ create mode 100644 submission/VIDEO_RECORDING_RUNBOOK.md
+ create mode 100644 submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md
+ create mode 100644 submission/VIDEO_UPLOAD_METADATA.md
+ create mode 100644 tests/test_agentops_control_tower.py
+ create mode 100644 tests/test_submission_safety_boundaries.py</td></tr>
+<tr><td>git commit hash exists</td><td class="ready">pass</td><td>ad1488b77f81</td></tr>
+<tr><td>git tracked files rehearsal</td><td class="ready">pass</td><td>tracked=248 staged=248</td></tr>
+<tr><td>git post-commit status clean</td><td class="ready">pass</td><td>clean</td></tr>
+<tr><td>git remote remains empty after commit</td><td class="ready">pass</td><td>no remotes</td></tr>
+<tr><td>rehearsal internal path scan</td><td class="ready">pass</td><td>no internal patterns</td></tr>
+<tr><td>rehearsal secret-like scan</td><td class="ready">pass</td><td>no secret-like patterns</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Boundary</h2>
+      <p>This dry run is local publication rehearsal only. It copies the reviewed public candidate to an isolated temporary staging folder outside the private workspace and runs git init/add/commit/status without creating a remote, pushing commits, publishing files, writing approved URLs, uploading video, updating Devpost, or submitting anything.</p>
+    </section>
+  </main>
+</body>
+</html>

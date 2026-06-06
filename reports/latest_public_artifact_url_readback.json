@@ -1,0 +1,94 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:34+00:00",
+  "producer": "verify_public_artifact_urls.py",
+  "status": "waiting_for_external_urls",
+  "repository_url": "PENDING_USER_APPROVAL_PUBLIC_REPO_URL",
+  "demo_video_url": "PENDING_USER_APPROVAL_PUBLIC_VIDEO_URL",
+  "pending_urls": [
+    "repository_url",
+    "demo_video_url"
+  ],
+  "url_shape_final_submit_ready": false,
+  "live_readback_requested": false,
+  "live_readback_attempted": false,
+  "ready_for_url_writeback": false,
+  "approved_public_urls_exists": false,
+  "github_repo_readback": {
+    "slug": "",
+    "readback": {},
+    "returncode": null
+  },
+  "demo_video_readback": {
+    "method": "not_run",
+    "status_code": null,
+    "final_url": "",
+    "content_type": "",
+    "error": "pending URLs"
+  },
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "shape: repository URL",
+      "status": "pass",
+      "detail": "pending user-approved URL"
+    },
+    {
+      "name": "shape: demo video URL",
+      "status": "pass",
+      "detail": "pending user-approved URL"
+    },
+    {
+      "name": "shape: repository approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "shape: video approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "approved URL file remains absent",
+      "status": "pass",
+      "detail": "approved_public_urls.json absent"
+    },
+    {
+      "name": "public URLs pending",
+      "status": "pass",
+      "detail": "repository_url, demo_video_url"
+    }
+  ],
+  "boundary": "This public artifact URL readback is a verification aid only. Default mode does not perform network readback when URLs are still pending. It does not publish, upload, write approved URLs, update Devpost, or submit anything.",
+  "next_required_external_approval": "approved_url_writeback",
+  "public_safe_readback": {
+    "action_key": "approved_url_writeback",
+    "status": "waiting_for_external_urls",
+    "repository": {
+      "url": "",
+      "slug": "",
+      "visibility": "",
+      "is_private": null,
+      "name_with_owner": ""
+    },
+    "demo_video": {
+      "url": "",
+      "final_url": "",
+      "host": "",
+      "http_status": null,
+      "method": "not_run",
+      "content_type": "",
+      "error_present": true
+    },
+    "pending_urls": [
+      "repository_url",
+      "demo_video_url"
+    ],
+    "live_readback_attempted": false,
+    "ready_for_url_writeback": false,
+    "approved_public_urls_exists": false,
+    "failed_count": 0,
+    "evidence_note_target": "submission/post_action_evidence/YYYY-MM-DD_approved_url_writeback_readback.md",
+    "copy_policy": "Use this public_safe_readback block for post-action evidence. Do not copy raw command output, credentials, tokens, account screenshots, browser tabs, or local absolute paths.",
+    "next_required_external_approval": "approved_url_writeback"
+  }
+}

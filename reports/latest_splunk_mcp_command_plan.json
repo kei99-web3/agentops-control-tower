@@ -1,0 +1,169 @@
+{
+  "generated_at_utc": "2026-06-06T13:08:51+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "live_splunk_mcp_verified": false,
+  "live_splunk_verified": false,
+  "mcp_protocol_adapter_verified": false,
+  "official_splunk_mcp_server_verified": false,
+  "live_proof_status": "missing",
+  "splunk_request_status": "optional_user_decision",
+  "missing_evidence": [],
+  "evidence": [
+    {
+      "path": "submission/SPLUNK_MCP_RUNBOOK.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "data/splunk_agentops_events.csv",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "submission/SPL_QUERIES.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_live_splunk_docker_proof.html",
+      "exists": false,
+      "required": false
+    },
+    {
+      "path": "reports/latest_live_splunk_docker_proof.json",
+      "exists": false,
+      "required": false
+    },
+    {
+      "path": "reports/latest_live_splunk_docker_proof.md",
+      "exists": false,
+      "required": false
+    },
+    {
+      "path": "reports/latest_local_spl_query_results.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_local_spl_query_results.json",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_mcp_investigation.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_claim_boundary_validation.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_claim_boundary_validation.json",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "reports/latest_external_approval_packet.html",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "splunk_app/agentops_control_tower/default/savedsearches.conf",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "splunk_app/agentops_control_tower/default/app.conf",
+      "exists": true,
+      "required": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "Refresh local synthetic event proof",
+      "command": "python prototype\\agentops_control_tower.py run-demo",
+      "purpose": "Regenerate synthetic checkout-incident events and the local dashboard before any live setup."
+    },
+    {
+      "name": "Refresh local SPL-equivalent proof",
+      "command": "python scripts\\run_local_spl_query_pack.py",
+      "purpose": "Confirm incident timeline, root-cause evidence, remediation ledger, MCP investigation context, and blast-radius rows exist before import."
+    },
+    {
+      "name": "Validate Splunk app candidate",
+      "command": "python scripts\\validate_splunk_app.py",
+      "purpose": "Confirm the Simple XML dashboard and saved searches are locally valid before installing or copying them."
+    },
+    {
+      "name": "Review live setup boundary",
+      "command": "manual: review submission\\SPLUNK_MCP_RUNBOOK.md and reports\\latest_external_approval_packet.html",
+      "purpose": "Confirm scope, cost, credential, and data boundaries before any Splunk account or MCP action."
+    },
+    {
+      "name": "Approve Splunk account and license use",
+      "command": "manual: create or use an approved Splunk account, trial, Cloud access, or Developer License",
+      "purpose": "Start live proof only after explicit account/license approval."
+    },
+    {
+      "name": "Run approved ephemeral Docker Splunk proof",
+      "command": "python scripts\\run_live_splunk_docker_proof.py",
+      "purpose": "After the user approves Splunk General Terms for this proof only, index the synthetic CSV in temporary Docker Splunk and capture live SPL plus local MCP SDK adapter readback."
+    },
+    {
+      "name": "Create approved synthetic-data index",
+      "command": "manual: create index agentops_events for synthetic checkout-incident events only",
+      "purpose": "Keep live proof isolated from private workspace logs or customer data."
+    },
+    {
+      "name": "Import synthetic CSV",
+      "command": "manual: import data\\splunk_agentops_events.csv into agentops_events",
+      "purpose": "Load only the generated synthetic dataset used by the local proof."
+    },
+    {
+      "name": "Install or copy Splunk app candidate",
+      "command": "manual: install or copy splunk_app\\agentops_control_tower after reviewing app.conf, savedsearches.conf, and dashboard XML",
+      "purpose": "Expose the Control Tower dashboard without adding unreviewed apps or private data sources."
+    },
+    {
+      "name": "Run live SPL evidence checks",
+      "command": "manual: run the incident timeline, root-cause evidence, remediation ledger, MCP investigation context, and blast-radius queries from submission\\SPL_QUERIES.md",
+      "purpose": "Verify live Splunk results match the local query proof before strengthening claims."
+    },
+    {
+      "name": "Configure Splunk MCP Server after approval",
+      "command": "manual: configure Splunk MCP Server with read-only approved scope for agentops_events",
+      "purpose": "Allow MCP-assisted investigation only inside the approved synthetic-data scope."
+    },
+    {
+      "name": "Run MCP-assisted investigation",
+      "command": "manual: ask what caused the checkout incident, which services are affected, and which remediation needs human approval first; require cited event IDs plus evidence refs",
+      "purpose": "Capture the bonus-proof story without allowing external actions or secret access."
+    },
+    {
+      "name": "Build proof capture manifest",
+      "command": "python scripts\\build_splunk_mcp_proof_capture_manifest.py",
+      "purpose": "Freeze the required live proof capture slots, readback evidence, stop conditions, and claim-upgrade gate before any proof capture."
+    },
+    {
+      "name": "Capture live proof safely",
+      "command": "manual: capture screenshots or recording of indexed CSV, live SPL results, and MCP answer with no tokens, account pages, or private paths visible",
+      "purpose": "Create evidence for the final demo only after the screen-safety review passes."
+    },
+    {
+      "name": "Upgrade claim wording only after proof",
+      "command": "python scripts\\validate_claim_boundaries.py && python scripts\\validate_submission_packet.py",
+      "purpose": "Re-check public copy before saying the project is verified through Splunk MCP Server."
+    }
+  ],
+  "boundary": "This command plan is advisory/readback only. The plan builder does not create accounts, configure credentials, import data, install apps, connect MCP, capture screenshots, update claims, publish, upload, or submit anything.",
+  "approval_required": "Explicit user approval is required before credential handling, official Splunk MCP Server configuration, dashboard/screenshot capture, or live-MCP claim wording changes."
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Release Integrity Manifest</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Release Integrity Manifest</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Snapshot</h2>
+      <table><tbody><tr><th>Root type</th><td>public_candidate</td></tr>
+<tr><th>Validation status</th><td>ready_for_user_review</td></tr>
+<tr><th>Validation failed count</th><td>0</td></tr>
+<tr><th>Validation source</th><td>reports/latest_final_go_no_go.json</td></tr>
+<tr><th>Validation note</th><td>Final Go/No-Go evidence is used because no full validator report is bundled yet.</td></tr>
+<tr><th>Final submit ready</th><td>False</td></tr>
+<tr><th>Approved public URLs file</th><td>False</td></tr>
+<tr><th>Splunk app package</th><td>ready_for_user_review</td></tr>
+<tr><th>Claim boundary</th><td>not_applicable_public_candidate_root</td></tr>
+<tr><th>Artifact count</th><td>73</td></tr>
+<tr><th>Missing artifacts</th><td>none</td></tr></tbody></table>
+      <p class="pending">Review this manifest before approving public GitHub, public demo video, optional Splunk/MCP proof, URL writeback, or Devpost final submission.</p>
+      <p class="pending">This release integrity manifest is local readback evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Release ZIP</h2>
+      <table><tbody><tr><th>Path</th><td>release/agentops-control-tower-public-candidate.zip</td></tr>
+<tr><th>Exists</th><td>True</td></tr>
+<tr><th>File count</th><td>248</td></tr>
+<tr><th>Size bytes</th><td>773263</td></tr>
+<tr><th>SHA256</th><td>b0fe4414c923c47260213bae03dd9fb38ad3de91296b97fe7682b8ba6bbe652a</td></tr>
+<tr><th>Smoke status</th><td>not_applicable_public_candidate_root</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>required artifacts present</td><td class="ready">pass</td><td>all required artifacts present</td></tr>
+<tr><td>Splunk app package SHA256 consistency</td><td class="ready">pass</td><td>manifest=061d79ceec155e7b9681bc5fcf671aa5685680f1ed274d404a0947817998e23e artifact=061d79ceec155e7b9681bc5fcf671aa5685680f1ed274d404a0947817998e23e</td></tr>
+<tr><td>Splunk app package manifest status</td><td class="ready">pass</td><td>ready_for_user_review</td></tr>
+<tr><td>Splunk MCP prompt pack status</td><td class="ready">pass</td><td>status=ready_for_user_review live=False external=False</td></tr>
+<tr><td>claim boundary status</td><td class="ready">pass</td><td>not_applicable_public_candidate_root</td></tr>
+<tr><td>release ZIP smoke status</td><td class="ready">pass</td><td>not_applicable_public_candidate_root</td></tr>
+<tr><td>candidate-local ZIP count consistency</td><td class="ready">pass</td><td>manifest=248 actual=248</td></tr>
+<tr><td>final submit remains gated</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>approved URLs remain gated</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>post-action external gates tracked</td><td class="ready">pass</td><td>public_github_repository, public_demo_video, optional_live_splunk_mcp_proof, approved_url_writeback, devpost_final_submission</td></tr>
+<tr><td>publication boundary text</td><td class="ready">pass</td><td>This release integrity manifest is local readback evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything.</td></tr>
+<tr><td>video dry run status</td><td class="ready">pass</td><td>not_applicable_public_candidate_root</td></tr>
+<tr><td>public video upload preflight status</td><td class="ready">pass</td><td>not_applicable_public_candidate_root</td></tr>
+<tr><td>URL writeback dry run status</td><td class="ready">pass</td><td>not_applicable_public_candidate_root</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Artifact Integrity</h2>
+      <table>
+        <thead><tr><th>Artifact</th><th>Path</th><th>Status</th><th>Required</th><th>Size</th><th>SHA256</th><th>Role</th></tr></thead>
+        <tbody><tr><td>Public candidate manifest</td><td><code>PUBLIC_REPO_CANDIDATE_MANIFEST.md</code></td><td class="ready">present</td><td>required</td><td>11379</td><td><code>d4565fdea014528ae731984c653d582e6cd674007b06ae4816978332afa41a27</code></td><td>Confirms this folder is the clean local public-candidate root.</td></tr>
+<tr><td>Candidate-local ZIP</td><td><code>release/agentops-control-tower-public-candidate.zip</code></td><td class="ready">present</td><td>optional</td><td>773263</td><td><code>b0fe4414c923c47260213bae03dd9fb38ad3de91296b97fe7682b8ba6bbe652a</code></td><td>Optional local ZIP generated inside the public candidate for review.</td></tr>
+<tr><td>Candidate-local ZIP manifest</td><td><code>reports/latest_public_candidate_zip_manifest.json</code></td><td class="ready">present</td><td>optional</td><td>12677</td><td><code>08b532d955587f5fd5e2021075fa186f56ce2cc5829f4e87e2504d2bfa59e0fd</code></td><td>Optional machine-readable candidate ZIP manifest.</td></tr>
+<tr><td>README</td><td><code>README.md</code></td><td class="ready">present</td><td>required</td><td>20826</td><td><code>5bd90033a12afba0192d9eeb7f96298b103a18768d9100476a712b8409760505</code></td><td>Portable project overview and local run instructions.</td></tr>
+<tr><td>License</td><td><code>LICENSE</code></td><td class="ready">present</td><td>required</td><td>11358</td><td><code>c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c</code></td><td>Open-source license candidate for public review.</td></tr>
+<tr><td>Architecture diagram</td><td><code>architecture_diagram.md</code></td><td class="ready">present</td><td>required</td><td>1912</td><td><code>b3b0f36a0d1e0a3bdd8d45c926e0d5fb6fff5ca9791c95d8fd90a6d9a3fd454b</code></td><td>Root architecture evidence required by the submission packet.</td></tr>
+<tr><td>Dashboard preview</td><td><code>assets/dashboard_preview.png</code></td><td class="ready">present</td><td>required</td><td>75210</td><td><code>a172e0fa0fcaa2b4bb0a96b7b02c5bd326b37dbf26d5c4130010f54579df6142</code></td><td>Visual README/Devpost preview asset.</td></tr>
+<tr><td>Local demo prototype</td><td><code>prototype/agentops_control_tower.py</code></td><td class="ready">present</td><td>required</td><td>36533</td><td><code>fce2f1c75eb25f4dfab60c57bfbbcbc9b0e126840b5672d9bfecbf070f5b871b</code></td><td>Generator for synthetic checkout-incident events, analysis, dashboard, and SPL examples.</td></tr>
+<tr><td>Splunk-ready CSV</td><td><code>data/splunk_agentops_events.csv</code></td><td class="ready">present</td><td>required</td><td>8368</td><td><code>3bb781d0e8859b52b5dd6676b35b8d051b9d2c355cec05bcb5ae2f85b5aa5a6e</code></td><td>Synthetic data export for a future agentops_events index after approval.</td></tr>
+<tr><td>SPL query pack</td><td><code>submission/SPL_QUERIES.md</code></td><td class="ready">present</td><td>required</td><td>1783</td><td><code>feb15f47a2498d4f54a2cc0ae0e41767c0c6100ebdcb6dcc2f4989651920e02a</code></td><td>Reviewer-facing SPL examples for the Control Tower flow.</td></tr>
+<tr><td>Splunk index config</td><td><code>splunk_app/agentops_control_tower/default/indexes.conf</code></td><td class="ready">present</td><td>required</td><td>212</td><td><code>4e966767e2b53e1c45102702824549f04d785e32052d0692c0f1f3410c2e9ffd</code></td><td>Optional local index definition for agentops_events.</td></tr>
+<tr><td>Splunk sourcetype config</td><td><code>splunk_app/agentops_control_tower/default/props.conf</code></td><td class="ready">present</td><td>required</td><td>217</td><td><code>6c6e3704dbd785b9fc52526b3c5fe429ac5648982d5347fce226d087fc6b024d</code></td><td>CSV extraction and timestamp parsing for the agentops:events sourcetype.</td></tr>
+<tr><td>Splunk app package</td><td><code>dist/agentops-control-tower-splunk-app.spl</code></td><td class="ready">present</td><td>required</td><td>2409</td><td><code>061d79ceec155e7b9681bc5fcf671aa5685680f1ed274d404a0947817998e23e</code></td><td>Local .spl package candidate; not installed or uploaded.</td></tr>
+<tr><td>Splunk app package manifest</td><td><code>reports/latest_splunk_app_package_manifest.html</code></td><td class="ready">present</td><td>required</td><td>3767</td><td><code>8bd3e3535b604785a3ead259c231be69401d4906b2533f9543a7fc3d691d47f1</code></td><td>Members, SHA256, and package boundary evidence.</td></tr>
+<tr><td>Splunk app package manifest JSON</td><td><code>reports/latest_splunk_app_package_manifest.json</code></td><td class="ready">present</td><td>required</td><td>2255</td><td><code>31c961482a64df27e972c7ff5c4553eaac2e16fa2408e0a5708a2cff7f99213a</code></td><td>Machine-readable .spl integrity evidence.</td></tr>
+<tr><td>Splunk MCP command plan</td><td><code>reports/latest_splunk_mcp_command_plan.html</code></td><td class="ready">present</td><td>required</td><td>7956</td><td><code>f18c8514781183a40e114ba65820383cde5fd401d85a856cbc24257505139e2c</code></td><td>Post-approval live Splunk/MCP setup and proof command plan.</td></tr>
+<tr><td>Splunk MCP proof brief</td><td><code>reports/latest_splunk_mcp_proof_brief.html</code></td><td class="ready">present</td><td>required</td><td>9457</td><td><code>30086309e0f80c75965b272f1f608435942e527fa4321c2a189f0512d061a0e4</code></td><td>Success criteria, screen safety, stop conditions, and claim-upgrade rules for optional live proof.</td></tr>
+<tr><td>Splunk MCP prompt pack</td><td><code>reports/latest_splunk_mcp_prompt_pack.html</code></td><td class="ready">present</td><td>required</td><td>8643</td><td><code>d9fda2d8db8ebecb0048b97768cb6948faaaaf3f7f5306a4c4c081e5ee70b3ad</code></td><td>Prompt-by-prompt live proof guide for evidence-backed MCP answers.</td></tr>
+<tr><td>Splunk MCP prompt pack JSON</td><td><code>reports/latest_splunk_mcp_prompt_pack.json</code></td><td class="ready">present</td><td>required</td><td>8715</td><td><code>a2843e522b735e5512dc50cf086410d8ec1de6e32c552ac3110634c38f385d9f</code></td><td>Machine-readable prompt keys, SPL, expected citations, and live-proof gates.</td></tr>
+<tr><td>Splunk MCP prompt pack Markdown</td><td><code>reports/latest_splunk_mcp_prompt_pack.md</code></td><td class="ready">present</td><td>required</td><td>6775</td><td><code>b84338006dcf4c7c3b9a8e565a4fcb7e1e175a7f6518c9a803b0b1bdfd90fa4d</code></td><td>Reviewable prompt pack for approved live proof capture.</td></tr>
+<tr><td>Splunk MCP prompt pack submission copy</td><td><code>submission/SPLUNK_MCP_PROMPT_PACK.md</code></td><td class="ready">present</td><td>required</td><td>6775</td><td><code>b84338006dcf4c7c3b9a8e565a4fcb7e1e175a7f6518c9a803b0b1bdfd90fa4d</code></td><td>Submission-side copy of the prompt pack and stop conditions.</td></tr>
+<tr><td>Claim evidence matrix</td><td><code>reports/latest_claim_evidence_matrix.html</code></td><td class="ready">present</td><td>required</td><td>11006</td><td><code>2f03b115b3d85f307c65e8788f20261033ade4b3254561317ca18f867f082c80</code></td><td>Allowed wording, avoid wording, evidence, and remaining gates.</td></tr>
+<tr><td>Claim evidence matrix JSON</td><td><code>reports/latest_claim_evidence_matrix.json</code></td><td class="ready">present</td><td>required</td><td>11992</td><td><code>7988029f56834ae73d0f8f1fd4e65027afc3d35da0a4556fad32e8b84f925f4c</code></td><td>Machine-readable claim support status.</td></tr>
+<tr><td>Submission gate ledger</td><td><code>reports/latest_submission_gate_ledger.html</code></td><td class="ready">present</td><td>required</td><td>9016</td><td><code>b8bd1ef7a5746e931f684cb4baa6b46483982941f34a07ca5c23a8af4db235e4</code></td><td>Approval-gate ledger for public repo, video, live proof, and Devpost.</td></tr>
+<tr><td>Submission deadline burndown</td><td><code>reports/latest_submission_deadline_burndown.html</code></td><td class="ready">present</td><td>required</td><td>10583</td><td><code>acb43ec2ed009238e244c074edf732d81fb5480dd95b5d722199f2d856ba3bb1</code></td><td>Deadline-aware path for public repo, video, optional live proof, URL writeback, and Devpost final submit.</td></tr>
+<tr><td>Submission deadline burndown JSON</td><td><code>reports/latest_submission_deadline_burndown.json</code></td><td class="ready">present</td><td>required</td><td>7548</td><td><code>ad555b48106fdbf6a7a2544cbb996dd7a6c8a4af64b7d0eea76d92856d817af8</code></td><td>Machine-readable target date, official deadline, milestones, and blocked final submit gate.</td></tr>
+<tr><td>Submission deadline burndown Markdown</td><td><code>reports/latest_submission_deadline_burndown.md</code></td><td class="ready">present</td><td>required</td><td>5153</td><td><code>859f5500e0db4631cd1eaa1ed1b065cc0f5acb47d70763876f0be6a850266ec6</code></td><td>Reviewable deadline burndown for local launch planning.</td></tr>
+<tr><td>Submission deadline burndown submission copy</td><td><code>submission/SUBMISSION_DEADLINE_BURNDOWN.md</code></td><td class="ready">present</td><td>required</td><td>5153</td><td><code>859f5500e0db4631cd1eaa1ed1b065cc0f5acb47d70763876f0be6a850266ec6</code></td><td>Submission-side copy of the deadline burndown and approval timing path.</td></tr>
+<tr><td>Next approval packet</td><td><code>reports/latest_next_approval_packet.html</code></td><td class="ready">present</td><td>required</td><td>15096</td><td><code>d591b6a74232d56ae4714f104d018d873daa69a3174922985ef06ee694c3087b</code></td><td>Next user approval target, approval phrases, risks, and verification steps.</td></tr>
+<tr><td>Next approval packet JSON</td><td><code>reports/latest_next_approval_packet.json</code></td><td class="ready">present</td><td>required</td><td>13143</td><td><code>6e5ca2be9792bd551d242ab21069a7c0731452d9842c186d25ce3fcaf34bc4ed</code></td><td>Machine-readable next approval status and human-confirmation gates.</td></tr>
+<tr><td>Next approval packet submission copy</td><td><code>submission/NEXT_APPROVAL_PACKET.md</code></td><td class="ready">present</td><td>required</td><td>9594</td><td><code>7e2723a48164945bbdea413a524f55145ebec2dfb34338198fae7b4db815ebad</code></td><td>Markdown copy of the next approval packet for final user decision support.</td></tr>
+<tr><td>Approval consistency audit</td><td><code>reports/latest_approval_consistency_audit.html</code></td><td class="ready">present</td><td>required</td><td>6609</td><td><code>047d7be233be735a6d560817c23bfa818db3fc686f4882f916e1acb037a622e7</code></td><td>Checks approval order consistency across plan, approval gates, launch brief, next packet, and validator state.</td></tr>
+<tr><td>Approval consistency audit JSON</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td class="ready">present</td><td>required</td><td>5756</td><td><code>e2f80d5943f00052dfd866ea3638e1738cac84f50420001501a842a2d3a6ee3b</code></td><td>Machine-readable approval-order consistency status.</td></tr>
+<tr><td>Status conflict audit</td><td><code>reports/latest_status_conflict_audit.html</code></td><td class="ready">present</td><td>optional</td><td>7550</td><td><code>ff188298cdbb139b647182501e9cced5ecc966b0d83e31d61e3dc77c2fcd6198</code></td><td>Scans root and public-candidate JSON reports for stale failed statuses or missing local artifacts.</td></tr>
+<tr><td>Status conflict audit JSON</td><td><code>reports/latest_status_conflict_audit.json</code></td><td class="ready">present</td><td>optional</td><td>6294</td><td><code>f21592b7f2136cb5f802590159df0e9ac8549d29d05f7c6e8e9eb13945e7ff06</code></td><td>Machine-readable status conflict scan and critical ready-state checks.</td></tr>
+<tr><td>Status conflict audit Markdown</td><td><code>reports/latest_status_conflict_audit.md</code></td><td class="ready">present</td><td>optional</td><td>4020</td><td><code>9446d5bfcf64a263f9e4f3ed6d0edacf59727e6ec4768844fd7dcf3681c9b06f</code></td><td>Reviewable status conflict audit summary.</td></tr>
+<tr><td>Public launch snapshot</td><td><code>reports/latest_public_launch_snapshot.html</code></td><td class="ready">present</td><td>required</td><td>8445</td><td><code>55068bd9b5de2a7ba0cbc27adb0cc1b76ebe8bb5aaf3adb73f47e37be04d4fb8</code></td><td>Frozen local snapshot for public repo and demo video approval review.</td></tr>
+<tr><td>Public launch snapshot JSON</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td class="ready">present</td><td>required</td><td>8219</td><td><code>f087dadb18db600fc7741ce35340224587022d016ef336f44dd20b2d95e5f79f</code></td><td>Machine-readable public launch readiness, ZIP hash, approval phrases, and remaining gates.</td></tr>
+<tr><td>Public launch snapshot Markdown</td><td><code>reports/latest_public_launch_snapshot.md</code></td><td class="ready">present</td><td>required</td><td>4296</td><td><code>40c4771b22535b60bef87a6e1072c61c5d18d5cc821f5f79f3c4371491e997c9</code></td><td>Reviewable public launch snapshot for copy/paste and audit.</td></tr>
+<tr><td>Public repo metadata</td><td><code>reports/latest_public_repo_metadata.html</code></td><td class="ready">present</td><td>required</td><td>6104</td><td><code>21c346bc21b00914423a19d99556fef951d1571a1ef3b3b907530d981947b93f</code></td><td>GitHub repository name, description, topics, expected readback, and no-publish boundary.</td></tr>
+<tr><td>Public repo metadata JSON</td><td><code>reports/latest_public_repo_metadata.json</code></td><td class="ready">present</td><td>required</td><td>3844</td><td><code>ad5b7fdaecad7926f7f38db8496fe686e4723b51bad896a0dd1e977c44dc80f6</code></td><td>Machine-readable public repository metadata and post-approval readback expectations.</td></tr>
+<tr><td>Public repo metadata Markdown</td><td><code>reports/latest_public_repo_metadata.md</code></td><td class="ready">present</td><td>required</td><td>2920</td><td><code>b5a935204c7a3e8f3bf6b0c4fc8f52a9a9cb21a5568726ff270283b2949bc0c4</code></td><td>Reviewable public repository metadata packet.</td></tr>
+<tr><td>Public repo metadata submission copy</td><td><code>submission/PUBLIC_REPO_METADATA.md</code></td><td class="ready">present</td><td>required</td><td>2920</td><td><code>b5a935204c7a3e8f3bf6b0c4fc8f52a9a9cb21a5568726ff270283b2949bc0c4</code></td><td>Submission-side copy of public repository metadata and stop conditions.</td></tr>
+<tr><td>User approval gates</td><td><code>submission/USER_APPROVAL_GATES.md</code></td><td class="ready">present</td><td>required</td><td>1451</td><td><code>00e00ba2b137bea9a14b2e4cd6904163a87d57847f094ad5772dd97ac1b2009a</code></td><td>Human approval boundaries and current recommended approval order.</td></tr>
+<tr><td>Ready for review</td><td><code>READY_FOR_REVIEW.md</code></td><td class="ready">present</td><td>required</td><td>1009</td><td><code>ff1b2788abb21f856dea23e2123da80068a75ba06e1f0c48f0a39b98d36ddbc8</code></td><td>Shortest local review entrypoint for the current SPAK packet.</td></tr>
+<tr><td>SPAK judge review packet</td><td><code>reports/latest_judge_review_packet.html</code></td><td class="ready">present</td><td>required</td><td>4659</td><td><code>cd9a4fc0fdfc60b6e84a5ee93ab20e13c921ddde2a08f52d34f899e244d04f6a</code></td><td>Judge-facing local packet with readiness, evidence, and closed external gates.</td></tr>
+<tr><td>SPAK judge review packet JSON</td><td><code>reports/latest_judge_review_packet.json</code></td><td class="ready">present</td><td>required</td><td>3678</td><td><code>b5d0990d377502a9d6a1668eee0d7f49602dd286cb9418658ee625d5c577caa2</code></td><td>Machine-readable SPAK judge packet status.</td></tr>
+<tr><td>SPAK judge review packet Markdown</td><td><code>reports/latest_judge_review_packet.md</code></td><td class="ready">present</td><td>required</td><td>2427</td><td><code>2144e7e0b0c6daeffdfd5efe5558a5bd7fd6b70e0670a9f0c78b887fbe0160ac</code></td><td>Reviewable SPAK judge packet summary.</td></tr>
+<tr><td>SPAK judge review submission copy</td><td><code>submission/JUDGE_REVIEW_PACKET.md</code></td><td class="ready">present</td><td>required</td><td>2427</td><td><code>2144e7e0b0c6daeffdfd5efe5558a5bd7fd6b70e0670a9f0c78b887fbe0160ac</code></td><td>Submission-side copy of the local judge review packet.</td></tr>
+<tr><td>Local readiness baseline</td><td><code>reports/latest_local_readiness_baseline.html</code></td><td class="ready">present</td><td>required</td><td>3843</td><td><code>63d11110eadf88b743574f8f8b3ddfec5980eac8210b5e5401018f3f4252e14c</code></td><td>Targeted pass/fail baseline for local package/proof readiness.</td></tr>
+<tr><td>Local readiness baseline JSON</td><td><code>reports/latest_local_readiness_baseline.json</code></td><td class="ready">present</td><td>required</td><td>2985</td><td><code>056e84ef57452cefe6f0602d07cfcb9e4a40ac41b5022bc109abc7eb8dc98aa6</code></td><td>Machine-readable targeted local readiness baseline.</td></tr>
+<tr><td>Local readiness baseline Markdown</td><td><code>reports/latest_local_readiness_baseline.md</code></td><td class="ready">present</td><td>required</td><td>1515</td><td><code>7465ddf21facc57cc927adf6bd341e231be779f1c6dea52653f5dbbf0f8f7a7a</code></td><td>Reviewable targeted local readiness baseline.</td></tr>
+<tr><td>Public candidate local audit</td><td><code>reports/latest_public_candidate_local_audit.html</code></td><td class="ready">present</td><td>required</td><td>3395</td><td><code>ccedb28b76d95d5f7736a8afdc0a49225111f401d83e2e17c0c087eff0c13c6b</code></td><td>Secret/internal-path and completeness audit for the public repo candidate.</td></tr>
+<tr><td>Public candidate local audit JSON</td><td><code>reports/latest_public_candidate_local_audit.json</code></td><td class="ready">present</td><td>required</td><td>1975</td><td><code>a3717fe818b1816a8d7de7d09a966d00a8cb0ac65e61cc69fb24a2c04efda8bb</code></td><td>Machine-readable public candidate safety audit.</td></tr>
+<tr><td>Public candidate local audit Markdown</td><td><code>reports/latest_public_candidate_local_audit.md</code></td><td class="ready">present</td><td>required</td><td>1124</td><td><code>02c148111253c14636f0aee7a3d0e185bcd923e0b86080638429773918a56902</code></td><td>Reviewable public candidate safety audit.</td></tr>
+<tr><td>Devpost copy audit</td><td><code>reports/latest_devpost_copy_audit.html</code></td><td class="ready">present</td><td>required</td><td>3382</td><td><code>37b62d3af36576082434a90c5bf919c71a4fe0b108cd5bdbc83b6066a695ca07</code></td><td>Local audit of Devpost copy readiness with final submission still gated.</td></tr>
+<tr><td>Devpost copy audit JSON</td><td><code>reports/latest_devpost_copy_audit.json</code></td><td class="ready">present</td><td>required</td><td>2033</td><td><code>0cf6073c9a5e7348b64fe6c5ce2f87b55c9dc5ec5adc817696acda73e644bab2</code></td><td>Machine-readable Devpost copy audit.</td></tr>
+<tr><td>Devpost copy audit Markdown</td><td><code>reports/latest_devpost_copy_audit.md</code></td><td class="ready">present</td><td>required</td><td>1121</td><td><code>3226ec2ab990ea757de9aafff4bdac7706a37112f050aa5f55beec251e55dce5</code></td><td>Reviewable Devpost copy audit.</td></tr>
+<tr><td>Judge quickstart</td><td><code>reports/latest_judge_quickstart.html</code></td><td class="ready">present</td><td>required</td><td>9800</td><td><code>8af1a5780240d7a7512cd20d60e1cb113ed03306696bf3f2cd9b5dc37a5bd163</code></td><td>Five-minute review path for judges and final preflight.</td></tr>
+<tr><td>Devpost final copy</td><td><code>reports/latest_devpost_final_copy.md</code></td><td class="ready">present</td><td>required</td><td>7027</td><td><code>e8df366b808c9794fb40fbf5f00762ebfaa40e0f4413db36bf68fba25f79d39d</code></td><td>Copy/paste packet with pending public URL placeholders.</td></tr>
+<tr><td>Post-action evidence brief</td><td><code>reports/latest_post_action_evidence_brief.html</code></td><td class="ready">present</td><td>required</td><td>10308</td><td><code>f3633bba8732bdfb711b975aebfd1e1bbf3c63483042c9c27020042cc34cd42a</code></td><td>Readback plan after approved external actions.</td></tr>
+<tr><td>Post-action evidence brief JSON</td><td><code>reports/latest_post_action_evidence_brief.json</code></td><td class="ready">present</td><td>required</td><td>9067</td><td><code>03cf2583d8a27be638181619302539f56f5cd30bf444c192f561c509cdad6497</code></td><td>Machine-readable post-action gate state.</td></tr>
+<tr><td>Post-action evidence log template</td><td><code>submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md</code></td><td class="ready">present</td><td>required</td><td>7393</td><td><code>f35de1a10121305df6bc05c184d5855101beaeb186f62a2ceb48bf8e103a248c</code></td><td>Template for safe readback after approved external actions.</td></tr>
+<tr><td>Splunk MCP proof capture manifest</td><td><code>reports/latest_splunk_mcp_proof_capture_manifest.html</code></td><td class="ready">present</td><td>required</td><td>9872</td><td><code>fb74a1ff294c98503e3670bc993f9b5258acd471f4d838b592024d7155a01137</code></td><td>Live Splunk/MCP proof capture slots, expected readback, stop conditions, and claim-upgrade gate.</td></tr>
+<tr><td>Splunk MCP proof capture manifest JSON</td><td><code>reports/latest_splunk_mcp_proof_capture_manifest.json</code></td><td class="ready">present</td><td>required</td><td>8201</td><td><code>b008e3f8f212a1725764efadb82d6e55d91626f024d9e68db0fc5af4116da95c</code></td><td>Machine-readable live Splunk/MCP proof capture gate state.</td></tr>
+<tr><td>Splunk MCP proof capture manifest Markdown</td><td><code>reports/latest_splunk_mcp_proof_capture_manifest.md</code></td><td class="ready">present</td><td>required</td><td>6280</td><td><code>574fc46a3560362a475c5d2f0170aab09e06a2fd7e50bd261c63cda5157e360a</code></td><td>Reviewable live Splunk/MCP proof capture manifest.</td></tr>
+<tr><td>Splunk MCP proof capture manifest submission copy</td><td><code>submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md</code></td><td class="ready">present</td><td>required</td><td>6280</td><td><code>574fc46a3560362a475c5d2f0170aab09e06a2fd7e50bd261c63cda5157e360a</code></td><td>Submission-side copy of the proof capture manifest and no-live-proof boundary.</td></tr>
+<tr><td>Official source freshness</td><td><code>reports/latest_official_source_freshness.html</code></td><td class="ready">present</td><td>required</td><td>6399</td><td><code>c8b9c27dac1a204aa0a7c58fcd8be5b26ffc60c28d13dbc526c4a6404885b894</code></td><td>Current official Devpost source and requirement freshness evidence.</td></tr>
+<tr><td>Official source freshness JSON</td><td><code>reports/latest_official_source_freshness.json</code></td><td class="ready">present</td><td>required</td><td>7744</td><td><code>d3f47dca236b8f9facbbd2f01bf55fe7436739632ac99a3bedb40fd92acb749a</code></td><td>Machine-readable official source freshness and local mapping status.</td></tr>
+<tr><td>Content rights audit</td><td><code>reports/latest_content_rights_audit.html</code></td><td class="ready">present</td><td>required</td><td>4886</td><td><code>9d23cbe82972acd73d2f7788b72c3254f3692b95cd98f534504b15a032aaa001</code></td><td>License, bundled asset, audio/video, and screen-safety evidence.</td></tr>
+<tr><td>Content rights audit JSON</td><td><code>reports/latest_content_rights_audit.json</code></td><td class="ready">present</td><td>required</td><td>3632</td><td><code>1847111ec2b84a80e93fa7c14e1ec7422253adf0d2d073d68513057695f1ca9a</code></td><td>Machine-readable content rights and asset safety status.</td></tr>
+<tr><td>Eligibility compliance audit</td><td><code>reports/latest_eligibility_compliance_audit.html</code></td><td class="ready">present</td><td>required</td><td>7810</td><td><code>fd0302542ef8e148d3edf5e4fded7804741c9689b931eda7c1f338289cc5d1ea</code></td><td>Eligibility, ownership, language, uniqueness, and human-confirmation evidence.</td></tr>
+<tr><td>Eligibility compliance audit JSON</td><td><code>reports/latest_eligibility_compliance_audit.json</code></td><td class="ready">present</td><td>required</td><td>6314</td><td><code>2bc4d15a70320a5174ac8e4e59ce63a9733130d163eb4ecda6f9ee3534c1f953</code></td><td>Machine-readable eligibility and compliance status.</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

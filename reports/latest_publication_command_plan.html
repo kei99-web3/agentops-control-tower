@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Repository Publication Command Plan</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public Repository Publication Command Plan</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Boundary</h2>
+      <p class="pending">This command plan is advisory only. It does not create a repo, push commits, publish files, write URLs, upload videos, or submit Devpost.</p>
+      <p>Explicit user approval is required before creating or pushing a public repository.</p>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>README.md</td><td class="ready">present</td></tr>
+<tr><td>LICENSE</td><td class="ready">present</td></tr>
+<tr><td>PUBLIC_REPO_CANDIDATE_MANIFEST.md</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_external_approval_packet.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_apply_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_public_artifact_url_readback.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_readiness.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_copy.md</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_final_go_no_go.html</td><td class="ready">present</td></tr>
+<tr><td>splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Commands After Approval</h2>
+      <table>
+        <thead><tr><th>Step</th><th>Purpose</th><th>Command</th></tr></thead>
+        <tbody><tr><td>Run guarded publication rehearsal</td><td>Copy the clean candidate into isolated TEMP audit/publish stages, run local validation, scan the publish stage, and create a local commit with no remote.</td><td><code>python scripts\publish_public_repo_after_approval.py</code></td></tr>
+<tr><td>Run public repository publication preflight</td><td>Confirm the exact approval phrase, source-folder review, staging policy, scan status, public visibility, and public git identity before any public repository creation.</td><td><code>python scripts\verify_public_repo_publication_gate.py --approval-phrase &quot;Approve public GitHub publication for the clean agentops-control-tower candidate.&quot; --source-folder-reviewed --isolated-staging-confirmed --secret-scan-confirmed --public-visibility-confirmed --public-git-identity-confirmed --git-user-name &quot;&lt;approved-public-git-name&gt;&quot; --git-user-email &quot;&lt;approved-public-git-email&gt;&quot;</code></td></tr>
+<tr><td>Check public repository namespace</td><td>Read the target GitHub namespace immediately before execution; stop if the repo name already resolves to an existing public or private repository.</td><td><code>gh repo view &lt;owner&gt;/agentops-control-tower --json nameWithOwner,visibility,url,isPrivate</code></td></tr>
+<tr><td>Execute guarded public repo publication after approval</td><td>Create and push the public GitHub repository only after the exact approval phrase and public git identity are supplied.</td><td><code>python scripts\publish_public_repo_after_approval.py --execute --approval-phrase &quot;Approve public GitHub publication for the clean agentops-control-tower candidate.&quot; --repo-name agentops-control-tower --git-user-name &quot;&lt;approved-public-git-name&gt;&quot; --git-user-email &quot;&lt;approved-public-git-email&gt;&quot;</code></td></tr>
+<tr><td>Read back public repo</td><td>Verify the repo is public and capture the URL for Devpost.</td><td><code>gh repo view &lt;owner&gt;/agentops-control-tower --json nameWithOwner,visibility,url</code></td></tr>
+<tr><td>Verify public artifact URLs after repo and video are public</td><td>Confirm the public GitHub repository and public demo video URL are reachable before local approved URL writeback.</td><td><code>python scripts\verify_public_artifact_urls.py --repository-url &lt;public-repo-url&gt; --demo-video-url &lt;public-video-url&gt; --live-readback</code></td></tr>
+<tr><td>Apply approved URLs locally</td><td>Update the local Devpost URL source only after both public URLs are approved.</td><td><code>python scripts\prepare_submission_urls.py --repository-url &lt;public-repo-url&gt; --demo-video-url &lt;public-video-url&gt; --write-approved --approval-note &quot;user approved public URLs&quot;</code></td></tr>
+<tr><td>Final local validation</td><td>Confirm the submission packet is ready for final Devpost review.</td><td><code>python scripts\validate_submission_packet.py</code></td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

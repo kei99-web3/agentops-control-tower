@@ -1,0 +1,880 @@
+{
+  "approval_queue": [
+    {
+      "approval_state": "pending_user",
+      "component": "waf_security",
+      "event_id": "evt-0007",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+      "external_action": "security_rule_change",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "WAF detected probing against checkout paths without a matching exploit signature.",
+      "policy_decision": "review",
+      "recommended_human_action": "Approve a temporary WAF watch rule only after confirming it will not block valid checkout traffic.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 100,
+      "runbook_action": "Prepare temporary WAF watch rule, not a hard block.",
+      "service": "edge-waf",
+      "signal_domain": "security",
+      "timestamp": "2026-06-03T09:14:00+09:00"
+    },
+    {
+      "approval_state": "pending_user",
+      "component": "remediation_orchestrator",
+      "event_id": "evt-0010",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+      "external_action": "cloud_rollback",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Rollback to release 2026.06.02.4 is proposed but blocked until human approval.",
+      "policy_decision": "review",
+      "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and DB pool status.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 100,
+      "runbook_action": "Rollback checkout-api to 2026.06.02.4.",
+      "service": "checkout-api",
+      "signal_domain": "remediation",
+      "timestamp": "2026-06-03T09:17:00+09:00"
+    },
+    {
+      "approval_state": "blocked_by_policy",
+      "component": "mcp_runtime_guard",
+      "event_id": "evt-0012",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "filesystem_read",
+      "message": "A proposed tool call attempted to inspect a credential-like path during incident response and was blocked.",
+      "policy_decision": "deny",
+      "recommended_human_action": "Keep the tool call blocked and cite redacted evidence only.",
+      "requires_human_approval": false,
+      "risk_domain": "credential_boundary",
+      "risk_score": 100,
+      "runbook_action": "Preserve redacted audit event; do not expose credentials.",
+      "service": "incident-command",
+      "signal_domain": "mcp_security",
+      "timestamp": "2026-06-03T09:19:00+09:00"
+    },
+    {
+      "approval_state": "pending_user",
+      "component": "communications_orchestrator",
+      "event_id": "evt-0011",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0011",
+      "external_action": "stakeholder_notify",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Customer-support and internal stakeholder update is drafted but not sent.",
+      "policy_decision": "review",
+      "recommended_human_action": "Review wording and send only after incident commander confirms customer impact.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 95,
+      "runbook_action": "Send concise incident update to support and engineering leads.",
+      "service": "incident-command",
+      "signal_domain": "communications",
+      "timestamp": "2026-06-03T09:18:00+09:00"
+    }
+  ],
+  "approval_queue_count": 4,
+  "blocked_count": 1,
+  "event_count": 13,
+  "generated_at": "2026-06-06T22:04:59+09:00",
+  "incident_count": 1,
+  "incident_summaries": [
+    {
+      "event_count": 13,
+      "impacted_services": [
+        "auth-gateway",
+        "checkout-api",
+        "edge-us-west",
+        "edge-waf",
+        "incident-command",
+        "payments-db"
+      ],
+      "incident_id": "inc-checkout-20260603-0900",
+      "max_risk": 100,
+      "primary_confidence": 100,
+      "primary_root_cause": "checkout-api release regression",
+      "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and database pressure.",
+      "status": "needs_human_remediation_approval"
+    }
+  ],
+  "max_risk": 100,
+  "mcp_event_count": 2,
+  "mcp_investigation": {
+    "answer": "The most likely cause is checkout-api release regression with confidence 100%.\nThe ranking is grounded in deploy proximity, application error spike, APM latency, and supporting database context.\nThe first human decision should be the rollback approval because it is high impact and blocked by the remediation approval ledger.\n1. edge-waf / evt-0007 requires review: Prepare temporary WAF watch rule, not a hard block. (splunk://agentops_events/inc-checkout-20260603-0900/0007)\n2. checkout-api / evt-0010 requires review: Rollback checkout-api to 2026.06.02.4. (splunk://agentops_events/inc-checkout-20260603-0900/0010)\n3. incident-command / evt-0012 requires review: Preserve redacted audit event; do not expose credentials. (splunk://agentops_events/inc-checkout-20260603-0900/0012)",
+    "evidence": [
+      {
+        "event_id": "evt-0002",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0002",
+        "message": "Checkout API 5xx rate jumped from 0.2% to 14.8% after the release.",
+        "risk_score": 100,
+        "service": "checkout-api",
+        "signal_domain": "application"
+      },
+      {
+        "event_id": "evt-0010",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+        "message": "Rollback to release 2026.06.02.4 is proposed but blocked until human approval.",
+        "risk_score": 100,
+        "service": "checkout-api",
+        "signal_domain": "remediation"
+      },
+      {
+        "event_id": "evt-0003",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0003",
+        "message": "p95 latency increased from 240ms to 2.8s for POST /checkout.",
+        "risk_score": 80,
+        "service": "checkout-api",
+        "signal_domain": "apm"
+      },
+      {
+        "event_id": "evt-0007",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+        "message": "WAF detected probing against checkout paths without a matching exploit signature.",
+        "risk_score": 100,
+        "service": "edge-waf"
+      },
+      {
+        "event_id": "evt-0010",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+        "message": "Rollback to release 2026.06.02.4 is proposed but blocked until human approval.",
+        "risk_score": 100,
+        "service": "checkout-api"
+      },
+      {
+        "event_id": "evt-0012",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+        "message": "A proposed tool call attempted to inspect a credential-like path during incident response and was blocked.",
+        "risk_score": 100,
+        "service": "incident-command"
+      }
+    ],
+    "question": "What likely caused the checkout incident, and which remediation needs human approval first?",
+    "spl": "index=agentops_events incident_id=\"inc-checkout-20260603-0900\" | sort _time | table _time signal_domain service event_type risk_score evidence_ref message"
+  },
+  "project_name": "Agentic Incident Command Center",
+  "remediation_ledger": [
+    {
+      "approval_state": "pending_user",
+      "component": "waf_security",
+      "event_id": "evt-0007",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+      "external_action": "security_rule_change",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "WAF detected probing against checkout paths without a matching exploit signature.",
+      "policy_decision": "review",
+      "recommended_human_action": "Approve a temporary WAF watch rule only after confirming it will not block valid checkout traffic.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 100,
+      "runbook_action": "Prepare temporary WAF watch rule, not a hard block.",
+      "service": "edge-waf",
+      "signal_domain": "security",
+      "timestamp": "2026-06-03T09:14:00+09:00"
+    },
+    {
+      "approval_state": "pending_user",
+      "component": "remediation_orchestrator",
+      "event_id": "evt-0010",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+      "external_action": "cloud_rollback",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Rollback to release 2026.06.02.4 is proposed but blocked until human approval.",
+      "policy_decision": "review",
+      "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and DB pool status.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 100,
+      "runbook_action": "Rollback checkout-api to 2026.06.02.4.",
+      "service": "checkout-api",
+      "signal_domain": "remediation",
+      "timestamp": "2026-06-03T09:17:00+09:00"
+    },
+    {
+      "approval_state": "pending_user",
+      "component": "communications_orchestrator",
+      "event_id": "evt-0011",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0011",
+      "external_action": "stakeholder_notify",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Customer-support and internal stakeholder update is drafted but not sent.",
+      "policy_decision": "review",
+      "recommended_human_action": "Review wording and send only after incident commander confirms customer impact.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 95,
+      "runbook_action": "Send concise incident update to support and engineering leads.",
+      "service": "incident-command",
+      "signal_domain": "communications",
+      "timestamp": "2026-06-03T09:18:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "service_observability",
+      "event_id": "evt-0002",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0002",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Checkout API 5xx rate jumped from 0.2% to 14.8% after the release.",
+      "policy_decision": "review",
+      "recommended_human_action": "Prioritize checkout outage investigation and collect the affected endpoint list.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 100,
+      "runbook_action": "Open checkout service incident runbook.",
+      "service": "checkout-api",
+      "signal_domain": "application",
+      "timestamp": "2026-06-03T09:08:00+09:00"
+    },
+    {
+      "approval_state": "blocked_by_policy",
+      "component": "mcp_runtime_guard",
+      "event_id": "evt-0012",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "filesystem_read",
+      "message": "A proposed tool call attempted to inspect a credential-like path during incident response and was blocked.",
+      "policy_decision": "deny",
+      "recommended_human_action": "Keep the tool call blocked and cite redacted evidence only.",
+      "requires_human_approval": false,
+      "risk_domain": "credential_boundary",
+      "risk_score": 100,
+      "runbook_action": "Preserve redacted audit event; do not expose credentials.",
+      "service": "incident-command",
+      "signal_domain": "mcp_security",
+      "timestamp": "2026-06-03T09:19:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "apm_latency_monitor",
+      "event_id": "evt-0003",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0003",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "p95 latency increased from 240ms to 2.8s for POST /checkout.",
+      "policy_decision": "review",
+      "recommended_human_action": "Correlate slow traces with the deploy and database connection pool telemetry.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 80,
+      "runbook_action": "Open APM trace comparison for POST /checkout.",
+      "service": "checkout-api",
+      "signal_domain": "apm",
+      "timestamp": "2026-06-03T09:10:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "database_monitor",
+      "event_id": "evt-0004",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0004",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Payments DB connection pool saturation rose to 92% during the checkout error spike.",
+      "policy_decision": "review",
+      "recommended_human_action": "Treat DB pressure as a contributing factor until trace evidence proves it is primary.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 70,
+      "runbook_action": "Check connection pool settings and slow query sample.",
+      "service": "payments-db",
+      "signal_domain": "database",
+      "timestamp": "2026-06-03T09:11:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "ai_incident_commander",
+      "event_id": "evt-0009",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0009",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "AI ranked checkout-api release regression as the most likely cause using deploy proximity, error spike, and APM evidence.",
+      "policy_decision": "review",
+      "recommended_human_action": "Review the rollback recommendation and confirm a human owner before action.",
+      "requires_human_approval": false,
+      "risk_domain": "incident_command",
+      "risk_score": 70,
+      "runbook_action": "Promote checkout rollback to first human decision.",
+      "service": "incident-command",
+      "signal_domain": "ai_correlation",
+      "timestamp": "2026-06-03T09:16:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "change_intelligence",
+      "event_id": "evt-0001",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0001",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Checkout API release 2026.06.03.1 completed 11 minutes before the error spike.",
+      "policy_decision": "allow",
+      "recommended_human_action": "Compare the release window with error and latency spikes before approving rollback.",
+      "requires_human_approval": false,
+      "risk_domain": "change_signal",
+      "risk_score": 45,
+      "runbook_action": "Inspect deploy diff and recent config changes.",
+      "service": "checkout-api",
+      "signal_domain": "deployment",
+      "timestamp": "2026-06-03T09:00:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "identity_security",
+      "event_id": "evt-0005",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0005",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Auth failures increased from a single ASN but did not align with checkout error start.",
+      "policy_decision": "review",
+      "recommended_human_action": "Keep security watch active but do not make it the primary outage cause yet.",
+      "requires_human_approval": false,
+      "risk_domain": "security_signal",
+      "risk_score": 45,
+      "runbook_action": "Attach auth anomaly context to the incident.",
+      "service": "auth-gateway",
+      "signal_domain": "security",
+      "timestamp": "2026-06-03T09:12:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "edge_network",
+      "event_id": "evt-0006",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0006",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Edge packet loss reached 2.2% in one region after the checkout regression was already visible.",
+      "policy_decision": "review",
+      "recommended_human_action": "Route network signal to supporting evidence, not primary rollback justification.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 45,
+      "runbook_action": "Check regional edge health and route impact.",
+      "service": "edge-us-west",
+      "signal_domain": "network",
+      "timestamp": "2026-06-03T09:13:00+09:00"
+    },
+    {
+      "approval_state": "approved",
+      "component": "ticketing_orchestrator",
+      "event_id": "evt-0013",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0013",
+      "external_action": "incident_ticket",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Incident ticket payload is ready with timeline, root-cause candidates, and approval ledger links.",
+      "policy_decision": "allow",
+      "recommended_human_action": "Create ticket only in approved internal project space.",
+      "requires_human_approval": false,
+      "risk_domain": "remediation_approval",
+      "risk_score": 30,
+      "runbook_action": "Create incident ticket with Splunk evidence references.",
+      "service": "incident-command",
+      "signal_domain": "platform",
+      "timestamp": "2026-06-03T09:20:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "splunk_mcp_investigator",
+      "event_id": "evt-0008",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0008",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "splunk_search",
+      "message": "AI incident commander requested Splunk context for timeline, blast radius, and root-cause ranking.",
+      "policy_decision": "allow",
+      "recommended_human_action": "Use Splunk evidence citations before taking remediation action.",
+      "requires_human_approval": false,
+      "risk_domain": "mcp_runtime",
+      "risk_score": 20,
+      "runbook_action": "Run incident timeline, root-cause ranking, approval ledger, and blast radius SPL.",
+      "service": "incident-command",
+      "signal_domain": "mcp",
+      "timestamp": "2026-06-03T09:15:00+09:00"
+    }
+  ],
+  "root_cause_candidates": [
+    {
+      "candidate": "checkout-api release regression",
+      "confidence": 100,
+      "domains": [
+        "ai_correlation",
+        "apm",
+        "application",
+        "deployment",
+        "remediation"
+      ],
+      "evidence": [
+        {
+          "event_id": "evt-0002",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0002",
+          "message": "Checkout API 5xx rate jumped from 0.2% to 14.8% after the release.",
+          "risk_score": 100,
+          "service": "checkout-api",
+          "signal_domain": "application"
+        },
+        {
+          "event_id": "evt-0010",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+          "message": "Rollback to release 2026.06.02.4 is proposed but blocked until human approval.",
+          "risk_score": 100,
+          "service": "checkout-api",
+          "signal_domain": "remediation"
+        },
+        {
+          "event_id": "evt-0003",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0003",
+          "message": "p95 latency increased from 240ms to 2.8s for POST /checkout.",
+          "risk_score": 80,
+          "service": "checkout-api",
+          "signal_domain": "apm"
+        },
+        {
+          "event_id": "evt-0009",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0009",
+          "message": "AI ranked checkout-api release regression as the most likely cause using deploy proximity, error spike, and APM evidence.",
+          "risk_score": 70,
+          "service": "incident-command",
+          "signal_domain": "ai_correlation"
+        },
+        {
+          "event_id": "evt-0001",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0001",
+          "message": "Checkout API release 2026.06.03.1 completed 11 minutes before the error spike.",
+          "risk_score": 45,
+          "service": "checkout-api",
+          "signal_domain": "deployment"
+        }
+      ],
+      "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and database pressure.",
+      "score": 182,
+      "services": [
+        "checkout-api",
+        "incident-command"
+      ]
+    },
+    {
+      "candidate": "database pool saturation",
+      "confidence": 14,
+      "domains": [
+        "database"
+      ],
+      "evidence": [
+        {
+          "event_id": "evt-0004",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0004",
+          "message": "Payments DB connection pool saturation rose to 92% during the checkout error spike.",
+          "risk_score": 70,
+          "service": "payments-db",
+          "signal_domain": "database"
+        }
+      ],
+      "recommended_human_action": "Keep DB mitigation ready, but do not treat it as primary until trace evidence beats deploy proximity.",
+      "score": 26,
+      "services": [
+        "payments-db"
+      ]
+    },
+    {
+      "candidate": "credential attack distraction",
+      "confidence": 13,
+      "domains": [
+        "security"
+      ],
+      "evidence": [
+        {
+          "event_id": "evt-0007",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+          "message": "WAF detected probing against checkout paths without a matching exploit signature.",
+          "risk_score": 100,
+          "service": "edge-waf",
+          "signal_domain": "security"
+        },
+        {
+          "event_id": "evt-0005",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0005",
+          "message": "Auth failures increased from a single ASN but did not align with checkout error start.",
+          "risk_score": 45,
+          "service": "auth-gateway",
+          "signal_domain": "security"
+        }
+      ],
+      "recommended_human_action": "Keep security monitoring active and avoid blocking checkout traffic without proof.",
+      "score": 24,
+      "services": [
+        "auth-gateway",
+        "edge-waf"
+      ]
+    },
+    {
+      "candidate": "regional network degradation",
+      "confidence": 3,
+      "domains": [
+        "network"
+      ],
+      "evidence": [
+        {
+          "event_id": "evt-0006",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0006",
+          "message": "Edge packet loss reached 2.2% in one region after the checkout regression was already visible.",
+          "risk_score": 45,
+          "service": "edge-us-west",
+          "signal_domain": "network"
+        }
+      ],
+      "recommended_human_action": "Treat network degradation as supporting evidence unless blast-radius expands.",
+      "score": 6,
+      "services": [
+        "edge-us-west"
+      ]
+    }
+  ],
+  "safety_ledger": [
+    {
+      "approval_state": "pending_user",
+      "component": "waf_security",
+      "event_id": "evt-0007",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+      "external_action": "security_rule_change",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "WAF detected probing against checkout paths without a matching exploit signature.",
+      "policy_decision": "review",
+      "recommended_human_action": "Approve a temporary WAF watch rule only after confirming it will not block valid checkout traffic.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 100,
+      "runbook_action": "Prepare temporary WAF watch rule, not a hard block.",
+      "service": "edge-waf",
+      "signal_domain": "security",
+      "timestamp": "2026-06-03T09:14:00+09:00"
+    },
+    {
+      "approval_state": "pending_user",
+      "component": "remediation_orchestrator",
+      "event_id": "evt-0010",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+      "external_action": "cloud_rollback",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Rollback to release 2026.06.02.4 is proposed but blocked until human approval.",
+      "policy_decision": "review",
+      "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and DB pool status.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 100,
+      "runbook_action": "Rollback checkout-api to 2026.06.02.4.",
+      "service": "checkout-api",
+      "signal_domain": "remediation",
+      "timestamp": "2026-06-03T09:17:00+09:00"
+    },
+    {
+      "approval_state": "pending_user",
+      "component": "communications_orchestrator",
+      "event_id": "evt-0011",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0011",
+      "external_action": "stakeholder_notify",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Customer-support and internal stakeholder update is drafted but not sent.",
+      "policy_decision": "review",
+      "recommended_human_action": "Review wording and send only after incident commander confirms customer impact.",
+      "requires_human_approval": true,
+      "risk_domain": "remediation_approval",
+      "risk_score": 95,
+      "runbook_action": "Send concise incident update to support and engineering leads.",
+      "service": "incident-command",
+      "signal_domain": "communications",
+      "timestamp": "2026-06-03T09:18:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "service_observability",
+      "event_id": "evt-0002",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0002",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Checkout API 5xx rate jumped from 0.2% to 14.8% after the release.",
+      "policy_decision": "review",
+      "recommended_human_action": "Prioritize checkout outage investigation and collect the affected endpoint list.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 100,
+      "runbook_action": "Open checkout service incident runbook.",
+      "service": "checkout-api",
+      "signal_domain": "application",
+      "timestamp": "2026-06-03T09:08:00+09:00"
+    },
+    {
+      "approval_state": "blocked_by_policy",
+      "component": "mcp_runtime_guard",
+      "event_id": "evt-0012",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "filesystem_read",
+      "message": "A proposed tool call attempted to inspect a credential-like path during incident response and was blocked.",
+      "policy_decision": "deny",
+      "recommended_human_action": "Keep the tool call blocked and cite redacted evidence only.",
+      "requires_human_approval": false,
+      "risk_domain": "credential_boundary",
+      "risk_score": 100,
+      "runbook_action": "Preserve redacted audit event; do not expose credentials.",
+      "service": "incident-command",
+      "signal_domain": "mcp_security",
+      "timestamp": "2026-06-03T09:19:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "apm_latency_monitor",
+      "event_id": "evt-0003",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0003",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "p95 latency increased from 240ms to 2.8s for POST /checkout.",
+      "policy_decision": "review",
+      "recommended_human_action": "Correlate slow traces with the deploy and database connection pool telemetry.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 80,
+      "runbook_action": "Open APM trace comparison for POST /checkout.",
+      "service": "checkout-api",
+      "signal_domain": "apm",
+      "timestamp": "2026-06-03T09:10:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "database_monitor",
+      "event_id": "evt-0004",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0004",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Payments DB connection pool saturation rose to 92% during the checkout error spike.",
+      "policy_decision": "review",
+      "recommended_human_action": "Treat DB pressure as a contributing factor until trace evidence proves it is primary.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 70,
+      "runbook_action": "Check connection pool settings and slow query sample.",
+      "service": "payments-db",
+      "signal_domain": "database",
+      "timestamp": "2026-06-03T09:11:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "ai_incident_commander",
+      "event_id": "evt-0009",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0009",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "AI ranked checkout-api release regression as the most likely cause using deploy proximity, error spike, and APM evidence.",
+      "policy_decision": "review",
+      "recommended_human_action": "Review the rollback recommendation and confirm a human owner before action.",
+      "requires_human_approval": false,
+      "risk_domain": "incident_command",
+      "risk_score": 70,
+      "runbook_action": "Promote checkout rollback to first human decision.",
+      "service": "incident-command",
+      "signal_domain": "ai_correlation",
+      "timestamp": "2026-06-03T09:16:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "change_intelligence",
+      "event_id": "evt-0001",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0001",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Checkout API release 2026.06.03.1 completed 11 minutes before the error spike.",
+      "policy_decision": "allow",
+      "recommended_human_action": "Compare the release window with error and latency spikes before approving rollback.",
+      "requires_human_approval": false,
+      "risk_domain": "change_signal",
+      "risk_score": 45,
+      "runbook_action": "Inspect deploy diff and recent config changes.",
+      "service": "checkout-api",
+      "signal_domain": "deployment",
+      "timestamp": "2026-06-03T09:00:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "identity_security",
+      "event_id": "evt-0005",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0005",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Auth failures increased from a single ASN but did not align with checkout error start.",
+      "policy_decision": "review",
+      "recommended_human_action": "Keep security watch active but do not make it the primary outage cause yet.",
+      "requires_human_approval": false,
+      "risk_domain": "security_signal",
+      "risk_score": 45,
+      "runbook_action": "Attach auth anomaly context to the incident.",
+      "service": "auth-gateway",
+      "signal_domain": "security",
+      "timestamp": "2026-06-03T09:12:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "edge_network",
+      "event_id": "evt-0006",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0006",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Edge packet loss reached 2.2% in one region after the checkout regression was already visible.",
+      "policy_decision": "review",
+      "recommended_human_action": "Route network signal to supporting evidence, not primary rollback justification.",
+      "requires_human_approval": false,
+      "risk_domain": "observability_signal",
+      "risk_score": 45,
+      "runbook_action": "Check regional edge health and route impact.",
+      "service": "edge-us-west",
+      "signal_domain": "network",
+      "timestamp": "2026-06-03T09:13:00+09:00"
+    },
+    {
+      "approval_state": "approved",
+      "component": "ticketing_orchestrator",
+      "event_id": "evt-0013",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0013",
+      "external_action": "incident_ticket",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "none",
+      "message": "Incident ticket payload is ready with timeline, root-cause candidates, and approval ledger links.",
+      "policy_decision": "allow",
+      "recommended_human_action": "Create ticket only in approved internal project space.",
+      "requires_human_approval": false,
+      "risk_domain": "remediation_approval",
+      "risk_score": 30,
+      "runbook_action": "Create incident ticket with Splunk evidence references.",
+      "service": "incident-command",
+      "signal_domain": "platform",
+      "timestamp": "2026-06-03T09:20:00+09:00"
+    },
+    {
+      "approval_state": "not_required",
+      "component": "splunk_mcp_investigator",
+      "event_id": "evt-0008",
+      "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0008",
+      "external_action": "none",
+      "incident_id": "inc-checkout-20260603-0900",
+      "mcp_tool": "splunk_search",
+      "message": "AI incident commander requested Splunk context for timeline, blast radius, and root-cause ranking.",
+      "policy_decision": "allow",
+      "recommended_human_action": "Use Splunk evidence citations before taking remediation action.",
+      "requires_human_approval": false,
+      "risk_domain": "mcp_runtime",
+      "risk_score": 20,
+      "runbook_action": "Run incident timeline, root-cause ranking, approval ledger, and blast radius SPL.",
+      "service": "incident-command",
+      "signal_domain": "mcp",
+      "timestamp": "2026-06-03T09:15:00+09:00"
+    }
+  ],
+  "service_count": 6,
+  "service_impact": [
+    {
+      "domains": [
+        "apm",
+        "application",
+        "deployment",
+        "remediation"
+      ],
+      "event_count": 4,
+      "max_risk": 100,
+      "service": "checkout-api",
+      "top_message": "Checkout API 5xx rate jumped from 0.2% to 14.8% after the release."
+    },
+    {
+      "domains": [
+        "security"
+      ],
+      "event_count": 1,
+      "max_risk": 100,
+      "service": "edge-waf",
+      "top_message": "WAF detected probing against checkout paths without a matching exploit signature."
+    },
+    {
+      "domains": [
+        "ai_correlation",
+        "communications",
+        "mcp",
+        "mcp_security",
+        "platform"
+      ],
+      "event_count": 5,
+      "max_risk": 100,
+      "service": "incident-command",
+      "top_message": "A proposed tool call attempted to inspect a credential-like path during incident response and was blocked."
+    },
+    {
+      "domains": [
+        "database"
+      ],
+      "event_count": 1,
+      "max_risk": 70,
+      "service": "payments-db",
+      "top_message": "Payments DB connection pool saturation rose to 92% during the checkout error spike."
+    },
+    {
+      "domains": [
+        "security"
+      ],
+      "event_count": 1,
+      "max_risk": 45,
+      "service": "auth-gateway",
+      "top_message": "Auth failures increased from a single ASN but did not align with checkout error start."
+    },
+    {
+      "domains": [
+        "network"
+      ],
+      "event_count": 1,
+      "max_risk": 45,
+      "service": "edge-us-west",
+      "top_message": "Edge packet loss reached 2.2% in one region after the checkout regression was already visible."
+    }
+  ],
+  "spl_queries": [
+    {
+      "name": "Incident timeline across observability, security, network, deploy, and MCP",
+      "query": "index=agentops_events incident_id=\"inc-checkout-20260603-0900\" | sort _time | table _time signal_domain service event_type risk_score evidence_ref message"
+    },
+    {
+      "name": "Root-cause evidence for checkout regression",
+      "query": "index=agentops_events incident_id=\"inc-checkout-20260603-0900\" root_cause_candidate!=\"incident_response_coordination\" | stats sum(root_cause_weight) as evidence_score values(signal_domain) as domains values(evidence_ref) as evidence by root_cause_candidate | sort -evidence_score"
+    },
+    {
+      "name": "Human-approved remediation ledger",
+      "query": "index=agentops_events requires_human_approval=true OR policy_decision=\"deny\" | sort -risk_score | table _time service external_action approval_state policy_decision runbook_action evidence_ref"
+    },
+    {
+      "name": "Splunk MCP investigation context",
+      "query": "index=agentops_events mcp_tool!=\"none\" OR signal_domain=\"ai_correlation\" | table _time component mcp_tool event_type evidence_ref recommended_human_action"
+    },
+    {
+      "name": "Blast radius by service",
+      "query": "index=agentops_events incident_id=\"inc-checkout-20260603-0900\" | stats count max(risk_score) as max_risk values(signal_domain) as domains by service | sort -max_risk"
+    }
+  ],
+  "tagline": "Splunk-grounded AI incident commander with human-approved remediation."
+}
