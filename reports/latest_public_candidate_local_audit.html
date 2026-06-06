@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Candidate Local Audit</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.56; }
+    header { background: #17202a; color: #fff; padding: 28px 36px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 18px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public Candidate Local Audit</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <p>Generated: <code>2026-06-06T12:29:22+00:00</code></p>
+      <p>Final submit ready: <span class="pending">False</span></p>
+      <p>This packet is local review evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>public candidate folder exists</td><td class="ready">pass</td><td>.</td></tr>
+<tr><td>required public candidate artifacts present</td><td class="ready">pass</td><td>all required artifacts present</td></tr>
+<tr><td>no nested git directory</td><td class="ready">pass</td><td>.git absent</td></tr>
+<tr><td>no release directory in public candidate</td><td class="ready">pass</td><td>release absent</td></tr>
+<tr><td>approved URL writeback absent</td><td class="ready">pass</td><td>approved_public_urls.json absent</td></tr>
+<tr><td>secret-like scan clean</td><td class="ready">pass</td><td>findings=0</td></tr>
+<tr><td>private/internal path scan clean</td><td class="ready">pass</td><td>findings=0</td></tr>
+<tr><td>public candidate pass/fail baseline present</td><td class="ready">pass</td><td>submission/JUDGING_ALIGNMENT.md</td></tr>
+<tr><td>claim boundary pass</td><td class="ready">pass</td><td>pass</td></tr>
+<tr><td>Devpost URLs remain placeholders</td><td class="ready">pass</td><td>final_submit_ready=False pending=repository_url, demo_video_url</td></tr>
+<tr><td>live Splunk/MCP proof remains unclaimed</td><td class="ready">pass</td><td>verified=False claim_upgrade_ready=False</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Boundary</h2>
+      <p class="pending">This packet is local review evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or submit anything.</p>
+    </section>
+  </main>
+</body>
+</html>

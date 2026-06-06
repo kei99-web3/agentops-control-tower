@@ -1,0 +1,119 @@
+{
+  "generated_at_utc": "2026-06-06T12:29:33+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "title": "Agentic Incident Command Center: Splunk-grounded AI incident response",
+  "platform": "approved public video host",
+  "visibility_after_approval": "public",
+  "duration_limit_seconds": 180,
+  "observed_duration_seconds": 180,
+  "tags": [
+    "Splunk",
+    "AgentOps",
+    "AI agents",
+    "MCP",
+    "observability",
+    "incident response",
+    "human approval",
+    "hackathon"
+  ],
+  "description": "Agentic Incident Command Center is a Splunk-grounded AI incident commander for modern operations teams.\n\nThis demo uses synthetic checkout-incident events to show how deploy, APM, database, network, security, and MCP-adjacent signals can be correlated into one incident timeline.\n\nThe MCP Remediation Ledger keeps evidence references attached to each proposed action so operators can see the ranked root cause, blast radius, blocked credential-boundary attempt, and the remediation steps that still require human approval. The project is designed for Splunk MCP Server workflows; live Splunk/MCP verification should only be claimed after explicit approval and captured proof.\n\nRepository and Devpost links should be added only after public URL readback has passed.",
+  "safe_claim_boundary": "Say designed for Splunk MCP Server unless approved live Splunk/MCP proof has been captured and validated.",
+  "public_video_url": "PENDING_USER_APPROVAL_PUBLIC_VIDEO_URL",
+  "approved_public_urls_exists": false,
+  "final_public_video_ready": false,
+  "upload_steps_after_approval": [
+    {
+      "name": "review_recording_path",
+      "action": "Open reports/latest_demo_tour.html, reports/latest_video_cue_sheet.html, and reports/latest_video_recording_preview.html.",
+      "purpose": "Confirm the capture path is synthetic-data-only and screen safe before recording."
+    },
+    {
+      "name": "record_after_approval",
+      "action": "Record the approved browser path using submission/VIDEO_RECORDING_RUNBOOK.md.",
+      "purpose": "Capture the demo only after explicit recording approval."
+    },
+    {
+      "name": "screen_safety_review",
+      "action": "Watch the final recording end to end and check submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md.",
+      "purpose": "Block upload if private screens, account pages, local paths, credentials, or overclaims appear."
+    },
+    {
+      "name": "upload_after_approval",
+      "action": "Upload to an approved public video host using the title, description, tags, and visibility in this packet.",
+      "purpose": "Create the public demo video URL only after explicit public upload approval."
+    },
+    {
+      "name": "public_url_readback",
+      "action": "Run python scripts\\verify_public_artifact_urls.py --repository-url <public-repo-url> --demo-video-url <public-video-url> --live-readback.",
+      "purpose": "Confirm the public repo and demo video are both reachable before approved URL writeback."
+    }
+  ],
+  "expected_readback": {
+    "video_url": "openable public video URL",
+    "visibility": "public",
+    "title": "Agentic Incident Command Center: Splunk-grounded AI incident response",
+    "duration_seconds_max": 180,
+    "screen_safety_checklist": "completed before upload approval",
+    "description_contains": [
+      "synthetic checkout-incident events",
+      "MCP Remediation Ledger",
+      "human approval"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "reports/latest_video_readiness.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_readiness.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_command_plan.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_cue_sheet.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_recording_preview.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_content_rights_audit.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_artifact_url_readback.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_post_action_evidence_brief.html",
+      "exists": true
+    },
+    {
+      "path": "submission/DEMO_VIDEO_SCRIPT.md",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+      "exists": true
+    },
+    {
+      "path": "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+      "exists": true
+    }
+  ],
+  "missing_evidence": [],
+  "stop_conditions": [
+    "Do not record until the recording path and script are reviewed.",
+    "Do not upload if the recording shows private paths, credentials, account pages, private logs, or unrelated workspace content.",
+    "Do not claim live Splunk MCP verification unless the optional live proof gate is approved and captured.",
+    "Do not write approved URLs until the public repo and demo video URLs both pass readback.",
+    "Do not update Devpost or press submit from this step."
+  ],
+  "boundary": "This video upload metadata packet is local review evidence only. It does not record video, upload video, publish media, write approved URLs, update Devpost, connect to Splunk, configure MCP, or submit anything."
+}

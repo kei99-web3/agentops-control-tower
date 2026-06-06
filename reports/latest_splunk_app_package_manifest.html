@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Splunk App Package Manifest</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Splunk App Package Manifest</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Package</h2>
+      <table>
+        <tbody>
+          <tr><th>Path</th><td><code>dist/agentops-control-tower-splunk-app.spl</code></td></tr>
+          <tr><th>Size bytes</th><td>2409</td></tr>
+          <tr><th>SHA256</th><td><code>8817972eb99d06d0cbfd8dffd2de4c758a0f41cf867ed65816ddfd817f2ea2e6</code></td></tr>
+          <tr><th>Members</th><td>7</td></tr>
+        </tbody>
+      </table>
+      <p class="pending">This local package is not installed, uploaded, published, connected to Splunk, or submitted anywhere.</p>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>Splunk app source files</td><td class="ready">pass</td><td>7 source files present</td></tr>
+<tr><td>Splunk app package size</td><td class="ready">pass</td><td>bytes=2409</td></tr>
+<tr><td>Splunk app package path traversal guard</td><td class="ready">pass</td><td>no unsafe member names</td></tr>
+<tr><td>Splunk app package root folder</td><td class="ready">pass</td><td>agentops_control_tower</td></tr>
+<tr><td>Splunk app package required members</td><td class="ready">pass</td><td>7 required members present</td></tr>
+<tr><td>Splunk app package member count</td><td class="ready">pass</td><td>members=7 expected=7</td></tr>
+<tr><td>Splunk app internal path scan</td><td class="ready">pass</td><td>no internal patterns</td></tr>
+<tr><td>Splunk app secret-like scan</td><td class="ready">pass</td><td>no secret-like patterns</td></tr>
+<tr><td>packaged app label</td><td class="ready">pass</td><td>ui.label checked</td></tr>
+<tr><td>packaged app id</td><td class="ready">pass</td><td>package.id checked</td></tr>
+<tr><td>packaged dashboard XML parses</td><td class="ready">pass</td><td>root=form</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Members</h2>
+      <table>
+        <thead><tr><th>Path</th></tr></thead>
+        <tbody><tr><td>agentops_control_tower/README.md</td></tr>
+<tr><td>agentops_control_tower/default/app.conf</td></tr>
+<tr><td>agentops_control_tower/default/data/ui/views/agentops_control_tower.xml</td></tr>
+<tr><td>agentops_control_tower/default/indexes.conf</td></tr>
+<tr><td>agentops_control_tower/default/props.conf</td></tr>
+<tr><td>agentops_control_tower/default/savedsearches.conf</td></tr>
+<tr><td>agentops_control_tower/metadata/default.meta</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post-Action Evidence Brief</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1160px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Post-Action Evidence Brief</h1>
+    <p>Readback evidence required after approved external actions. This page does not perform those actions.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Status</h2>
+      <table>
+        <tbody>
+          <tr><th>Local status</th><td class="ready">ready_for_user_review</td></tr>
+          <tr><th>Final submit ready</th><td class="pending">False</td></tr>
+          <tr><th>Post-action evidence ready</th><td class="pending">False</td></tr>
+          <tr><th>Approved public URLs file exists</th><td class="pending">False</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Boundary</h2>
+      <p>This brief is local post-action evidence guidance only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or mark the submission complete.</p>
+    </section>
+    <section>
+      <h2>Post-Action Evidence</h2>
+      <table>
+        <thead><tr><th>Action</th><th>Status</th><th>Evidence Note</th><th>Readback</th><th>Completion Evidence</th><th>Stop Condition</th></tr></thead>
+        <tbody><tr><td>Public GitHub Repository</td><td>waiting_for_user_approval</td><td><code>submission/post_action_evidence/YYYY-MM-DD_public_github_repository_readback.md</code><br>Use the public_safe_readback block from scripts/publish_public_repo_after_approval.py JSON output.</td><td><code>gh repo view &lt;owner&gt;/agentops-control-tower --json nameWithOwner,visibility,url</code></td><td><ul><li>Public repository URL opens without authentication.</li><li>Repository visibility readback is PUBLIC.</li><li>README, LICENSE, architecture diagram, source, reports, and Splunk app candidate are present.</li><li>Public candidate internal path and secret-like scans pass after publication.</li><li>Repository URL is recorded only after the user approves URL writeback.</li></ul></td><td>Stop if the URL points to a private workspace repository or the wrong folder was published.</td></tr>
+<tr><td>Public Demo Video</td><td>waiting_for_user_approval</td><td><code>submission/post_action_evidence/YYYY-MM-DD_public_demo_video_readback.md</code><br>Use the public_video_upload_safe_readback block from reports/latest_public_video_upload_preflight.json, the public_video_safe_readback block from reports/latest_video_recording_preview.json, plus a short manual final-recording review summary.</td><td><code>manual: open the video URL, watch end to end, and save the verified URL in the approved URL packet only after approval</code></td><td><ul><li>Public video upload preflight gate allowed manual recording/upload only after the exact approval phrase and manual safety confirmations.</li><li>Uploaded video URL opens publicly or with the approved visibility.</li><li>Duration is under 3 minutes.</li><li>Recording shows only the prepared demo surfaces and no private tabs, local paths, credentials, or billing/account pages.</li><li>Narration does not claim live Splunk/MCP proof unless that proof is separately verified.</li><li>Demo video URL is recorded only after the user approves URL writeback.</li></ul></td><td>Stop if the recording exposes private screens or overstates live Splunk/MCP verification.</td></tr>
+<tr><td>Optional Live Splunk / MCP Proof</td><td>optional_waiting_for_user_approval</td><td><code>submission/post_action_evidence/YYYY-MM-DD_optional_live_splunk_mcp_proof_readback.md</code><br>Use the proof capture summary from submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md with synthetic event IDs only.</td><td><code>manual: follow submission/SPLUNK_MCP_RUNBOOK.md and reports/latest_splunk_mcp_proof_capture_manifest.html before changing wording</code></td><td><ul><li>Splunk account/license and MCP setup were explicitly approved before use.</li><li>Only synthetic AgentOps data was imported.</li><li>SPL queries return concrete synthetic event IDs.</li><li>MCP-assisted answer cites the same synthetic event evidence.</li><li>Proof capture manifest slots are completed and read back before any claim wording upgrade.</li><li>Claim-boundary validation passes after any wording upgrade.</li></ul></td><td>Stop if credentials, costs, private data, or unapproved live Splunk/MCP scope would be exposed.</td></tr>
+<tr><td>Approved URL Writeback</td><td>blocked_until_public_urls</td><td><code>submission/post_action_evidence/YYYY-MM-DD_approved_url_writeback_readback.md</code><br>Use the public_safe_readback block from reports/latest_public_artifact_url_readback.json after live URL readback passes.</td><td><code>python scripts\verify_public_artifact_urls.py --repository-url &lt;public_repo_url&gt; --demo-video-url &lt;public_video_url&gt; --live-readback &amp;&amp; python scripts\prepare_submission_urls.py --repository-url &lt;public_repo_url&gt; --demo-video-url &lt;public_video_url&gt; --write-approved --approval-note &quot;user approved public URLs&quot; &amp;&amp; python scripts\validate_submission_packet.py</code></td><td><ul><li>submission/approved_public_urls.json exists only after explicit approval.</li><li>repository_url and demo_video_url are both approved public URLs.</li><li>reports/latest_submission_url_validation.json returns final_submit_ready true.</li><li>reports/latest_devpost_final_copy.json no longer contains pending URL placeholders.</li><li>Final Go/No-Go moves to final_submit_ready true only after both URLs validate.</li></ul></td><td>Stop if either URL is missing, private, unapproved, or still a PENDING_USER_APPROVAL placeholder.</td></tr>
+<tr><td>Devpost Final Submission</td><td>blocked_until_public_urls</td><td><code>submission/post_action_evidence/YYYY-MM-DD_devpost_final_submission_readback.md</code><br>Use the devpost_final_submit_safe_readback block from reports/latest_devpost_final_submit_preflight.json before submit; after submit, add a short manual Devpost submitted page/status summary only.</td><td><code>manual: after explicit approval, submit Devpost, read back the submitted page/status, and store local evidence</code></td><td><ul><li>Final submit approval is explicit in the current thread.</li><li>Final submit preflight gate allows manual submit only after final_submit_ready, exact approval phrase, and manual readback confirmations.</li><li>Devpost fields match reports/latest_devpost_final_copy.md and submission/DEVPOST_FIELD_MAP.md.</li><li>Selected track and bonus target match the launch decision brief.</li><li>Submitted Devpost page/status is read back after pressing submit.</li><li>A local post-submit evidence note captures the submitted URL/status without secrets or account screenshots.</li><li>submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md is copied or filled as the local post-action evidence note.</li></ul></td><td>Stop if final_submit_ready is false, public URLs are pending, or claim wording has not passed validation.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Final Readback Sequence</h2>
+      <ol><li>Read the public GitHub repository URL and visibility.</li>
+<li>Watch the public demo video and confirm screen safety.</li>
+<li>Optionally read back live Splunk/MCP proof against reports/latest_splunk_mcp_proof_capture_manifest.html only after approved setup.</li>
+<li>Validate approved URL writeback and final copy placeholders.</li>
+<li>Fill the post-action evidence log template with approved URLs, status, and validation readback.</li>
+<li>Read back the submitted Devpost page/status after explicit final approval.</li></ol>
+    </section>
+    <section>
+      <h2>Evidence Log Policy</h2>
+      <table>
+        <tbody>
+          <tr><th>Recommended directory</th><td><code>submission/post_action_evidence/</code></td></tr>
+          <tr><th>Filename pattern</th><td><code>YYYY-MM-DD_&lt;action_key&gt;_readback.md</code></td></tr>
+          <tr><th>Write policy</th><td>Create a dated local evidence note only after explicit user approval, external action completion, and completion readback.</td></tr>
+          <tr><th>Public candidate policy</th><td>Keep completed evidence notes private/local by default. Include them in a public candidate only after a separate review confirms they contain no credentials, tokens, account screenshots, billing or OAuth screens, local absolute paths, private workspace material, private logs, or customer data.</td></tr>
+          <tr><th>Required fields</th><td><ul><li>approval evidence</li>
+<li>completion readback</li>
+<li>verification command or check</li>
+<li>evidence file or URL</li>
+<li>claim wording impact</li>
+<li>status</li></ul></td></tr>
+          <tr><th>Forbidden content</th><td><ul><li>credentials</li>
+<li>tokens</li>
+<li>account screenshots</li>
+<li>billing pages</li>
+<li>OAuth screens</li>
+<li>local absolute paths</li>
+<li>private workspace material</li>
+<li>private logs</li>
+<li>customer data</li></ul></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Local Evidence</h2>
+      <table><tbody><tr><td>All required local evidence</td><td class="ready">present</td></tr></tbody></table>
+    </section>
+  </main>
+</body>
+</html>

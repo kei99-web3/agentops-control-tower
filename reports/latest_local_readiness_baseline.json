@@ -1,0 +1,85 @@
+{
+  "generated_at_utc": "2026-06-06T12:29:22+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "final_submit_ready": false,
+  "full_submission_validation_status": "missing",
+  "full_submission_validation_failed_count": "missing",
+  "full_submission_validation_note": "The full validator still records external-gate/stale run failures. This targeted baseline uses current local evidence only and keeps public URL, video, live Splunk/MCP, and Devpost gates closed.",
+  "external_gates_still_blocked": [
+    "public_github_repository",
+    "public_demo_video",
+    "optional_live_splunk_mcp_proof",
+    "approved_url_writeback",
+    "devpost_final_submission"
+  ],
+  "checks": [
+    {
+      "name": "final Go/No-Go local ready",
+      "status": "pass",
+      "detail": "status=ready_for_user_review local_ready=True"
+    },
+    {
+      "name": "final submit remains closed",
+      "status": "pass",
+      "detail": "False"
+    },
+    {
+      "name": "local evidence complete",
+      "status": "pass",
+      "detail": "local=0 public_candidate=0"
+    },
+    {
+      "name": "status conflict audit clean",
+      "status": "pass",
+      "detail": "status=ready_for_user_review failed=0 conflicts=0"
+    },
+    {
+      "name": "claim boundary validation pass",
+      "status": "pass",
+      "detail": "pass"
+    },
+    {
+      "name": "Splunk app package ready",
+      "status": "pass",
+      "detail": "status=ready_for_user_review failed=0"
+    },
+    {
+      "name": "release integrity ready",
+      "status": "pass",
+      "detail": "status=ready_for_user_review failed=0"
+    },
+    {
+      "name": "local SPL proof present",
+      "status": "pass",
+      "detail": "status=local_spl_emulation_only events=13"
+    },
+    {
+      "name": "public URLs still pending",
+      "status": "pass",
+      "detail": "status=waiting_for_external_urls final_submit_ready=False"
+    },
+    {
+      "name": "Devpost copy locally reviewable",
+      "status": "pass",
+      "detail": "status=ready_for_user_review final_submit_ready=False"
+    },
+    {
+      "name": "root pass/fail baseline present",
+      "status": "pass",
+      "detail": "submission/JUDGING_ALIGNMENT.md"
+    },
+    {
+      "name": "public candidate pass/fail baseline present",
+      "status": "pass",
+      "detail": "public candidate submission/JUDGING_ALIGNMENT.md"
+    },
+    {
+      "name": "full validator stale failure explained",
+      "status": "pass",
+      "detail": "latest_submission_validation status=missing failed_count=missing is full submission/external-gate evidence; targeted baseline uses current Go/No-Go and status-conflict readback."
+    }
+  ],
+  "boundary": "This packet is local review evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or submit anything."
+}

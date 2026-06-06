@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devpost Manual Fill And Readback Brief</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code, pre { background: #edf3f6; border-radius: 4px; }
+    code { padding: 2px 5px; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: 8px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Devpost Manual Fill And Readback Brief</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Boundary</h2>
+      <p class="pending">This brief is local Devpost form-fill decision support only. It does not log in, save a draft, press submit, update Devpost, publish, upload, write approved URLs, or submit anything.</p>
+      <p>Explicit user approval is required before using a Devpost account/session, saving a draft, or pressing submit.</p>
+      <table>
+        <tbody>
+          <tr><th>Final submit ready</th><td class="pending">False</td></tr>
+          <tr><th>Pending fields</th><td>Repository URL, Demo video URL</td></tr>
+          <tr><th>URL validation</th><td>waiting_for_external_urls</td></tr>
+          <tr><th>Claim boundary</th><td>pass</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Core Field Fill Order</h2>
+      <table>
+        <thead><tr><th>Field</th><th>Value</th><th>Status</th><th>Readback</th></tr></thead>
+        <tbody><tr><td>Project name</td><td><pre>Agentic Incident Command Center</pre></td><td class="ready">ready</td><td>Exact text matches final copy.</td></tr>
+<tr><td>Tagline</td><td><pre>Splunk-grounded AI incident commander with human-approved remediation.</pre></td><td class="ready">ready</td><td>Exact text matches final copy and stays within the soft limit.</td></tr>
+<tr><td>Track</td><td><pre>Platform &amp; Developer Experience</pre></td><td class="ready">ready</td><td>Platform &amp; Developer Experience is selected.</td></tr>
+<tr><td>Bonus target</td><td><pre>Best Use of Splunk MCP Server</pre></td><td class="ready">ready</td><td>Best Use of Splunk MCP Server is selected or described where Devpost allows.</td></tr>
+<tr><td>Built with</td><td><pre>Python, Splunk, SPL, JSON, CSV, HTML</pre></td><td class="ready">ready</td><td>Use Python, Splunk, SPL, JSON, CSV, HTML now; keep Splunk MCP Server out of built-with tags until approved live proof is captured and claim validation passes.</td></tr>
+<tr><td>Repository URL</td><td><pre>PENDING_USER_APPROVAL_PUBLIC_REPO_URL</pre></td><td class="pending">pending</td><td>Must be a user-approved public repository URL, not a pending placeholder.</td></tr>
+<tr><td>Demo video URL</td><td><pre>PENDING_USER_APPROVAL_PUBLIC_VIDEO_URL</pre></td><td class="pending">pending</td><td>Must be a user-approved public video URL, not a pending placeholder.</td></tr>
+<tr><td>Architecture diagram</td><td><pre>architecture_diagram.md</pre></td><td class="ready">ready</td><td>Attach or reference the root architecture diagram evidence.</td></tr>
+<tr><td>License</td><td><pre>LICENSE</pre></td><td class="ready">ready</td><td>Open-source license remains present in the public repository candidate.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Section Readback</h2>
+      <table>
+        <thead><tr><th>Section</th><th>Chars</th><th>Status</th><th>Readback</th></tr></thead>
+        <tbody><tr><td>Short Description</td><td>351</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>Inspiration</td><td>663</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>What It Does</td><td>1004</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>How We Built It</td><td>754</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>Splunk Usage</td><td>873</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>What Makes It Different</td><td>348</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>Judging Alignment</td><td>518</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>Challenges</td><td>314</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>Accomplishments</td><td>567</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>New During Hackathon</td><td>259</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr>
+<tr><td>What Is Next</td><td>378</td><td>present</td><td>Text matches the final copy and does not add live Splunk/MCP proof claims unless proof is verified.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Final Readback Checks</h2>
+      <ul><li>Project name, tagline, track, bonus target, and built-with tags match the final copy packet.</li>
+<li>Repository URL and demo video URL are real public URLs and no pending placeholder remains.</li>
+<li>Architecture diagram evidence is attached or visible according to the Devpost form requirement.</li>
+<li>The Splunk usage text says designed for Splunk MCP Server unless approved live proof has been captured.</li>
+<li>No text claims the repository is public, video is uploaded, or submission is complete before those gates are true.</li>
+<li>No credentials, account pages, local absolute paths, private workspace material, or non-public data are visible.</li>
+<li>Final local validation is ready_for_user_review with failed_count 0 immediately before pressing submit.</li>
+<li>The final Devpost submit action has explicit user approval in this thread before the button is pressed.</li></ul>
+    </section>
+    <section>
+      <h2>Stop Conditions</h2>
+      <ul><li>Stop if repository_url or demo_video_url still starts with PENDING_USER_APPROVAL.</li>
+<li>Stop if URL validation is not final-submit ready after approved URLs are written.</li>
+<li>Stop if claim-boundary validation finds an unqualified live Splunk/MCP claim.</li>
+<li>Stop if Devpost shows the wrong track, missing architecture evidence, or missing public repository/video links.</li>
+<li>Stop if a browser screen exposes account settings, billing, credentials, local paths, or private data.</li>
+<li>Stop if the user has not explicitly approved the final Devpost submit action.</li></ul>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Status</th></tr></thead>
+        <tbody><tr><td>All required local evidence</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

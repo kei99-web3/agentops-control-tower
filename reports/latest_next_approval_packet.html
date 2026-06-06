@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next Approval Packet</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; width: 190px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Next Approval Packet</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <table>
+        <tbody>
+          <tr><th>Next approval target</th><td>public_github_repository</td></tr>
+          <tr><th>Ready now</th><td>public_github_repository, public_demo_video</td></tr>
+          <tr><th>Local submission</th><td>ready_for_user_review / failed_count 0 (reports/latest_final_go_no_go.json)</td></tr>
+          <tr><th>Pending URLs</th><td>repository_url, demo_video_url</td></tr>
+          <tr><th>Final submit ready</th><td>False</td></tr>
+          <tr><th>Human confirmations</th><td>5</td></tr>
+        </tbody>
+      </table>
+      <p class="pending">This packet is local approval guidance only. It does not publish, upload, submit, create accounts, configure credentials, write approved URLs, or update Devpost.</p>
+    </section>
+    <section>
+      <h2>Recommended Approval Order</h2>
+      <table>
+        <thead><tr><th>#</th><th>Action</th><th>Status</th></tr></thead>
+        <tbody><tr><td>1</td><td>Public GitHub Repository</td><td>ready_for_user_decision</td></tr>
+<tr><td>2</td><td>Public Demo Video</td><td>ready_for_user_decision</td></tr>
+<tr><td>3</td><td>Optional Live Splunk / MCP Proof</td><td>optional_user_decision</td></tr>
+<tr><td>4</td><td>Approved URL Writeback</td><td>blocked_until_public_urls</td></tr>
+<tr><td>5</td><td>Devpost Final Submission</td><td>blocked_until_public_urls</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Public GitHub Repository</h2>
+      <p>Status: <span class="ready">ready_for_user_decision</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval phrase</th><td><code>Approve public GitHub publication for the clean agentops-control-tower candidate.</code></td></tr>
+          <tr><th>Purpose</th><td>Satisfy the public open-source repository requirement and give judges a runnable code package.</td></tr>
+          <tr><th>Exact operation</th><td>Run scripts/verify_public_repo_publication_gate.py with the exact approval phrase, public git identity, and manual safety confirmations, then use scripts/publish_public_repo_after_approval.py to create and push the public repository only after explicit approval.</td></tr>
+          <tr><th>After approval</th><td>Run the public repository publication preflight gate with the exact approval phrase, public git identity, and manual safety confirmations, then create and push the public repository through the guarded helper and record the public repository URL.</td></tr>
+          <tr><th>Main risk</th><td>Publishing the wrong folder or initializing Git inside the private workspace could expose private workspace material, local paths, or non-public artifacts.</td></tr>
+          <tr><th>Verification</th><td>Review reports/latest_public_repo_publication_preflight.html, open the public repository URL, rerun the public candidate scans and isolated staging dry run, then validate the URL before writing it locally.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_judge_quickstart.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_publication_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_repo_publish_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_repo_publication_preflight.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_release_integrity_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>PUBLIC_REPO_CANDIDATE_MANIFEST.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>README.md</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Public Demo Video</h2>
+      <p>Status: <span class="ready">ready_for_user_decision</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval phrase</th><td><code>Approve recording and public upload of the Agentic Incident Command Center demo video.</code></td></tr>
+          <tr><th>Purpose</th><td>Give judges a fast walkthrough of the dashboard, local SPL proof, approval queue, and MCP Remediation Ledger.</td></tr>
+          <tr><th>Exact operation</th><td>Run scripts/verify_public_video_upload_gate.py with the exact approval phrase and manual safety confirmations, record the browser walkthrough using reports/latest_demo_tour.html and submission/VIDEO_RECORDING_RUNBOOK.md, then upload publicly only after explicit approval.</td></tr>
+          <tr><th>After approval</th><td>Run the public video upload preflight gate with the exact approval phrase and manual safety confirmations, record, review, and upload the public demo video, then record the public video URL.</td></tr>
+          <tr><th>Main risk</th><td>A recording could expose private tabs, local paths, accounts, credentials, or overstate live Splunk MCP proof.</td></tr>
+          <tr><th>Verification</th><td>Review reports/latest_public_video_upload_preflight.html, watch the uploaded public video end to end, confirm it is under 3 minutes and screen-safe, then validate the URL.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_demo_tour.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_video_readiness.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_video_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_video_upload_preflight.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_video_cue_sheet.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_content_rights_audit.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/VIDEO_RECORDING_RUNBOOK.md</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Optional Live Splunk / MCP Proof</h2>
+      <p>Status: <span class="pending">optional_user_decision</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval phrase</th><td><code>Approve optional live Splunk and Splunk MCP proof using synthetic data only.</code></td></tr>
+          <tr><th>Purpose</th><td>Strengthen the Best Use of Splunk MCP Server bonus claim if credentials, time, and scope are acceptable.</td></tr>
+          <tr><th>Exact operation</th><td>Set up Splunk account/license, import only synthetic data into agentops_events, configure Splunk MCP Server with approved scope, and capture proof.</td></tr>
+          <tr><th>After approval</th><td>Configure Splunk/MCP with approved scope, import only synthetic data, capture proof, and rerun claim validation.</td></tr>
+          <tr><th>Main risk</th><td>Requires account setup, credentials, possible cost, and careful scope control.</td></tr>
+          <tr><th>Verification</th><td>Use the prompt pack and proof capture manifest, confirm SPL queries and MCP-assisted answer cite synthetic event IDs, then update wording only after proof exists.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_splunk_mcp_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_proof_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_prompt_pack.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_proof_capture_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_app_package_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_RUNBOOK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_PROMPT_PACK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>data/splunk_agentops_events.csv</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Approved URL Writeback</h2>
+      <p>Status: <span class="pending">blocked_until_public_urls</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval phrase</th><td><code>Approve writing the verified public repository and demo video URLs into local submission artifacts.</code></td></tr>
+          <tr><th>Purpose</th><td>Replace pending URL placeholders only after both public URLs are real and approved.</td></tr>
+          <tr><th>Exact operation</th><td>Run prepare_submission_urls.py with both approved URLs and --write-approved, then rebuild final copy.</td></tr>
+          <tr><th>After approval</th><td>Run prepare_submission_urls.py with both approved URLs and --write-approved, then rebuild final copy.</td></tr>
+          <tr><th>Main risk</th><td>Writing unverified or private URLs could make the Devpost packet look ready when it is not.</td></tr>
+          <tr><th>Verification</th><td>Rerun URL validation and confirm final_submit_ready changes only when both public URLs pass.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_submission_url_validation.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_submission_url_apply_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_devpost_final_copy.html</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Devpost Final Submission</h2>
+      <p>Status: <span class="pending">blocked_until_public_urls</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval phrase</th><td><code>Approve final Devpost submission for Agentic Incident Command Center.</code></td></tr>
+          <tr><th>Purpose</th><td>Complete the hackathon submission after all required public artifacts and claim boundaries are verified.</td></tr>
+          <tr><th>Exact operation</th><td>After public repo and public video URLs are inserted and validation passes, review reports/latest_devpost_final_copy.md and press the Devpost submit button only with explicit final approval.</td></tr>
+          <tr><th>After approval</th><td>Use the Devpost command plan, fill fields, perform human readback, then press submit only after final approval.</td></tr>
+          <tr><th>Main risk</th><td>Submitting with pending URLs, wrong track, missing architecture evidence, or unverified live Splunk claims.</td></tr>
+          <tr><th>Verification</th><td>Read back the submitted Devpost page/status and save local post-submit evidence.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_devpost_submit_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_devpost_manual_fill_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_post_action_evidence_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_official_source_freshness.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_content_rights_audit.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_eligibility_compliance_audit.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_release_integrity_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_devpost_final_copy.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_final_go_no_go.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/DEVPOST_FIELD_MAP.md</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Human Confirmations Before Devpost</h2>
+      <table>
+        <thead><tr><th>Key</th><th>Rule area</th><th>Confirmation needed</th></tr></thead>
+        <tbody><tr><td>age_and_residence</td><td>Eligibility</td><td>Entrant is at least the age of majority where they reside and is not resident/domiciled in an excluded jurisdiction.</td></tr>
+<tr><td>no_excluded_role_or_conflict</td><td>Eligibility and conflict of interest</td><td>Entrant is not a judge, promotion entity, government/state-owned entity, excluded affiliate, household member, or otherwise conflicted participant.</td></tr>
+<tr><td>team_or_representative_authority</td><td>Team representation</td><td>If submitted as a team or organization, the submitter is authorized to act as the representative and the team size is within the rules.</td></tr>
+<tr><td>ownership_and_ip</td><td>Submission ownership and IP</td><td>The entrant owns the submitted work or has permission for every included component, and no third-party rights are violated.</td></tr>
+<tr><td>no_sponsor_support_conflict</td><td>Financial or preferential support</td><td>The project was not developed with prohibited financial or preferential support from Sponsor or Administrator.</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

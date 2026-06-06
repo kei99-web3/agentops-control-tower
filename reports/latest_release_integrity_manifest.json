@@ -1,0 +1,757 @@
+{
+  "generated_at_utc": "2026-06-06T12:29:37+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "validation_status": "ready_for_user_review",
+  "validation_failed_count": 0,
+  "validation_source": "reports/latest_final_go_no_go.json",
+  "validation_note": "Final Go/No-Go evidence is used because no full validator report is bundled yet.",
+  "final_submit_ready": false,
+  "approved_public_urls_exists": false,
+  "release_zip": {
+    "path": "release/agentops-control-tower-public-candidate.zip",
+    "exists": true,
+    "size_bytes": 771004,
+    "sha256": "38f0d88dd0896740e3712877cc8d0a7c9fe9c33c07cf7bbb96235bc7f3934b6e",
+    "file_count": 248,
+    "smoke_status": "not_applicable_public_candidate_root"
+  },
+  "splunk_app_package_status": "ready_for_user_review",
+  "claim_boundary_status": "not_applicable_public_candidate_root",
+  "artifact_count": 73,
+  "missing_artifacts": [],
+  "artifacts": [
+    {
+      "title": "Public candidate manifest",
+      "path": "PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+      "role": "Confirms this folder is the clean local public-candidate root.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 11379,
+      "sha256": "d4565fdea014528ae731984c653d582e6cd674007b06ae4816978332afa41a27"
+    },
+    {
+      "title": "Candidate-local ZIP",
+      "path": "release/agentops-control-tower-public-candidate.zip",
+      "role": "Optional local ZIP generated inside the public candidate for review.",
+      "required": false,
+      "exists": true,
+      "size_bytes": 771004,
+      "sha256": "38f0d88dd0896740e3712877cc8d0a7c9fe9c33c07cf7bbb96235bc7f3934b6e"
+    },
+    {
+      "title": "Candidate-local ZIP manifest",
+      "path": "reports/latest_public_candidate_zip_manifest.json",
+      "role": "Optional machine-readable candidate ZIP manifest.",
+      "required": false,
+      "exists": true,
+      "size_bytes": 12677,
+      "sha256": "1d9916f6eea0834d3bc2f80d8983537952f399f3f788b7f2b733833a60b97b39"
+    },
+    {
+      "title": "README",
+      "path": "README.md",
+      "role": "Portable project overview and local run instructions.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 20826,
+      "sha256": "5bd90033a12afba0192d9eeb7f96298b103a18768d9100476a712b8409760505"
+    },
+    {
+      "title": "License",
+      "path": "LICENSE",
+      "role": "Open-source license candidate for public review.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 4881,
+      "sha256": "8bcd9791ac7d1ab77082c66a607f0eec083192599b0266d17a8ae55b1517acde"
+    },
+    {
+      "title": "Architecture diagram",
+      "path": "architecture_diagram.md",
+      "role": "Root architecture evidence required by the submission packet.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1912,
+      "sha256": "b3b0f36a0d1e0a3bdd8d45c926e0d5fb6fff5ca9791c95d8fd90a6d9a3fd454b"
+    },
+    {
+      "title": "Dashboard preview",
+      "path": "assets/dashboard_preview.png",
+      "role": "Visual README/Devpost preview asset.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 75210,
+      "sha256": "a172e0fa0fcaa2b4bb0a96b7b02c5bd326b37dbf26d5c4130010f54579df6142"
+    },
+    {
+      "title": "Local demo prototype",
+      "path": "prototype/agentops_control_tower.py",
+      "role": "Generator for synthetic checkout-incident events, analysis, dashboard, and SPL examples.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 36533,
+      "sha256": "fce2f1c75eb25f4dfab60c57bfbbcbc9b0e126840b5672d9bfecbf070f5b871b"
+    },
+    {
+      "title": "Splunk-ready CSV",
+      "path": "data/splunk_agentops_events.csv",
+      "role": "Synthetic data export for a future agentops_events index after approval.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 8368,
+      "sha256": "3bb781d0e8859b52b5dd6676b35b8d051b9d2c355cec05bcb5ae2f85b5aa5a6e"
+    },
+    {
+      "title": "SPL query pack",
+      "path": "submission/SPL_QUERIES.md",
+      "role": "Reviewer-facing SPL examples for the Control Tower flow.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1783,
+      "sha256": "feb15f47a2498d4f54a2cc0ae0e41767c0c6100ebdcb6dcc2f4989651920e02a"
+    },
+    {
+      "title": "Splunk index config",
+      "path": "splunk_app/agentops_control_tower/default/indexes.conf",
+      "role": "Optional local index definition for agentops_events.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 212,
+      "sha256": "4e966767e2b53e1c45102702824549f04d785e32052d0692c0f1f3410c2e9ffd"
+    },
+    {
+      "title": "Splunk sourcetype config",
+      "path": "splunk_app/agentops_control_tower/default/props.conf",
+      "role": "CSV extraction and timestamp parsing for the agentops:events sourcetype.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 217,
+      "sha256": "6c6e3704dbd785b9fc52526b3c5fe429ac5648982d5347fce226d087fc6b024d"
+    },
+    {
+      "title": "Splunk app package",
+      "path": "dist/agentops-control-tower-splunk-app.spl",
+      "role": "Local .spl package candidate; not installed or uploaded.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2409,
+      "sha256": "8817972eb99d06d0cbfd8dffd2de4c758a0f41cf867ed65816ddfd817f2ea2e6"
+    },
+    {
+      "title": "Splunk app package manifest",
+      "path": "reports/latest_splunk_app_package_manifest.html",
+      "role": "Members, SHA256, and package boundary evidence.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3767,
+      "sha256": "410fc57edf471bf4bf86ded687ec2279700d54857d89bcbe9f67472b30b92c61"
+    },
+    {
+      "title": "Splunk app package manifest JSON",
+      "path": "reports/latest_splunk_app_package_manifest.json",
+      "role": "Machine-readable .spl integrity evidence.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2255,
+      "sha256": "dd48e5d10a0e149e8556edb421c02013f25982bcb992268a0d92ae5bd570419e"
+    },
+    {
+      "title": "Splunk MCP command plan",
+      "path": "reports/latest_splunk_mcp_command_plan.html",
+      "role": "Post-approval live Splunk/MCP setup and proof command plan.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 7956,
+      "sha256": "f18c8514781183a40e114ba65820383cde5fd401d85a856cbc24257505139e2c"
+    },
+    {
+      "title": "Splunk MCP proof brief",
+      "path": "reports/latest_splunk_mcp_proof_brief.html",
+      "role": "Success criteria, screen safety, stop conditions, and claim-upgrade rules for optional live proof.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9457,
+      "sha256": "30086309e0f80c75965b272f1f608435942e527fa4321c2a189f0512d061a0e4"
+    },
+    {
+      "title": "Splunk MCP prompt pack",
+      "path": "reports/latest_splunk_mcp_prompt_pack.html",
+      "role": "Prompt-by-prompt live proof guide for evidence-backed MCP answers.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 8643,
+      "sha256": "d9fda2d8db8ebecb0048b97768cb6948faaaaf3f7f5306a4c4c081e5ee70b3ad"
+    },
+    {
+      "title": "Splunk MCP prompt pack JSON",
+      "path": "reports/latest_splunk_mcp_prompt_pack.json",
+      "role": "Machine-readable prompt keys, SPL, expected citations, and live-proof gates.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 8715,
+      "sha256": "df96df62ccf90153ddaad34c5146f1cb0ce5af4efe8559acb5a904ed54bc108b"
+    },
+    {
+      "title": "Splunk MCP prompt pack Markdown",
+      "path": "reports/latest_splunk_mcp_prompt_pack.md",
+      "role": "Reviewable prompt pack for approved live proof capture.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6775,
+      "sha256": "b84338006dcf4c7c3b9a8e565a4fcb7e1e175a7f6518c9a803b0b1bdfd90fa4d"
+    },
+    {
+      "title": "Splunk MCP prompt pack submission copy",
+      "path": "submission/SPLUNK_MCP_PROMPT_PACK.md",
+      "role": "Submission-side copy of the prompt pack and stop conditions.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6775,
+      "sha256": "b84338006dcf4c7c3b9a8e565a4fcb7e1e175a7f6518c9a803b0b1bdfd90fa4d"
+    },
+    {
+      "title": "Claim evidence matrix",
+      "path": "reports/latest_claim_evidence_matrix.html",
+      "role": "Allowed wording, avoid wording, evidence, and remaining gates.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 11006,
+      "sha256": "2f03b115b3d85f307c65e8788f20261033ade4b3254561317ca18f867f082c80"
+    },
+    {
+      "title": "Claim evidence matrix JSON",
+      "path": "reports/latest_claim_evidence_matrix.json",
+      "role": "Machine-readable claim support status.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 11992,
+      "sha256": "0279a0471a4b4564b78225b7611102288d28b18ac173ccbec79b05703fb4a44b"
+    },
+    {
+      "title": "Submission gate ledger",
+      "path": "reports/latest_submission_gate_ledger.html",
+      "role": "Approval-gate ledger for public repo, video, live proof, and Devpost.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9016,
+      "sha256": "b8bd1ef7a5746e931f684cb4baa6b46483982941f34a07ca5c23a8af4db235e4"
+    },
+    {
+      "title": "Submission deadline burndown",
+      "path": "reports/latest_submission_deadline_burndown.html",
+      "role": "Deadline-aware path for public repo, video, optional live proof, URL writeback, and Devpost final submit.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 10583,
+      "sha256": "7ef9bf2a6840792173644fa5ab76df00807536c32c94e170648bdd26fb0cddc2"
+    },
+    {
+      "title": "Submission deadline burndown JSON",
+      "path": "reports/latest_submission_deadline_burndown.json",
+      "role": "Machine-readable target date, official deadline, milestones, and blocked final submit gate.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 7548,
+      "sha256": "89c2fe41e518ef1a6afbc38050d69d7359a21fec6712f2824806b808ff23b969"
+    },
+    {
+      "title": "Submission deadline burndown Markdown",
+      "path": "reports/latest_submission_deadline_burndown.md",
+      "role": "Reviewable deadline burndown for local launch planning.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 5153,
+      "sha256": "c2a988acf44a5ec4ca17524e7ccc94ae094b56752705675d75214cd4d5a546eb"
+    },
+    {
+      "title": "Submission deadline burndown submission copy",
+      "path": "submission/SUBMISSION_DEADLINE_BURNDOWN.md",
+      "role": "Submission-side copy of the deadline burndown and approval timing path.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 5153,
+      "sha256": "c2a988acf44a5ec4ca17524e7ccc94ae094b56752705675d75214cd4d5a546eb"
+    },
+    {
+      "title": "Next approval packet",
+      "path": "reports/latest_next_approval_packet.html",
+      "role": "Next user approval target, approval phrases, risks, and verification steps.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 15096,
+      "sha256": "d591b6a74232d56ae4714f104d018d873daa69a3174922985ef06ee694c3087b"
+    },
+    {
+      "title": "Next approval packet JSON",
+      "path": "reports/latest_next_approval_packet.json",
+      "role": "Machine-readable next approval status and human-confirmation gates.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 13143,
+      "sha256": "6dd11a105ff9fc847407fc43d0b53d3d0206731defa2fea38b30ce33a29deb85"
+    },
+    {
+      "title": "Next approval packet submission copy",
+      "path": "submission/NEXT_APPROVAL_PACKET.md",
+      "role": "Markdown copy of the next approval packet for final user decision support.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9594,
+      "sha256": "7e2723a48164945bbdea413a524f55145ebec2dfb34338198fae7b4db815ebad"
+    },
+    {
+      "title": "Approval consistency audit",
+      "path": "reports/latest_approval_consistency_audit.html",
+      "role": "Checks approval order consistency across plan, approval gates, launch brief, next packet, and validator state.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6609,
+      "sha256": "047d7be233be735a6d560817c23bfa818db3fc686f4882f916e1acb037a622e7"
+    },
+    {
+      "title": "Approval consistency audit JSON",
+      "path": "reports/latest_approval_consistency_audit.json",
+      "role": "Machine-readable approval-order consistency status.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 5756,
+      "sha256": "17133639b98aa3d627c2d8a6f3cc7530ad24170090f8da981ffb4a95357b3f92"
+    },
+    {
+      "title": "Status conflict audit",
+      "path": "reports/latest_status_conflict_audit.html",
+      "role": "Scans root and public-candidate JSON reports for stale failed statuses or missing local artifacts.",
+      "required": false,
+      "exists": true,
+      "size_bytes": 7550,
+      "sha256": "ff188298cdbb139b647182501e9cced5ecc966b0d83e31d61e3dc77c2fcd6198"
+    },
+    {
+      "title": "Status conflict audit JSON",
+      "path": "reports/latest_status_conflict_audit.json",
+      "role": "Machine-readable status conflict scan and critical ready-state checks.",
+      "required": false,
+      "exists": true,
+      "size_bytes": 6294,
+      "sha256": "6a2b7d03de24411abc0e2735b8cd932c94db156f870a0a129583246a4fb5f398"
+    },
+    {
+      "title": "Status conflict audit Markdown",
+      "path": "reports/latest_status_conflict_audit.md",
+      "role": "Reviewable status conflict audit summary.",
+      "required": false,
+      "exists": true,
+      "size_bytes": 4020,
+      "sha256": "9446d5bfcf64a263f9e4f3ed6d0edacf59727e6ec4768844fd7dcf3681c9b06f"
+    },
+    {
+      "title": "Public launch snapshot",
+      "path": "reports/latest_public_launch_snapshot.html",
+      "role": "Frozen local snapshot for public repo and demo video approval review.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 8445,
+      "sha256": "55068bd9b5de2a7ba0cbc27adb0cc1b76ebe8bb5aaf3adb73f47e37be04d4fb8"
+    },
+    {
+      "title": "Public launch snapshot JSON",
+      "path": "reports/latest_public_launch_snapshot.json",
+      "role": "Machine-readable public launch readiness, ZIP hash, approval phrases, and remaining gates.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 8219,
+      "sha256": "e7c42b4dd4cba05073259567564d1ba238113eb177d79f7fb7712147cb15cced"
+    },
+    {
+      "title": "Public launch snapshot Markdown",
+      "path": "reports/latest_public_launch_snapshot.md",
+      "role": "Reviewable public launch snapshot for copy/paste and audit.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 4296,
+      "sha256": "40c4771b22535b60bef87a6e1072c61c5d18d5cc821f5f79f3c4371491e997c9"
+    },
+    {
+      "title": "Public repo metadata",
+      "path": "reports/latest_public_repo_metadata.html",
+      "role": "GitHub repository name, description, topics, expected readback, and no-publish boundary.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6137,
+      "sha256": "cc7030e24bd286ffb12c7363fad388898e2b508990fd212dfb55f3bfe8225a32"
+    },
+    {
+      "title": "Public repo metadata JSON",
+      "path": "reports/latest_public_repo_metadata.json",
+      "role": "Machine-readable public repository metadata and post-approval readback expectations.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3877,
+      "sha256": "7909f5e7a8048530ca76bf56840e9587d331be7ed109f26e68fc4f6f195ffdc9"
+    },
+    {
+      "title": "Public repo metadata Markdown",
+      "path": "reports/latest_public_repo_metadata.md",
+      "role": "Reviewable public repository metadata packet.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2953,
+      "sha256": "7004301efc77638842134e45804bc0c72bc28fb80569a2a39eda0cd1655f79a5"
+    },
+    {
+      "title": "Public repo metadata submission copy",
+      "path": "submission/PUBLIC_REPO_METADATA.md",
+      "role": "Submission-side copy of public repository metadata and stop conditions.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2953,
+      "sha256": "7004301efc77638842134e45804bc0c72bc28fb80569a2a39eda0cd1655f79a5"
+    },
+    {
+      "title": "User approval gates",
+      "path": "submission/USER_APPROVAL_GATES.md",
+      "role": "Human approval boundaries and current recommended approval order.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1451,
+      "sha256": "00e00ba2b137bea9a14b2e4cd6904163a87d57847f094ad5772dd97ac1b2009a"
+    },
+    {
+      "title": "Ready for review",
+      "path": "READY_FOR_REVIEW.md",
+      "role": "Shortest local review entrypoint for the current SPAK packet.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1009,
+      "sha256": "ff1b2788abb21f856dea23e2123da80068a75ba06e1f0c48f0a39b98d36ddbc8"
+    },
+    {
+      "title": "SPAK judge review packet",
+      "path": "reports/latest_judge_review_packet.html",
+      "role": "Judge-facing local packet with readiness, evidence, and closed external gates.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 4659,
+      "sha256": "cd9a4fc0fdfc60b6e84a5ee93ab20e13c921ddde2a08f52d34f899e244d04f6a"
+    },
+    {
+      "title": "SPAK judge review packet JSON",
+      "path": "reports/latest_judge_review_packet.json",
+      "role": "Machine-readable SPAK judge packet status.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3678,
+      "sha256": "73b06be1060b1f3feb0f51a24fc58981a55441a075213077c21a0ff10651beed"
+    },
+    {
+      "title": "SPAK judge review packet Markdown",
+      "path": "reports/latest_judge_review_packet.md",
+      "role": "Reviewable SPAK judge packet summary.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2427,
+      "sha256": "357a9c96bcc8687f4dd9b01c7d9e7dee7a1e8e1793028da95ad44dae792b3b2f"
+    },
+    {
+      "title": "SPAK judge review submission copy",
+      "path": "submission/JUDGE_REVIEW_PACKET.md",
+      "role": "Submission-side copy of the local judge review packet.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2427,
+      "sha256": "357a9c96bcc8687f4dd9b01c7d9e7dee7a1e8e1793028da95ad44dae792b3b2f"
+    },
+    {
+      "title": "Local readiness baseline",
+      "path": "reports/latest_local_readiness_baseline.html",
+      "role": "Targeted pass/fail baseline for local package/proof readiness.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3857,
+      "sha256": "4f6966cb0866f33ff2ef079d912d5bd60058ebd995e36f37bafded8a7f03e272"
+    },
+    {
+      "title": "Local readiness baseline JSON",
+      "path": "reports/latest_local_readiness_baseline.json",
+      "role": "Machine-readable targeted local readiness baseline.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2999,
+      "sha256": "86b3fe3df5d730ef37bf75e8dbfbb70927d96d27b4d037f58f0de8dad2920ea1"
+    },
+    {
+      "title": "Local readiness baseline Markdown",
+      "path": "reports/latest_local_readiness_baseline.md",
+      "role": "Reviewable targeted local readiness baseline.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1529,
+      "sha256": "92114852b0939c39388208450f217ea4182b0589792de8edd4352017c9ad9885"
+    },
+    {
+      "title": "Public candidate local audit",
+      "path": "reports/latest_public_candidate_local_audit.html",
+      "role": "Secret/internal-path and completeness audit for the public repo candidate.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3395,
+      "sha256": "9d95edfed8404802adf6ac82921cba9d52d36906d37e5a07da86610e44823466"
+    },
+    {
+      "title": "Public candidate local audit JSON",
+      "path": "reports/latest_public_candidate_local_audit.json",
+      "role": "Machine-readable public candidate safety audit.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1975,
+      "sha256": "aa8c0bd1f39f6c676650f29522874c0215fabf79ad6310efd4edcb03ba9076a3"
+    },
+    {
+      "title": "Public candidate local audit Markdown",
+      "path": "reports/latest_public_candidate_local_audit.md",
+      "role": "Reviewable public candidate safety audit.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1124,
+      "sha256": "74c63dbd920d60aae11114552390dac0d6bd80be72698108d2484651de34c459"
+    },
+    {
+      "title": "Devpost copy audit",
+      "path": "reports/latest_devpost_copy_audit.html",
+      "role": "Local audit of Devpost copy readiness with final submission still gated.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3382,
+      "sha256": "985ef604b4efa19650bfae397a8b2d3fa94bf1704c75b7e7979148fcdf36ac15"
+    },
+    {
+      "title": "Devpost copy audit JSON",
+      "path": "reports/latest_devpost_copy_audit.json",
+      "role": "Machine-readable Devpost copy audit.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2033,
+      "sha256": "1d8bda3c708a322b8d108e7101d4fa7f27049e293a134fd566597874b0992eb4"
+    },
+    {
+      "title": "Devpost copy audit Markdown",
+      "path": "reports/latest_devpost_copy_audit.md",
+      "role": "Reviewable Devpost copy audit.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 1121,
+      "sha256": "ebf70a22791d0b11d531878a3f991b407f74708ba428fd401ac8886f5d781cb7"
+    },
+    {
+      "title": "Judge quickstart",
+      "path": "reports/latest_judge_quickstart.html",
+      "role": "Five-minute review path for judges and final preflight.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9800,
+      "sha256": "8af1a5780240d7a7512cd20d60e1cb113ed03306696bf3f2cd9b5dc37a5bd163"
+    },
+    {
+      "title": "Devpost final copy",
+      "path": "reports/latest_devpost_final_copy.md",
+      "role": "Copy/paste packet with pending public URL placeholders.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 7027,
+      "sha256": "e8df366b808c9794fb40fbf5f00762ebfaa40e0f4413db36bf68fba25f79d39d"
+    },
+    {
+      "title": "Post-action evidence brief",
+      "path": "reports/latest_post_action_evidence_brief.html",
+      "role": "Readback plan after approved external actions.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 10308,
+      "sha256": "f3633bba8732bdfb711b975aebfd1e1bbf3c63483042c9c27020042cc34cd42a"
+    },
+    {
+      "title": "Post-action evidence brief JSON",
+      "path": "reports/latest_post_action_evidence_brief.json",
+      "role": "Machine-readable post-action gate state.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9067,
+      "sha256": "569dcf9ca12226ef680fdbdbf40b844f9dd2e91599561f39661d271cffc3c579"
+    },
+    {
+      "title": "Post-action evidence log template",
+      "path": "submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md",
+      "role": "Template for safe readback after approved external actions.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 7393,
+      "sha256": "f35de1a10121305df6bc05c184d5855101beaeb186f62a2ceb48bf8e103a248c"
+    },
+    {
+      "title": "Splunk MCP proof capture manifest",
+      "path": "reports/latest_splunk_mcp_proof_capture_manifest.html",
+      "role": "Live Splunk/MCP proof capture slots, expected readback, stop conditions, and claim-upgrade gate.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9872,
+      "sha256": "fb74a1ff294c98503e3670bc993f9b5258acd471f4d838b592024d7155a01137"
+    },
+    {
+      "title": "Splunk MCP proof capture manifest JSON",
+      "path": "reports/latest_splunk_mcp_proof_capture_manifest.json",
+      "role": "Machine-readable live Splunk/MCP proof capture gate state.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 8201,
+      "sha256": "3592e16298561a4a62234be14d8ba7d3b5c444ab01c2070ce5e5ca6a6dd570dc"
+    },
+    {
+      "title": "Splunk MCP proof capture manifest Markdown",
+      "path": "reports/latest_splunk_mcp_proof_capture_manifest.md",
+      "role": "Reviewable live Splunk/MCP proof capture manifest.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6280,
+      "sha256": "574fc46a3560362a475c5d2f0170aab09e06a2fd7e50bd261c63cda5157e360a"
+    },
+    {
+      "title": "Splunk MCP proof capture manifest submission copy",
+      "path": "submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md",
+      "role": "Submission-side copy of the proof capture manifest and no-live-proof boundary.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6280,
+      "sha256": "574fc46a3560362a475c5d2f0170aab09e06a2fd7e50bd261c63cda5157e360a"
+    },
+    {
+      "title": "Official source freshness",
+      "path": "reports/latest_official_source_freshness.html",
+      "role": "Current official Devpost source and requirement freshness evidence.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6399,
+      "sha256": "c8b9c27dac1a204aa0a7c58fcd8be5b26ffc60c28d13dbc526c4a6404885b894"
+    },
+    {
+      "title": "Official source freshness JSON",
+      "path": "reports/latest_official_source_freshness.json",
+      "role": "Machine-readable official source freshness and local mapping status.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 7744,
+      "sha256": "cd4baf4d308a7e1c937fb39fc0e9ff7184d3373e17bafcf677ed48c828016202"
+    },
+    {
+      "title": "Content rights audit",
+      "path": "reports/latest_content_rights_audit.html",
+      "role": "License, bundled asset, audio/video, and screen-safety evidence.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 4886,
+      "sha256": "9d23cbe82972acd73d2f7788b72c3254f3692b95cd98f534504b15a032aaa001"
+    },
+    {
+      "title": "Content rights audit JSON",
+      "path": "reports/latest_content_rights_audit.json",
+      "role": "Machine-readable content rights and asset safety status.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3632,
+      "sha256": "8c32a6adaeca63eecadc3cd007d3ab12c1b518147293198bc01d78c7f3f927c1"
+    },
+    {
+      "title": "Eligibility compliance audit",
+      "path": "reports/latest_eligibility_compliance_audit.html",
+      "role": "Eligibility, ownership, language, uniqueness, and human-confirmation evidence.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 7810,
+      "sha256": "fd0302542ef8e148d3edf5e4fded7804741c9689b931eda7c1f338289cc5d1ea"
+    },
+    {
+      "title": "Eligibility compliance audit JSON",
+      "path": "reports/latest_eligibility_compliance_audit.json",
+      "role": "Machine-readable eligibility and compliance status.",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6314,
+      "sha256": "77125c5476db8d3b53780f9b2b642a99fb47a2d281b1ebaec1e6c75c161cb5b3"
+    }
+  ],
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "required artifacts present",
+      "status": "pass",
+      "detail": "all required artifacts present"
+    },
+    {
+      "name": "Splunk app package SHA256 consistency",
+      "status": "pass",
+      "detail": "manifest=8817972eb99d06d0cbfd8dffd2de4c758a0f41cf867ed65816ddfd817f2ea2e6 artifact=8817972eb99d06d0cbfd8dffd2de4c758a0f41cf867ed65816ddfd817f2ea2e6"
+    },
+    {
+      "name": "Splunk app package manifest status",
+      "status": "pass",
+      "detail": "ready_for_user_review"
+    },
+    {
+      "name": "Splunk MCP prompt pack status",
+      "status": "pass",
+      "detail": "status=ready_for_user_review live=False external=False"
+    },
+    {
+      "name": "claim boundary status",
+      "status": "pass",
+      "detail": "not_applicable_public_candidate_root"
+    },
+    {
+      "name": "release ZIP smoke status",
+      "status": "pass",
+      "detail": "not_applicable_public_candidate_root"
+    },
+    {
+      "name": "candidate-local ZIP count consistency",
+      "status": "pass",
+      "detail": "manifest=248 actual=248"
+    },
+    {
+      "name": "final submit remains gated",
+      "status": "pass",
+      "detail": "False"
+    },
+    {
+      "name": "approved URLs remain gated",
+      "status": "pass",
+      "detail": "False"
+    },
+    {
+      "name": "post-action external gates tracked",
+      "status": "pass",
+      "detail": "public_github_repository, public_demo_video, optional_live_splunk_mcp_proof, approved_url_writeback, devpost_final_submission"
+    },
+    {
+      "name": "publication boundary text",
+      "status": "pass",
+      "detail": "This release integrity manifest is local readback evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything."
+    },
+    {
+      "name": "video dry run status",
+      "status": "pass",
+      "detail": "not_applicable_public_candidate_root"
+    },
+    {
+      "name": "public video upload preflight status",
+      "status": "pass",
+      "detail": "not_applicable_public_candidate_root"
+    },
+    {
+      "name": "URL writeback dry run status",
+      "status": "pass",
+      "detail": "not_applicable_public_candidate_root"
+    }
+  ],
+  "boundary": "This release integrity manifest is local readback evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything.",
+  "recommended_next_step": "Review this manifest before approving public GitHub, public demo video, optional Splunk/MCP proof, URL writeback, or Devpost final submission."
+}

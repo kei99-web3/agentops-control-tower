@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Video Upload Preflight</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public Video Upload Preflight</h1>
+    <p>Gate status: <span class="pending">blocked_by_video_approval_gate</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <table>
+        <tbody>
+          <tr><th>Status</th><td>ready_for_user_review</td></tr>
+          <tr><th>Public video upload allowed</th><td>False</td></tr>
+          <tr><th>Approval phrase accepted</th><td>False</td></tr>
+          <tr><th>Duration seconds</th><td>180</td></tr>
+          <tr><th>Evidence note target</th><td><code>submission/post_action_evidence/YYYY-MM-DD_public_demo_video_readback.md</code></td></tr>
+        </tbody>
+      </table>
+      <p class="pending">This public video upload gate is a local preflight only. It does not record video, upload video, publish media, open accounts, write approved URLs, update Devpost, connect to Splunk, configure MCP, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Safe Readback</h2>
+      <table>
+        <tbody>
+          <tr><th>Ready for public upload</th><td>False</td></tr>
+          <tr><th>Screen safety checklist</th><td><code>submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md</code></td></tr>
+          <tr><th>Copy policy</th><td>Use this pre-upload safe readback plus the recording-preview safe readback and a short manual final-recording review summary. Do not copy screenshots, browser state, account pages, raw recording output, credentials, tokens, or local absolute paths.</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Gate Issues</h2>
+      <ul><li>approval phrase is required before manual recording or public upload</li>
+<li>manual screen, duration, claim, rights, and visibility confirmations are required before upload</li></ul>
+    </section>
+    <section>
+      <h2>Manual Confirmations</h2>
+      <table><tbody><tr><td>screen_safety_confirmed</td><td class="pending">False</td></tr>
+<tr><td>duration_confirmed</td><td class="pending">False</td></tr>
+<tr><td>claim_boundary_confirmed</td><td class="pending">False</td></tr>
+<tr><td>content_rights_confirmed</td><td class="pending">False</td></tr>
+<tr><td>upload_visibility_confirmed</td><td class="pending">False</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_demo_tour.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_readiness.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_readiness.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_cue_sheet.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_cue_sheet.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_recording_preview.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_recording_preview.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_upload_metadata.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_upload_metadata.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_content_rights_audit.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_content_rights_audit.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_claim_boundary_validation.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_claim_boundary_validation.json</td><td class="ready">present</td></tr>
+<tr><td>submission/DEMO_VIDEO_SCRIPT.md</td><td class="ready">present</td></tr>
+<tr><td>submission/VIDEO_RECORDING_RUNBOOK.md</td><td class="ready">present</td></tr>
+<tr><td>submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md</td><td class="ready">present</td></tr>
+<tr><td>submission/VIDEO_UPLOAD_METADATA.md</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "generated_at_utc": "2026-06-06T12:28:58+00:00",
+  "status": "waiting_for_external_urls",
+  "final_submit_ready": false,
+  "write_requested": false,
+  "approved_urls_file_written": false,
+  "approved_urls_path": "submission/approved_public_urls.json",
+  "repository_url": "PENDING_USER_APPROVAL_PUBLIC_REPO_URL",
+  "demo_video_url": "PENDING_USER_APPROVAL_PUBLIC_VIDEO_URL",
+  "pending_urls": [
+    "repository_url",
+    "demo_video_url"
+  ],
+  "checks": [
+    {
+      "name": "repository URL",
+      "status": "pass",
+      "detail": "pending user-approved URL"
+    },
+    {
+      "name": "demo video URL",
+      "status": "pass",
+      "detail": "pending user-approved URL"
+    },
+    {
+      "name": "repository approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "video approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    }
+  ],
+  "approval_note_present": false,
+  "verified_readback_required": false,
+  "verified_readback_passed": false,
+  "verified_readback_source": "reports/latest_public_artifact_url_readback.json",
+  "verified_readback_issues": [],
+  "boundary": "This plan only validates and optionally writes a local approved URL file. It does not publish, upload, submit, or update Devpost."
+}

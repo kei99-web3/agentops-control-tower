@@ -1,0 +1,196 @@
+{
+  "generated_at_utc": "2026-06-06T12:29:25+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "official_source_checked_at_jst": "2026-06-04 JST",
+  "target_submit_by_jst": "2026-06-15 20:00 JST",
+  "official_deadline_jst": "2026-06-16 01:00 JST",
+  "days_until_target_submit": 8.94,
+  "days_until_official_deadline": 9.15,
+  "urgency": "on_track",
+  "local_submission_status": "ready_for_user_review",
+  "failed_count": 0,
+  "local_validation_source": "reports/latest_final_go_no_go.json",
+  "local_validation_note": "Public candidate inherits the workspace release validation through the final Go/No-Go evidence bundled in the candidate.",
+  "final_submit_ready": false,
+  "approved_public_urls_exists": false,
+  "pending_external_actions": [
+    "public_github_repository",
+    "public_demo_video",
+    "optional_live_splunk_mcp_proof",
+    "approved_url_writeback",
+    "devpost_final_submission"
+  ],
+  "milestones": [
+    {
+      "key": "public_github_repository",
+      "title": "Public GitHub Repository",
+      "status": "ready_for_user_decision",
+      "due_jst": "2026-06-09 20:00 JST",
+      "owner": "entrant",
+      "approval_phrase": "Approve public GitHub publication for the clean agentops-control-tower candidate.",
+      "blocker": "Needs explicit public GitHub publication approval.",
+      "notes": "This is the first required external artifact. Publish only from the clean staged candidate after approval.",
+      "evidence": [
+        {
+          "path": "reports/latest_public_repo_publish_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_release_integrity_manifest.html",
+          "exists": true
+        },
+        {
+          "path": "PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+          "exists": true
+        }
+      ],
+      "missing_evidence": []
+    },
+    {
+      "key": "public_demo_video",
+      "title": "Public Demo Video",
+      "status": "ready_for_user_decision",
+      "due_jst": "2026-06-10 20:00 JST",
+      "owner": "entrant",
+      "approval_phrase": "Approve recording and public upload of the Agentic Incident Command Center demo video.",
+      "blocker": "Needs explicit recording and public upload approval.",
+      "notes": "Record and upload only after screen-safety review. Keep the video under 3 minutes.",
+      "evidence": [
+        {
+          "path": "reports/latest_demo_tour.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_video_readiness.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_video_command_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_public_video_upload_preflight.html",
+          "exists": true
+        },
+        {
+          "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+          "exists": true
+        },
+        {
+          "path": "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+          "exists": true
+        }
+      ],
+      "missing_evidence": []
+    },
+    {
+      "key": "optional_live_splunk_mcp_proof",
+      "title": "Optional Live Splunk / MCP Proof",
+      "status": "optional_user_decision",
+      "due_jst": "2026-06-11 20:00 JST",
+      "owner": "entrant",
+      "approval_phrase": "Approve optional live Splunk and Splunk MCP proof using synthetic data only.",
+      "blocker": "Optional. Needs explicit approval, account scope, credentials, and synthetic-data-only guardrails.",
+      "notes": "Skip if it risks cost, credential exposure, or deadline slip. The local submission remains viable without live proof.",
+      "evidence": [
+        {
+          "path": "reports/latest_splunk_mcp_command_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_prompt_pack.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_capture_manifest.html",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_PROMPT_PACK.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md",
+          "exists": true
+        }
+      ],
+      "missing_evidence": []
+    },
+    {
+      "key": "approved_url_writeback",
+      "title": "Approved URL Writeback",
+      "status": "blocked_until_public_urls",
+      "due_jst": "2026-06-13 20:00 JST",
+      "owner": "Codex after approval",
+      "approval_phrase": "Approve writing the verified public repository and demo video URLs into local submission artifacts.",
+      "blocker": "Blocked until both public repository and public demo video URLs are verified.",
+      "notes": "Write approved URLs only after both public artifacts are public and read back.",
+      "evidence": [
+        {
+          "path": "reports/latest_submission_url_validation.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_submission_url_apply_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_public_artifact_url_readback.html",
+          "exists": true
+        }
+      ],
+      "missing_evidence": []
+    },
+    {
+      "key": "devpost_final_submission",
+      "title": "Devpost Final Submission",
+      "status": "blocked_until_public_urls",
+      "due_jst": "2026-06-15 20:00 JST",
+      "owner": "entrant",
+      "approval_phrase": "Approve final Devpost submission for Agentic Incident Command Center.",
+      "blocker": "Blocked until public URLs, human confirmations, final checklist, validation, and explicit final approval are complete.",
+      "notes": "Submit before the target time, then read back the submitted Devpost page/status into local evidence.",
+      "evidence": [
+        {
+          "path": "reports/latest_devpost_final_copy.md",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_devpost_manual_fill_brief.html",
+          "exists": true
+        },
+        {
+          "path": "submission/DEVPOST_FINAL_REVIEW_CHECKLIST.md",
+          "exists": true
+        },
+        {
+          "path": "submission/HUMAN_CONFIRMATION_CHECKLIST.md",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_final_go_no_go.html",
+          "exists": true
+        }
+      ],
+      "missing_evidence": []
+    }
+  ],
+  "missing_evidence": [],
+  "minimum_viable_path": [
+    "Approve and publish the clean public GitHub repository.",
+    "Approve recording and public upload of the under-3-minute demo video.",
+    "Verify both public URLs, then approve local URL writeback.",
+    "Complete human confirmations and Devpost final review checklist.",
+    "Rerun validation and submit on Devpost only after explicit final approval."
+  ],
+  "stretch_path": [
+    "Approve optional live Splunk/MCP proof only if account scope, credential handling, and time are safe.",
+    "Use synthetic data only and upgrade claim wording only after proof cites event IDs and evidence references."
+  ],
+  "boundary": "This burndown is local planning evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or submit anything."
+}

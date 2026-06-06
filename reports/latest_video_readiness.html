@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Readiness Report</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    .pass, .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Video Readiness Report</h1>
+    <p>Status: <span class="ready">ready_for_recording_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Timing</h2>
+      <p>Target: under 3 minutes. Current scripted end: <strong>180s</strong>.</p>
+      <p>Screen safety checklist: <code>submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md</code></p>
+      <table>
+        <thead><tr><th>Time</th><th>Beat</th><th>Duration</th></tr></thead>
+        <tbody><tr><td>0:00-0:20</td><td>Problem</td><td>20s</td></tr>
+<tr><td>0:20-0:45</td><td>Solution</td><td>25s</td></tr>
+<tr><td>0:45-1:20</td><td>Synthetic Event Flow</td><td>35s</td></tr>
+<tr><td>1:20-2:10</td><td>Dashboard</td><td>50s</td></tr>
+<tr><td>2:10-2:40</td><td>Splunk/MCP Fit</td><td>30s</td></tr>
+<tr><td>2:40-3:00</td><td>Close</td><td>20s</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Screen Safety And Claim Boundary</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>demo video script exists</td><td>pass</td><td>submission/DEMO_VIDEO_SCRIPT.md</td></tr>
+<tr><td>video recording runbook exists</td><td>pass</td><td>submission/VIDEO_RECORDING_RUNBOOK.md</td></tr>
+<tr><td>video timeline ranges</td><td>pass</td><td>6 ranges parsed</td></tr>
+<tr><td>under 3 minute target</td><td>pass</td><td>end=180s target&lt;=180s</td></tr>
+<tr><td>continuous recording timeline</td><td>pass</td><td>no gaps or overlaps</td></tr>
+<tr><td>required video beats</td><td>pass</td><td>all required beats present</td></tr>
+<tr><td>screen safety checklist</td><td>pass</td><td>all screen safety items present</td></tr>
+<tr><td>video claim boundary</td><td>pass</td><td>no unsafe live-claim phrases in script</td></tr>
+<tr><td>voiceover claim guidance</td><td>pass</td><td>safe wording guidance present</td></tr>
+<tr><td>demo tour artifact</td><td>pass</td><td>safe demo tour sections present</td></tr>
+<tr><td>dashboard preview image</td><td>pass</td><td>bytes=75210</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>External Gates</h2>
+      <ul><li>user review of video script</li>
+<li>screen safety checklist completion</li>
+<li>screen recording capture</li>
+<li>public video upload approval</li>
+<li>public video URL insertion</li></ul>
+      <p class="pending">This report prepares local recording review only. It does not record, upload, publish, or submit a video.</p>
+    </section>
+  </main>
+</body>
+</html>

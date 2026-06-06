@@ -1,0 +1,249 @@
+# Final Submission Checklist
+
+Status: not submitted
+Deadline target: submit before 2026-06-15 20:00 JST
+
+## Local Proof
+
+- [ ] `python prototype/agentops_control_tower.py run-demo`
+- [ ] `python scripts/run_local_spl_query_pack.py`
+- [ ] `python scripts/build_demo_tour.py`
+- [ ] `python scripts/build_video_readiness_report.py`
+- [ ] `python scripts/build_video_cue_sheet.py`
+- [ ] `python scripts/build_video_dry_run.py`
+- [ ] `python scripts/build_video_recording_preview.py`
+- [ ] `python scripts/build_video_upload_metadata.py`
+- [ ] `python scripts/build_video_command_plan.py`
+- [ ] `python scripts/build_claim_evidence_matrix.py`
+- [ ] `python scripts/build_external_approval_packet.py`
+- [ ] `python scripts/build_publication_command_plan.py`
+- [ ] `python scripts/build_public_repo_metadata.py`
+- [ ] `python scripts/build_public_repo_publish_brief.py`
+- [ ] `python scripts/verify_public_repo_publication_gate.py`
+- [ ] `python scripts/build_public_repo_dry_run.py`
+- [ ] `python scripts/build_public_launch_snapshot.py`
+- [ ] `python scripts/build_user_approval_brief_ja.py`
+- [ ] `python scripts/build_devpost_submit_command_plan.py`
+- [ ] `python scripts/build_devpost_manual_fill_brief.py`
+- [ ] `python scripts/build_post_action_evidence_brief.py`
+- [ ] `python scripts/build_official_source_freshness.py`
+- [ ] `python scripts/build_release_integrity_manifest.py`
+- [ ] `python scripts/build_devpost_submission_packet.py`
+- [ ] `python scripts/export_devpost_final_copy.py`
+- [ ] `python scripts/build_final_go_no_go_report.py`
+- [ ] `python scripts/package_public_candidate_zip.py`
+- [ ] `python scripts/smoke_test_release_zip.py`
+- [ ] `python scripts/prepare_submission_urls.py`
+- [ ] `python scripts/verify_public_artifact_urls.py`
+- [ ] `python scripts/build_url_writeback_dry_run.py`
+- [ ] `python scripts/validate_claim_boundaries.py`
+- [ ] `python scripts/validate_submission_urls.py`
+- [ ] `python scripts/validate_splunk_app.py`
+- [ ] `python scripts/package_splunk_app.py`
+- [ ] `python scripts/build_splunk_mcp_command_plan.py`
+- [ ] `python scripts/build_splunk_mcp_proof_brief.py`
+- [ ] `python scripts/build_splunk_mcp_prompt_pack.py`
+- [ ] `python scripts/build_splunk_mcp_proof_capture_manifest.py`
+- [ ] `python scripts/build_submission_gate_ledger.py`
+- [ ] `python scripts/build_submission_deadline_burndown.py`
+- [ ] `python scripts/build_submission_review_index.py`
+- [ ] `python scripts/build_judge_quickstart.py`
+- [ ] `python scripts/build_judge_scorecard.py`
+- [ ] `python scripts/build_launch_decision_brief.py`
+- [ ] `python scripts/build_content_rights_audit.py`
+- [ ] `python scripts/build_eligibility_compliance_audit.py`
+- [ ] `python scripts/build_next_approval_packet.py`
+- [ ] `python scripts/build_approval_consistency_audit.py`
+- [ ] `python scripts/build_status_conflict_audit.py`
+- [ ] `python scripts/build_approval_execution_handoff.py`
+- [ ] `python scripts/publish_public_repo_after_approval.py`
+- [ ] `python -m unittest discover -s tests`
+- [ ] `python -m py_compile prototype/agentops_control_tower.py scripts/build_demo_tour.py scripts/build_video_readiness_report.py scripts/build_video_command_plan.py scripts/build_video_cue_sheet.py scripts/build_video_dry_run.py scripts/build_video_recording_preview.py scripts/build_video_upload_metadata.py scripts/build_claim_evidence_matrix.py scripts/build_external_approval_packet.py scripts/build_publication_command_plan.py scripts/build_public_repo_metadata.py scripts/build_public_repo_publish_brief.py scripts/verify_public_repo_publication_gate.py scripts/build_public_repo_dry_run.py scripts/publish_public_repo_after_approval.py scripts/build_public_launch_snapshot.py scripts/build_user_approval_brief_ja.py scripts/build_splunk_mcp_command_plan.py scripts/build_splunk_mcp_proof_brief.py scripts/build_splunk_mcp_prompt_pack.py scripts/build_splunk_mcp_proof_capture_manifest.py scripts/build_submission_gate_ledger.py scripts/build_submission_review_index.py scripts/build_judge_quickstart.py scripts/build_judge_scorecard.py scripts/build_launch_decision_brief.py scripts/build_content_rights_audit.py scripts/build_eligibility_compliance_audit.py scripts/build_next_approval_packet.py scripts/build_approval_consistency_audit.py scripts/build_status_conflict_audit.py scripts/build_approval_execution_handoff.py scripts/build_devpost_submission_packet.py scripts/build_devpost_submit_command_plan.py scripts/build_devpost_manual_fill_brief.py scripts/build_post_action_evidence_brief.py scripts/build_official_source_freshness.py scripts/build_release_integrity_manifest.py scripts/build_final_go_no_go_report.py scripts/build_public_repo_candidate.py scripts/export_devpost_final_copy.py scripts/package_splunk_app.py scripts/package_public_candidate_zip.py scripts/prepare_submission_urls.py scripts/verify_public_artifact_urls.py scripts/build_url_writeback_dry_run.py scripts/run_local_spl_query_pack.py scripts/submission_urls.py scripts/smoke_test_release_zip.py scripts/validate_claim_boundaries.py scripts/validate_submission_urls.py scripts/validate_splunk_app.py scripts/validate_submission_packet.py`
+- [ ] `python scripts/validate_submission_packet.py`
+- [ ] Dashboard opens and shows KPI, incident summary, remediation ledger, SPL queries, and MCP investigation preview.
+- [ ] Demo tour opens and shows problem, Control Tower summary, approval queue, local SPL proof, and Splunk MCP boundary.
+- [ ] Video readiness report shows under-3-minute timing, screen safety checklist, claim boundary guidance, and upload approval gate.
+- [ ] Video screen safety checklist exists at `submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md`, stays pending until final recording review, and states public upload remains blocked.
+- [ ] Video command plan shows recording, review, upload, and URL update steps as advisory only and requires explicit approval.
+- [ ] Video cue sheet shows the exact 3-minute timeline, screen focus, narration cue, and screen-safety guardrail for each scene.
+- [ ] Video dry run shows a local-only recording rehearsal with no upload or public action.
+- [ ] Video recording preview shows a TEMP-staged preview URL, screen-safety checks, and no external action.
+- [ ] Video upload metadata shows title, description, tags, expected readback, and no-upload boundary.
+- [ ] Claim evidence matrix maps public claims to allowed wording, avoid wording, evidence files, and remaining gates.
+- [ ] External approval packet separates public repo, video upload, optional Splunk/MCP proof, and Devpost final submit decisions.
+- [ ] Publication command plan shows public repo commands as advisory only and requires explicit approval before create/push.
+- [ ] Public repo metadata shows repository name, description, topics, expected GitHub readback, and no-publish boundary.
+- [ ] Public repo publish brief shows the clean candidate path, approval phrase, ZIP evidence, SHA256, stop conditions, and URL writeback hold.
+- [ ] Public repo publication preflight shows source-folder review, isolated staging, scan, visibility, public git identity, approval phrase, and no-publication boundary.
+- [ ] Public repo dry run shows isolated TEMP staging, git init/add/commit rehearsal, no remote, and clean internal path/secret scans.
+- [ ] Guarded public repo helper blocks execute mode unless the exact approval phrase and public git identity are supplied.
+- [ ] Public launch snapshot shows repo/video approval phrases, ZIP SHA256, expected approval order, final-submit false, and no-external-action boundary.
+- [ ] Japanese user approval brief shows the same approval order and phrases without implying any action has been executed.
+- [ ] Splunk MCP command plan shows account/license, synthetic import, app install, MCP setup, live SPL checks, proof capture, and claim-upgrade steps as advisory only and requires explicit approval.
+- [ ] Splunk MCP proof brief shows success criteria, screen safety checks, stop conditions, approval phrase, and claim-upgrade rule for the optional live proof.
+- [ ] Splunk MCP prompt pack shows proof prompts, SPL, expected event citations, success readbacks, and stop conditions for the optional live proof.
+- [ ] Splunk MCP proof capture manifest shows capture slots, expected readback, stop conditions, and claim-upgrade gate for optional live proof.
+- [ ] Submission gate ledger shows public repo, video, optional Splunk/MCP proof, and Devpost final submission gates as advisory-only approval records.
+- [ ] Submission deadline burndown shows target submit timing, official deadline, minimum viable submit path, optional live proof stretch path, and blocked final submit gate.
+- [ ] Submission review index shows the recommended review order and links local evidence without performing external actions.
+- [ ] Judge quickstart shows the 5-minute review path, key evidence links, and the no-publish/no-upload/no-submit boundary.
+- [ ] Judge scorecard maps Stage One, Stage Two, and bonus alignment to concrete evidence, readiness states, and remaining external gates.
+- [ ] Launch decision brief shows the recommended approval order, approval phrases, ready public repo/video decisions, blocked URL/Devpost gates, and the no-external-action boundary.
+- [ ] Next approval packet shows the next approval target, copy-paste approval phrases, and pre-Devpost human confirmations.
+- [ ] Approval consistency audit confirms public repo/video are first, optional Splunk/MCP proof is not first, and URL/Devpost gates remain blocked until public URLs exist.
+- [ ] Status conflict audit shows no stale failed statuses, nonzero failed counts, or missing local artifacts remain in JSON reports.
+- [ ] Content rights audit shows Apache-2.0 license, bundled asset inventory, no bundled audio/video media, screen-safety evidence, and public video still gated.
+- [ ] Eligibility and compliance audit shows automated package evidence plus human confirmation items for eligibility, team authority, ownership/IP, conflicts, and prohibited support.
+- [ ] Human confirmation checklist exists at `submission/HUMAN_CONFIRMATION_CHECKLIST.md`, keeps all personal/legal confirmations pending until entrant review, and states Devpost final submission remains blocked.
+- [ ] Devpost submit command plan shows form fill, final review, submit, and readback steps as advisory only and requires explicit approval.
+- [ ] Devpost manual fill brief shows field fill order, pending URL fields, section readback, final readback checks, and stop conditions.
+- [ ] Devpost final review checklist exists at `submission/DEVPOST_FINAL_REVIEW_CHECKLIST.md`, stays pending until the visible Devpost screen is reviewed, and keeps final submit blocked.
+- [ ] Post-action evidence brief shows required readback evidence for public repo, video, URL writeback, optional Splunk/MCP proof, and Devpost final submission.
+- [ ] Post-action evidence log template is present and ready to copy/fill only after approved external actions are completed.
+- [ ] Official source freshness shows the latest Devpost official-source check, expected deadline, required artifacts, judging criteria, and local evidence mapping.
+- [ ] Release integrity manifest shows key artifact SHA256, sizes, ZIP count consistency, `.spl` hash consistency, and the no-publish/no-submit boundary.
+- [ ] Submission URL apply plan shows pending URLs or validates approved public repo/video URLs without writing unless explicitly requested.
+- [ ] Public artifact URL readback stays pending without approved public repo/video URLs and performs no live readback unless requested.
+- [ ] URL writeback dry run shows exactly what would change after approved public URLs without writing approved URLs.
+- [ ] Devpost submission packet shows core fields, pending repo/video URL placeholders, claim boundaries, and final gates.
+- [ ] Devpost final copy export shows copy/paste sections, character checks, pending URLs, and final gate.
+- [ ] Submission URL validation shows pending URL gates or user-approved public URL shapes.
+- [ ] Claim boundary validation shows no unqualified live Splunk/MCP overclaims.
+- [ ] Final Go/No-Go report shows local readiness, pending external gates, and recommended next order.
+- [ ] Approval execution handoff maps each next phase to command/action, approval phrase, readback evidence, and stop conditions.
+- [ ] Submission launch runbook shows preflight commands, launch sequence, claim wording, and final safety gate.
+- [ ] Submission review Q&A shows judge answers and safe copy boundaries.
+- [ ] Public candidate zip manifest shows local zip path, included files, and publication boundary.
+- [ ] Release zip smoke test extracts the zip and passes unit tests, local SPL proof, Splunk app validation, claim boundary validation, and URL validation.
+- [ ] Splunk app candidate validates and includes dashboard XML plus saved searches.
+- [ ] Splunk app `.spl` package exists at `dist/agentops-control-tower-splunk-app.spl` and package manifest shows no install/upload/publish action.
+- [ ] Local SPL query result HTML shows high-risk events, human approval queue, MCP remediation ledger, and external action guardrail sections.
+- [ ] `assets/dashboard_preview.png` exists and contains no private data.
+- [ ] `submission/SPL_QUERIES.md` matches the current analysis output.
+- [ ] `reports/latest_local_spl_query_results.html` matches the current CSV output.
+- [ ] `reports/latest_mcp_investigation.md` cites event IDs and evidence refs.
+- [ ] `submission/JUDGING_ALIGNMENT.md` maps the project to the current judging criteria.
+- [ ] `submission/OFFICIAL_REQUIREMENTS_AUDIT.md` still matches the current Devpost overview/rules.
+
+## Splunk Proof
+
+- [ ] `reports/latest_splunk_mcp_command_plan.html` reviewed before account/license/MCP decision.
+- [ ] `reports/latest_splunk_mcp_proof_brief.html` reviewed before live proof capture or claim upgrade.
+- [ ] `reports/latest_splunk_mcp_prompt_pack.html` reviewed before live MCP prompt execution.
+- [ ] Splunk account / trial / license approved by user.
+- [ ] `data/splunk_agentops_events.csv` imported into `agentops_events`.
+- [ ] High-risk events SPL query verified.
+- [ ] Human approval queue SPL query verified.
+- [ ] MCP Remediation Ledger SPL query verified.
+- [ ] Splunk MCP Server configured with approved scope.
+- [ ] MCP-assisted answer cites event IDs and evidence refs.
+
+## Public Repo
+
+- [ ] `reports/latest_external_approval_packet.html` reviewed before publication decision.
+- [ ] `reports/latest_video_command_plan.html` reviewed before recording/upload decision.
+- [ ] `reports/latest_publication_command_plan.html` reviewed before publication decision.
+- [ ] `reports/latest_public_repo_metadata.html` reviewed before publication decision.
+- [ ] `reports/latest_public_repo_publication_preflight.html` reviewed before publication decision.
+- [ ] `python scripts/build_public_repo_candidate.py`
+- [ ] Candidate generated at `public_repo_candidate/agentops-control-tower`.
+- [ ] Candidate tests pass.
+- [ ] Candidate internal path scan passes.
+- [ ] Candidate secret-like string scan passes.
+- [ ] Candidate includes `reports/latest_demo_tour.html`.
+- [ ] Candidate includes `reports/latest_video_readiness.html`.
+- [ ] Candidate includes `submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md`.
+- [ ] Candidate includes `reports/latest_video_command_plan.html`.
+- [ ] Candidate includes `reports/latest_video_cue_sheet.html`.
+- [ ] Candidate includes `reports/latest_video_upload_metadata.html`.
+- [ ] Candidate includes `submission/VIDEO_UPLOAD_METADATA.md`.
+- [ ] Candidate includes `reports/latest_claim_evidence_matrix.html`.
+- [ ] Candidate includes `reports/latest_splunk_mcp_command_plan.html`.
+- [ ] Candidate includes `reports/latest_splunk_mcp_proof_brief.html`.
+- [ ] Candidate includes `reports/latest_splunk_mcp_prompt_pack.html`.
+- [ ] Candidate includes `submission/SPLUNK_MCP_PROMPT_PACK.md`.
+- [ ] Candidate includes `reports/latest_splunk_mcp_proof_capture_manifest.html`.
+- [ ] Candidate includes `submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md`.
+- [ ] Candidate includes `reports/latest_public_repo_metadata.html`.
+- [ ] Candidate includes `submission/PUBLIC_REPO_METADATA.md`.
+- [ ] Candidate includes `reports/latest_public_repo_publish_brief.html`.
+- [ ] Candidate includes `reports/latest_public_repo_publication_preflight.html`.
+- [ ] Candidate includes `reports/latest_public_launch_snapshot.html`.
+- [ ] Candidate includes `reports/latest_submission_gate_ledger.html`.
+- [ ] Candidate includes `reports/latest_submission_deadline_burndown.html`.
+- [ ] Candidate includes `submission/SUBMISSION_DEADLINE_BURNDOWN.md`.
+- [ ] Candidate includes `reports/latest_submission_review_index.html`.
+- [ ] Candidate includes `reports/latest_judge_quickstart.html`.
+- [ ] Candidate includes `reports/latest_judge_scorecard.html`.
+- [ ] Candidate includes `reports/latest_launch_decision_brief.html`.
+- [ ] Candidate includes `reports/latest_next_approval_packet.html`.
+- [ ] Candidate includes `reports/latest_approval_consistency_audit.html`.
+- [ ] Candidate includes `reports/latest_status_conflict_audit.html`.
+- [ ] Candidate includes `reports/latest_content_rights_audit.html`.
+- [ ] Candidate includes `reports/latest_eligibility_compliance_audit.html`.
+- [ ] Candidate includes `submission/HUMAN_CONFIRMATION_CHECKLIST.md`.
+- [ ] Candidate includes `reports/latest_devpost_submission_packet.html`.
+- [ ] Candidate includes `reports/latest_devpost_final_copy.html`.
+- [ ] Candidate includes `reports/latest_devpost_final_copy.md`.
+- [ ] Candidate includes `reports/latest_devpost_submit_command_plan.html`.
+- [ ] Candidate includes `reports/latest_devpost_manual_fill_brief.html`.
+- [ ] Candidate includes `submission/DEVPOST_FINAL_REVIEW_CHECKLIST.md`.
+- [ ] Candidate includes `reports/latest_post_action_evidence_brief.html`.
+- [ ] Candidate includes `reports/latest_official_source_freshness.html`.
+- [ ] Candidate includes `reports/latest_release_integrity_manifest.html`.
+- [ ] Candidate includes `submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md`.
+- [ ] Candidate includes `reports/latest_submission_url_validation.html`.
+- [ ] Candidate includes `reports/latest_claim_boundary_validation.html`.
+- [ ] Candidate includes `reports/latest_final_go_no_go.html`.
+- [ ] Candidate can generate `release/agentops-control-tower-public-candidate.zip`.
+- [ ] Root release zip smoke test report exists at `reports/latest_release_zip_smoke_test.html`.
+- [ ] Candidate includes `splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml`.
+- [ ] Candidate includes `dist/agentops-control-tower-splunk-app.spl`.
+- [ ] Candidate includes `reports/latest_splunk_app_package_manifest.html`.
+- [ ] Candidate includes `submission/DEVPOST_FIELD_MAP.md`.
+- [ ] Candidate includes `submission/JUDGING_ALIGNMENT.md`.
+- [ ] Candidate includes `submission/NEXT_APPROVAL_PACKET.md`.
+- [ ] Candidate includes `submission/USER_APPROVAL_GATES.md`.
+- [ ] Candidate includes `submission/OFFICIAL_REQUIREMENTS_AUDIT.md`.
+- [ ] Candidate includes `submission/SUBMISSION_LAUNCH_RUNBOOK.md`.
+- [ ] Candidate includes `submission/SUBMISSION_REVIEW_QA.md`.
+- [ ] `reports/latest_submission_validation.html` says local checks passed.
+- [ ] User approves public GitHub publication.
+- [ ] Public repo URL added to Devpost draft.
+- [ ] `python scripts/prepare_submission_urls.py --repository-url <url> --demo-video-url <url> --write-approved --approval-note "<approval>"` run only after explicit URL approval.
+
+## Video
+
+- [ ] Video script reviewed.
+- [ ] `reports/latest_video_readiness.html` reviewed.
+- [ ] `submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md` reviewed and checked against the final recording before upload approval.
+- [ ] `reports/latest_video_command_plan.html` reviewed.
+- [ ] Screen safety checklist completed.
+- [ ] Under-3-minute recording captured.
+- [ ] Public video upload approved by user.
+- [ ] Public video URL added to Devpost draft.
+
+## Devpost
+
+- [ ] `reports/latest_external_approval_packet.html` reviewed before final submission decision.
+- [ ] `reports/latest_next_approval_packet.html` reviewed before choosing any approval phrase.
+- [ ] `reports/latest_public_launch_snapshot.html` reviewed before public repo/video approval.
+- [ ] `reports/latest_approval_consistency_audit.html` reviewed to confirm no stale Splunk-first approval order remains.
+- [ ] `reports/latest_status_conflict_audit.html` reviewed to confirm no stale failed status remains.
+- [ ] `reports/latest_devpost_submit_command_plan.html` reviewed before final submission decision.
+- [ ] `reports/latest_post_action_evidence_brief.html` reviewed before final submission decision.
+- [ ] Devpost account/session approved by user.
+- [ ] Entrant confirms age/residence eligibility, no excluded role/conflict, team/representative authority if applicable, ownership/IP rights, English materials, and no prohibited sponsor/administrator support.
+- [ ] `submission/HUMAN_CONFIRMATION_CHECKLIST.md` reviewed and checked by the entrant before final submit approval.
+- [ ] Track selected: Platform & Developer Experience.
+- [ ] Bonus noted: Best Use of Splunk MCP Server if live MCP proof exists.
+- [ ] Project description copied from `submission/DEVPOST_SUBMISSION_DRAFT.md`.
+- [ ] Public repo URL added.
+- [ ] Public video URL added.
+- [ ] Architecture diagram included.
+- [ ] Final submit approved by user.
+- [ ] Post-action evidence log copied/filled after final submit readback without credentials, account screenshots, private paths, or secrets.
+
+## Go / No-Go
+
+Submit only if public repo, public video, and Devpost final action are explicitly approved by the user.

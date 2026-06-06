@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devpost Final Submission Command Plan</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Devpost Final Submission Command Plan</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Boundary</h2>
+      <p class="pending">This command plan is advisory only. It does not log in, save a draft, press submit, update Devpost, publish, upload, write URLs, or submit anything.</p>
+      <p>Explicit user approval is required before using a Devpost account/session, saving a Devpost draft, or pressing the final submit button.</p>
+      <p>Final submit ready: <span class="pending">False</span></p>
+      <p>Pending URLs: repository_url, demo_video_url</p>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_devpost_submission_packet.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_submission_packet.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_copy.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_copy.md</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_copy.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_submit_preflight.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_submit_preflight.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_validation.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_validation.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_apply_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_final_go_no_go.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_final_go_no_go.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_external_approval_packet.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_command_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_publication_command_plan.html</td><td class="ready">present</td></tr>
+<tr><td>submission/DEVPOST_FIELD_MAP.md</td><td class="ready">present</td></tr>
+<tr><td>submission/FINAL_SUBMISSION_CHECKLIST.md</td><td class="ready">present</td></tr>
+<tr><td>submission/OFFICIAL_REQUIREMENTS_AUDIT.md</td><td class="ready">present</td></tr>
+<tr><td>submission/SUBMISSION_LAUNCH_RUNBOOK.md</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Commands After Approval</h2>
+      <table>
+        <thead><tr><th>Step</th><th>Purpose</th><th>Command</th></tr></thead>
+        <tbody><tr><td>Refresh Devpost packet</td><td>Regenerate local Devpost field evidence before copying anything into Devpost.</td><td><code>python scripts\build_devpost_submission_packet.py</code></td></tr>
+<tr><td>Refresh final copy</td><td>Regenerate copy/paste text and character checks.</td><td><code>python scripts\export_devpost_final_copy.py</code></td></tr>
+<tr><td>Validate public URLs</td><td>Confirm repository and video URLs are either still pending or valid approved public URLs.</td><td><code>python scripts\validate_submission_urls.py</code></td></tr>
+<tr><td>Refresh Go/No-Go</td><td>Confirm whether the package is local-ready and whether final submit is still blocked by external gates.</td><td><code>python scripts\build_final_go_no_go_report.py</code></td></tr>
+<tr><td>Final local validation</td><td>Re-run the full local submission validator before touching the Devpost form.</td><td><code>python scripts\validate_submission_packet.py</code></td></tr>
+<tr><td>Open final review artifacts</td><td>Review fields, URL state, claim boundaries, and final gate before any Devpost session.</td><td><code>start reports\latest_devpost_final_copy.html &amp;&amp; start reports\latest_final_go_no_go.html &amp;&amp; start reports\latest_submission_url_validation.html</code></td></tr>
+<tr><td>Fill Devpost form after approval</td><td>Populate the form only after account/session use is approved.</td><td><code>manual: copy fields from reports\latest_devpost_final_copy.md into Devpost; select Platform &amp; Developer Experience; attach architecture_diagram.md; use only approved public repo/video URLs</code></td></tr>
+<tr><td>Pre-submit human review</td><td>Hold submission if pending URLs, unsafe Splunk MCP claims, wrong track, or missing architecture evidence remain.</td><td><code>manual: compare Devpost screen against submission\DEVPOST_FIELD_MAP.md and reports\latest_devpost_final_copy.md</code></td></tr>
+<tr><td>Final submit preflight gate</td><td>Require final_submit_ready, exact final approval phrase, and manual readback confirmations before the submit button is pressed.</td><td><code>python scripts\verify_devpost_final_submit_gate.py --final-approval-phrase &quot;Approve final Devpost submission for Agentic Incident Command Center.&quot; --field-map-readback-confirmed --human-confirmations-completed --video-screen-safety-confirmed --post-action-evidence-plan-reviewed</code></td></tr>
+<tr><td>Submit after explicit final approval</td><td>Complete the external submission only when the final approval gate is satisfied.</td><td><code>manual: press the Devpost submit button only after explicit final user approval</code></td></tr>
+<tr><td>Post-submit readback</td><td>Create a local audit trail after the external submit action has actually completed.</td><td><code>manual: capture the Devpost submitted URL/status and save local evidence after submission</code></td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

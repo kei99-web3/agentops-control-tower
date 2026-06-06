@@ -1,0 +1,196 @@
+{
+  "generated_at_utc": "2026-06-06T12:29:18+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "final_submit_ready": false,
+  "pending_gates": [
+    "public_github_repository",
+    "public_demo_video",
+    "optional_live_splunk_mcp_proof",
+    "approved_url_writeback",
+    "devpost_final_submission"
+  ],
+  "missing_evidence": [],
+  "gates": [
+    {
+      "key": "public_github_repository",
+      "title": "Public GitHub Repository",
+      "status": "ready_for_user_decision",
+      "approval_required": "Explicit approval is required before creating a public repository or pushing files.",
+      "next_safe_action": "Review the publication command plan and hold until the public repository decision is explicit.",
+      "verification": "After approval, confirm the public URL opens, then rerun URL validation and the submission packet validator.",
+      "evidence": [
+        {
+          "path": "PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_external_approval_packet.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_publication_command_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_submission_url_apply_plan.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "public_demo_video",
+      "title": "Public Demo Video",
+      "status": "ready_for_user_decision",
+      "approval_required": "Explicit approval is required before recording, uploading, or making the video public.",
+      "next_safe_action": "Review the video readiness report and command plan, then record only after the screen safety check is complete.",
+      "verification": "Confirm the uploaded video is public, under 3 minutes, and does not expose private screens or overclaim live Splunk MCP proof.",
+      "evidence": [
+        {
+          "path": "reports/latest_demo_tour.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_video_readiness.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_video_command_plan.html",
+          "exists": true
+        },
+        {
+          "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "optional_live_splunk_mcp_proof",
+      "title": "Optional Live Splunk / MCP Proof",
+      "status": "optional_user_decision",
+      "approval_required": "Explicit approval is required before Splunk account/license use, credential setup, data import, app install, MCP setup, or proof capture.",
+      "next_safe_action": "Use the Splunk MCP command plan, prompt pack, and proof capture manifest if the optional bonus proof is approved.",
+      "verification": "Capture live SPL and MCP evidence, then rerun claim-boundary validation before strengthening any bonus wording.",
+      "evidence": [
+        {
+          "path": "reports/latest_splunk_mcp_command_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_prompt_pack.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_capture_manifest.html",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_RUNBOOK.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_PROMPT_PACK.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SPL_QUERIES.md",
+          "exists": true
+        },
+        {
+          "path": "data/splunk_agentops_events.csv",
+          "exists": true
+        },
+        {
+          "path": "splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "approved_url_writeback",
+      "title": "Approved URL Writeback",
+      "status": "blocked_until_public_urls",
+      "approval_required": "Explicit approval is required before writing verified public URLs into local submission artifacts.",
+      "next_safe_action": "Wait until the public repository and demo video URLs are real, public, and read back.",
+      "verification": "Run prepare_submission_urls.py with both approved URLs, then rerun URL validation and final copy export.",
+      "evidence": [
+        {
+          "path": "reports/latest_submission_url_validation.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_submission_url_apply_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_devpost_final_copy.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_final_go_no_go.html",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "devpost_final_submission",
+      "title": "Devpost Final Submission",
+      "status": "blocked_until_public_urls",
+      "approval_required": "Explicit final approval is required before using a Devpost session, saving a draft, or pressing submit.",
+      "next_safe_action": "Wait for public repo and video URLs, write approved URL evidence only after approval, then review final copy.",
+      "verification": "Confirm approved public URLs, safe claim wording, selected track, architecture evidence, and final submit readback.",
+      "evidence": [
+        {
+          "path": "reports/latest_devpost_final_copy.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_devpost_submit_command_plan.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_devpost_manual_fill_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_post_action_evidence_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_submission_url_validation.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_final_go_no_go.html",
+          "exists": true
+        },
+        {
+          "path": "submission/DEVPOST_FIELD_MAP.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SUBMISSION_LAUNCH_RUNBOOK.md",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "recommended_order": [
+    "Review this Submission Gate Ledger and the External Approval Packet.",
+    "Approve or hold public GitHub publication.",
+    "Approve or hold public demo video recording/upload.",
+    "Optionally approve live Splunk/MCP proof if the bonus path is worth the account and credential work.",
+    "After public URLs are approved, write approved URL evidence locally and rerun validation.",
+    "Only then request final Devpost submit approval."
+  ],
+  "non_action_boundary": "This ledger is advisory only. It does not create a repo, upload a video, create accounts, configure credentials, write approved URLs, update Devpost, or submit anything."
+}

@@ -1,0 +1,156 @@
+{
+  "generated_at_utc": "2026-06-06T12:29:33+00:00",
+  "status": "ready_for_recording_review",
+  "root_type": "public_candidate",
+  "candidate_source": ".",
+  "stage_policy": "system_temp_public_candidate_copy",
+  "stage_created": true,
+  "stage_removed_after_run": true,
+  "stage_path": "<system-temp>/agentops-video-preview-*/agentops-control-tower",
+  "preview_url": "http://127.0.0.1:8765/reports/latest_demo_tour.html",
+  "server_command_template": "python -m http.server 8765 --bind 127.0.0.1 --directory <recording-stage>",
+  "screen_scan_files": [
+    {
+      "path": "reports/latest_demo_tour.html",
+      "exists": true,
+      "status": "scanned"
+    },
+    {
+      "path": "reports/latest_control_tower.html",
+      "exists": true,
+      "status": "scanned"
+    },
+    {
+      "path": "reports/latest_local_spl_query_results.html",
+      "exists": true,
+      "status": "scanned"
+    },
+    {
+      "path": "reports/latest_video_cue_sheet.md",
+      "exists": true,
+      "status": "scanned"
+    },
+    {
+      "path": "submission/DEMO_VIDEO_SCRIPT.md",
+      "exists": true,
+      "status": "scanned"
+    },
+    {
+      "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+      "exists": true,
+      "status": "scanned"
+    },
+    {
+      "path": "submission/SPL_QUERIES.md",
+      "exists": true,
+      "status": "scanned"
+    }
+  ],
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "candidate source exists",
+      "status": "pass",
+      "detail": "<local-path>"
+    },
+    {
+      "name": "candidate source is public candidate",
+      "status": "pass",
+      "detail": "<local-path>"
+    },
+    {
+      "name": "stage root under system temp",
+      "status": "pass",
+      "detail": "<local-path>"
+    },
+    {
+      "name": "stage root outside private workspace",
+      "status": "pass",
+      "detail": "<local-path>"
+    },
+    {
+      "name": "recording stage isolated",
+      "status": "pass",
+      "detail": "<local-path>"
+    },
+    {
+      "name": "recording required files",
+      "status": "pass",
+      "detail": "all required files present"
+    },
+    {
+      "name": "video readiness status",
+      "status": "pass",
+      "detail": "ready_for_recording_review"
+    },
+    {
+      "name": "video cue status",
+      "status": "pass",
+      "detail": "ready_for_recording_review"
+    },
+    {
+      "name": "video duration under three minutes",
+      "status": "pass",
+      "detail": "cue=180 readiness=180"
+    },
+    {
+      "name": "approved URL writeback absent",
+      "status": "pass",
+      "detail": "approved_public_urls.json absent"
+    },
+    {
+      "name": "submission URLs still pending",
+      "status": "pass",
+      "detail": "repository_url, demo_video_url"
+    },
+    {
+      "name": "recording screen internal path scan",
+      "status": "pass",
+      "detail": "no internal paths"
+    },
+    {
+      "name": "recording screen secret-like scan",
+      "status": "pass",
+      "detail": "no secret-like strings"
+    }
+  ],
+  "boundary": "This recording preview is local preparation only. It copies the reviewed public candidate to an isolated temporary folder, scans the recording files, and provides a localhost preview command template without recording video, uploading video, publishing files, writing approved URLs, updating Devpost, or submitting anything.",
+  "external_actions_attempted": false,
+  "external_actions_completed": false,
+  "next_required_external_approval": "public_demo_video",
+  "public_video_safe_readback": {
+    "action_key": "public_demo_video",
+    "status": "ready_for_recording_review",
+    "evidence_note_target": "submission/post_action_evidence/YYYY-MM-DD_public_demo_video_readback.md",
+    "screen_safety_checklist": "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+    "preview_url": "http://127.0.0.1:8765/reports/latest_demo_tour.html",
+    "stage_policy": "system_temp_public_candidate_copy",
+    "stage_removed_after_run": true,
+    "duration_seconds": 180,
+    "screen_scan": {
+      "scanned_count": 7,
+      "missing_count": 0,
+      "internal_path_hit_count": 0,
+      "secret_like_hit_count": 0
+    },
+    "ready_for_recording_review": true,
+    "final_recording_review_required": true,
+    "ready_for_public_upload": false,
+    "external_actions_attempted": false,
+    "external_actions_completed": false,
+    "forbidden_content": [
+      "credentials",
+      "tokens",
+      "account screenshots",
+      "browser tabs",
+      "billing pages",
+      "OAuth screens",
+      "local absolute paths",
+      "private workspace material",
+      "private logs",
+      "customer data"
+    ],
+    "copy_policy": "Use this public_video_safe_readback block plus a short manual final-recording review summary for post-action evidence. Do not copy raw recording output, account screenshots, browser tabs, credentials, tokens, or local absolute paths.",
+    "next_required_external_approval": "public_demo_video"
+  }
+}
