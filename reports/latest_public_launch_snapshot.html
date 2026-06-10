@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Launch Snapshot</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public Launch Snapshot</h1>
+    <p>Status: <span class="fail">needs_more_evidence</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Snapshot</h2>
+      <table><tbody><tr><th>Root type</th><td>workspace</td></tr>
+<tr><th>Validation status</th><td>needs_more_evidence</td></tr>
+<tr><th>Validation failed count</th><td>29</td></tr>
+<tr><th>Next approval target</th><td>approved_url_writeback</td></tr>
+<tr><th>Ready now</th><td>approved_url_writeback, devpost_final_submission</td></tr>
+<tr><th>Final submit ready</th><td>True</td></tr>
+<tr><th>Approved public URLs file</th><td>True</td></tr>
+<tr><th>Pending URLs</th><td>none</td></tr>
+<tr><th>Post-action evidence ready</th><td>True</td></tr></tbody></table>
+      <p class="pending">Review this snapshot, then use reports/latest_next_approval_packet.html before any public repo or demo video approval.</p>
+      <p class="pending">This public launch snapshot is local approval evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or mark the submission complete.</p>
+    </section>
+    <section>
+      <h2>Approval Phrases</h2>
+      <table><thead><tr><th>Gate</th><th>Phrase</th></tr></thead><tbody><tr><td>public_github_repository</td><td><code>Approve public GitHub publication for the clean agentops-control-tower candidate.</code></td></tr>
+<tr><td>public_demo_video</td><td><code>Approve recording and public upload of the Agentic Incident Command Center demo video.</code></td></tr>
+<tr><td>approved_url_writeback</td><td><code>Approve writing the verified public repository and demo video URLs into local submission artifacts.</code></td></tr>
+<tr><td>devpost_final_submission</td><td><code>Approve final Devpost submission for Agentic Incident Command Center.</code></td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Release ZIP</h2>
+      <table><tbody><tr><th>Path</th><td>release/agentops-control-tower-public-candidate.zip</td></tr>
+<tr><th>Exists</th><td>True</td></tr>
+<tr><th>File count</th><td>250</td></tr>
+<tr><th>Size bytes</th><td>803352</td></tr>
+<tr><th>SHA256</th><td>769db8778a993757aed1600062dde25a9daff8280ede4097aaf8554c5cea0ea9</td></tr>
+<tr><th>Smoke status</th><td>fail</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table><thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead><tbody><tr><td>required evidence present</td><td class="ready">pass</td><td>all required evidence present</td></tr>
+<tr><td>next approval target is public repo</td><td class="fail">fail</td><td>approved_url_writeback</td></tr>
+<tr><td>public repo and video are ready now</td><td class="fail">fail</td><td>approved_url_writeback, devpost_final_submission</td></tr>
+<tr><td>public repo approval ready</td><td class="fail">fail</td><td>False</td></tr>
+<tr><td>public repo publication preflight ready and blocked</td><td class="fail">fail</td><td>status=needs_more_evidence allowed=False gate=needs_more_evidence</td></tr>
+<tr><td>video recording review ready</td><td class="ready">pass</td><td>ready_for_recording_review</td></tr>
+<tr><td>public video upload preflight ready and blocked</td><td class="fail">fail</td><td>status=needs_more_evidence allowed=False gate=needs_more_evidence</td></tr>
+<tr><td>video cue under three minutes</td><td class="ready">pass</td><td>180</td></tr>
+<tr><td>video dry run ready</td><td class="fail">fail</td><td>status=needs_more_evidence failed=4</td></tr>
+<tr><td>URL writeback dry run ready</td><td class="fail">fail</td><td>status=needs_more_evidence failed=3 wrote=True</td></tr>
+<tr><td>approval order matches expected</td><td class="fail">fail</td><td>public_github_repository, public_demo_video, approved_url_writeback, devpost_final_submission</td></tr>
+<tr><td>official Splunk MCP proof completed</td><td class="ready">pass</td><td>submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md</td></tr>
+<tr><td>release ZIP exists</td><td class="ready">pass</td><td>True</td></tr>
+<tr><td>release ZIP smoke passed</td><td class="fail">fail</td><td>fail</td></tr>
+<tr><td>release ZIP SHA256 present</td><td class="ready">pass</td><td>769db8778a993757aed1600062dde25a9daff8280ede4097aaf8554c5cea0ea9</td></tr>
+<tr><td>approved public URLs not written</td><td class="fail">fail</td><td>True</td></tr>
+<tr><td>final submit remains false</td><td class="fail">fail</td><td>True</td></tr>
+<tr><td>content rights ready</td><td class="ready">pass</td><td>ready_for_user_review</td></tr>
+<tr><td>post-action evidence remains incomplete before externals</td><td class="fail">fail</td><td>True</td></tr>
+<tr><td>no external action boundary</td><td class="ready">pass</td><td>This public launch snapshot is local approval evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or mark the submission complete.</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table><thead><tr><th>Path</th><th>Status</th><th>Role</th></tr></thead><tbody><tr><td><code>public_repo_candidate/agentops-control-tower/PUBLIC_REPO_CANDIDATE_MANIFEST.md</code></td><td class="ready">present</td><td>clean public candidate folder boundary</td></tr>
+<tr><td><code>reports/latest_release_zip_smoke_test.html</code></td><td class="ready">present</td><td>extract-and-test proof for the release ZIP</td></tr>
+<tr><td><code>reports/latest_public_candidate_zip_manifest.html</code></td><td class="ready">present</td><td>release ZIP file list</td></tr>
+<tr><td><code>release/agentops-control-tower-public-candidate.zip</code></td><td class="ready">present</td><td>local release ZIP for user review</td></tr>
+<tr><td><code>reports/latest_public_repo_dry_run.html</code></td><td class="ready">present</td><td>isolated TEMP staging git-init/commit rehearsal for the clean public candidate</td></tr>
+<tr><td><code>reports/latest_video_dry_run.html</code></td><td class="ready">present</td><td>local recording rehearsal and screen-safety scan</td></tr>
+<tr><td><code>reports/latest_url_writeback_dry_run.html</code></td><td class="ready">present</td><td>temporary-copy rehearsal for approved URL writeback</td></tr>
+<tr><td><code>reports/latest_next_approval_packet.html</code></td><td class="ready">present</td><td>copy-paste approval phrases and human confirmations</td></tr>
+<tr><td><code>reports/latest_public_repo_publish_brief.html</code></td><td class="ready">present</td><td>public repo approval boundary and ZIP evidence</td></tr>
+<tr><td><code>reports/latest_public_repo_publication_preflight.html</code></td><td class="ready">present</td><td>public repo approval phrase and manual publication gate</td></tr>
+<tr><td><code>reports/latest_video_readiness.html</code></td><td class="ready">present</td><td>screen-safe recording readiness</td></tr>
+<tr><td><code>reports/latest_video_command_plan.html</code></td><td class="ready">present</td><td>post-approval recording/upload plan</td></tr>
+<tr><td><code>reports/latest_public_video_upload_preflight.html</code></td><td class="ready">present</td><td>public video approval phrase and manual confirmation gate</td></tr>
+<tr><td><code>reports/latest_video_cue_sheet.html</code></td><td class="ready">present</td><td>under-3-minute scene timing</td></tr>
+<tr><td><code>reports/latest_approval_consistency_audit.html</code></td><td class="ready">present</td><td>approval order consistency</td></tr>
+<tr><td><code>reports/latest_release_integrity_manifest.html</code></td><td class="ready">present</td><td>artifact hashes and no-publish boundary</td></tr>
+<tr><td><code>reports/latest_content_rights_audit.html</code></td><td class="ready">present</td><td>license, media, and screen safety</td></tr>
+<tr><td><code>reports/latest_submission_url_validation.html</code></td><td class="ready">present</td><td>pending public URL gates</td></tr>
+<tr><td><code>reports/latest_post_action_evidence_brief.html</code></td><td class="ready">present</td><td>readback plan after approved external actions</td></tr>
+<tr><td><code>submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md</code></td><td class="ready">present</td><td>local evidence log template</td></tr></tbody></table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "generated_at_utc": "2026-06-10T02:36:50+00:00",
+  "status": "ready_for_user_review",
+  "package": "dist/agentops-control-tower-splunk-app.spl",
+  "package_exists": true,
+  "package_size_bytes": 2409,
+  "sha256": "fdad475534452d6175dcb69d77e4a5ef9effb5c8aac94d0dbfcf864387db9e4f",
+  "member_count": 7,
+  "members": [
+    "agentops_control_tower/README.md",
+    "agentops_control_tower/default/app.conf",
+    "agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+    "agentops_control_tower/default/indexes.conf",
+    "agentops_control_tower/default/props.conf",
+    "agentops_control_tower/default/savedsearches.conf",
+    "agentops_control_tower/metadata/default.meta"
+  ],
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "Splunk app source files",
+      "status": "pass",
+      "detail": "7 source files present"
+    },
+    {
+      "name": "Splunk app package size",
+      "status": "pass",
+      "detail": "bytes=2409"
+    },
+    {
+      "name": "Splunk app package path traversal guard",
+      "status": "pass",
+      "detail": "no unsafe member names"
+    },
+    {
+      "name": "Splunk app package root folder",
+      "status": "pass",
+      "detail": "agentops_control_tower"
+    },
+    {
+      "name": "Splunk app package required members",
+      "status": "pass",
+      "detail": "7 required members present"
+    },
+    {
+      "name": "Splunk app package member count",
+      "status": "pass",
+      "detail": "members=7 expected=7"
+    },
+    {
+      "name": "Splunk app internal path scan",
+      "status": "pass",
+      "detail": "no internal patterns"
+    },
+    {
+      "name": "Splunk app secret-like scan",
+      "status": "pass",
+      "detail": "no secret-like patterns"
+    },
+    {
+      "name": "packaged app label",
+      "status": "pass",
+      "detail": "ui.label checked"
+    },
+    {
+      "name": "packaged app id",
+      "status": "pass",
+      "detail": "package.id checked"
+    },
+    {
+      "name": "packaged dashboard XML parses",
+      "status": "pass",
+      "detail": "root=form"
+    }
+  ],
+  "boundary": "This local package is not installed, uploaded, published, connected to Splunk, or submitted anywhere."
+}

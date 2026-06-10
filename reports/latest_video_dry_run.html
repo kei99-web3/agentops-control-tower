@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Video Dry Run</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Demo Video Dry Run</h1>
+    <p>Local-only recording rehearsal and screen safety scan.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <table>
+        <tbody>
+          <tr><th>Status</th><td class="fail">needs_more_evidence</td></tr>
+          <tr><th>Duration</th><td>180 seconds</td></tr>
+          <tr><th>Scenes</th><td>6</td></tr>
+          <tr><th>Final public video ready</th><td>False</td></tr>
+          <tr><th>Approved public URLs</th><td>True</td></tr>
+        </tbody>
+      </table>
+      <p class="pending">This video dry run is local recording rehearsal only. It checks the prepared demo script, cue sheet, evidence files, screen-safety guardrails, and text scans without recording video, uploading video, publishing files, writing approved URLs, updating Devpost, or submitting anything.</p>
+    </section>
+    <section>
+      <h2>Dry Run Actions</h2>
+      <ul><li>read video readiness report</li>
+<li>read video cue sheet and validate timeline</li>
+<li>read recording runbook and screen-safety guardrails</li>
+<li>scan planned recording files for internal paths and secret-like strings</li>
+<li>verify public URL and final submit gates remain closed</li></ul>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>video readiness status</td><td class="ready">pass</td><td>ready_for_recording_review</td></tr>
+<tr><td>video readiness failed count</td><td class="ready">pass</td><td>0</td></tr>
+<tr><td>video readiness duration</td><td class="ready">pass</td><td>180</td></tr>
+<tr><td>video readiness final gate</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>video cue status</td><td class="ready">pass</td><td>ready_for_recording_review</td></tr>
+<tr><td>video cue missing evidence</td><td class="ready">pass</td><td>[]</td></tr>
+<tr><td>video cue duration</td><td class="ready">pass</td><td>180</td></tr>
+<tr><td>video cue final gate</td><td class="ready">pass</td><td>False</td></tr>
+<tr><td>video command plan artifact</td><td class="ready">pass</td><td>ready_for_user_review</td></tr>
+<tr><td>content rights status</td><td class="ready">pass</td><td>ready_for_user_review</td></tr>
+<tr><td>recording evidence files</td><td class="ready">pass</td><td>all required evidence present</td></tr>
+<tr><td>video dry run scene count</td><td class="ready">pass</td><td>6</td></tr>
+<tr><td>video dry run duration</td><td class="ready">pass</td><td>end=180s</td></tr>
+<tr><td>video dry run positive scene durations</td><td class="ready">pass</td><td>all scenes positive</td></tr>
+<tr><td>video dry run timeline continuity</td><td class="ready">pass</td><td>continuous from 0:00</td></tr>
+<tr><td>video dry run required beats</td><td class="ready">pass</td><td>all required beats present</td></tr>
+<tr><td>video dry run scene fields</td><td class="ready">pass</td><td>screen, narration, and guardrail present for each scene</td></tr>
+<tr><td>video dry run screen safety terms</td><td class="ready">pass</td><td>screen safety terms present</td></tr>
+<tr><td>video dry run boundary</td><td class="ready">pass</td><td>This video dry run is local recording rehearsal only. It checks the prepared demo script, cue sheet, evidence files, screen-safety guardrails, and text scans without recording video, uploading video, publishing files, writing approved URLs, updating Devpost, or submitting anything.</td></tr>
+<tr><td>video dry run live-claim boundary</td><td class="ready">pass</td><td>no unsafe live-claim narration</td></tr>
+<tr><td>video dry run Splunk MCP positioning</td><td class="ready">pass</td><td>designed-for wording present</td></tr>
+<tr><td>video dry run internal path scan</td><td class="ready">pass</td><td>no internal paths</td></tr>
+<tr><td>video dry run secret-like scan</td><td class="ready">pass</td><td>no secret-like strings</td></tr>
+<tr><td>video dry run approved URLs absent</td><td class="fail">fail</td><td>approved_public_urls.json exists</td></tr>
+<tr><td>video dry run URL gate closed</td><td class="fail">fail</td><td>True</td></tr>
+<tr><td>video dry run repo and video URLs pending</td><td class="fail">fail</td><td></td></tr>
+<tr><td>video dry run Go/No-Go final gate</td><td class="fail">fail</td><td>True</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Recording Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_demo_tour.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_control_tower.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_video_readiness.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_video_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_video_cue_sheet.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_content_rights_audit.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/DEMO_VIDEO_SCRIPT.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/VIDEO_RECORDING_RUNBOOK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPL_QUERIES.md</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>External Gates Still Pending</h2>
+      <ul><li>screen recording capture</li>
+<li>public video upload approval</li>
+<li>public video URL insertion</li></ul>
+    </section>
+  </main>
+</body>
+</html>

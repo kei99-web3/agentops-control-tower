@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Status Conflict Audit</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Status Conflict Audit</h1>
+    <p>Status: <span class="fail">needs_more_evidence</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Snapshot</h2>
+      <table><tbody><tr><th>Root type</th><td>workspace</td></tr>
+<tr><th>JSON files scanned</th><td>104</td></tr>
+<tr><th>Conflict count</th><td>171</td></tr>
+<tr><th>Critical check failed count</th><td>24</td></tr>
+<tr><th>Failed count</th><td>195</td></tr></tbody></table>
+      <p class="pending">Use this report as a final local sanity check before approving public repo, public video, URL writeback, or Devpost final submission.</p>
+      <p class="pending">This status conflict audit is local readback evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Scan Scopes</h2>
+      <table>
+        <thead><tr><th>Scope</th><th>JSON reports</th><th>Directory</th></tr></thead>
+        <tbody><tr><td>workspace</td><td>56</td><td>reports</td></tr>
+<tr><td>public_candidate</td><td>48</td><td>reports</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Conflicts</h2>
+      <table>
+        <thead><tr><th>Scope</th><th>Report</th><th>Field</th><th>Value</th><th>Reason</th></tr></thead>
+        <tbody><tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>failed_count</code></td><td><code>6</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[0].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[1].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[4].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[9].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[15].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[16].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_claim_evidence_matrix.json</code></td><td><code>validation_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_claim_evidence_matrix.json</code></td><td><code>validation_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_devpost_copy_audit.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_devpost_copy_audit.json</code></td><td><code>checks[2].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_eligibility_compliance_audit.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_eligibility_compliance_audit.json</code></td><td><code>failed_count</code></td><td><code>1</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_eligibility_compliance_audit.json</code></td><td><code>checks[1].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_external_approval_packet.json</code></td><td><code>local_submission_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>local_submission_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>validation_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>release_integrity_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>eligibility_compliance_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>approval_consistency_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_scorecard.json</code></td><td><code>local_submission_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_judge_scorecard.json</code></td><td><code>validation_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_next_approval_packet.json</code></td><td><code>eligibility_compliance_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_next_approval_packet.json</code></td><td><code>local_submission_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_next_approval_packet.json</code></td><td><code>local_submission_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_artifact_url_readback.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_artifact_url_readback.json</code></td><td><code>failed_count</code></td><td><code>1</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_artifact_url_readback.json</code></td><td><code>checks[4].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_artifact_url_readback.json</code></td><td><code>public_safe_readback.status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_artifact_url_readback.json</code></td><td><code>public_safe_readback.failed_count</code></td><td><code>1</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>validation_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>validation_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>release_zip.smoke_status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_repo.publication_preflight_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_repo.publication_preflight_gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_video.upload_preflight_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_video.upload_preflight_gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_video.dry_run_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>url_writeback_dry_run.status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>url_writeback_dry_run.failed_count</code></td><td><code>3</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>failed_count</code></td><td><code>12</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[1].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[2].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[3].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[4].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[6].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[8].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[9].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[10].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[13].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[15].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[16].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[18].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>failed_count</code></td><td><code>4</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[7].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[8].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[9].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[10].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_publication_preflight.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_publication_preflight.json</code></td><td><code>gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_publication_preflight.json</code></td><td><code>public_repo_publication_safe_readback.gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_repo_publish_brief.json</code></td><td><code>zip.smoke_status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_video_upload_preflight.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_video_upload_preflight.json</code></td><td><code>gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_public_video_upload_preflight.json</code></td><td><code>public_video_upload_safe_readback.gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>validation_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>validation_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>release_zip.smoke_status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>failed_count</code></td><td><code>7</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[6].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[8].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[9].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[10].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[12].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[13].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_integrity_manifest.json</code></td><td><code>checks[14].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>failed_count</code></td><td><code>6</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>checks[5].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>checks[9].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>checks[12].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>checks[22].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>checks[34].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_release_zip_smoke_test.json</code></td><td><code>checks[36].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_deadline_burndown.json</code></td><td><code>local_submission_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_deadline_burndown.json</code></td><td><code>failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>local_submission_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>validation_failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>release_zip_status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>release_integrity_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>eligibility_compliance_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>approval_consistency_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>overall_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>failed_count</code></td><td><code>29</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[189].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[190].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[195].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[202].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[207].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[208].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[233].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[241].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[242].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[334].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[548].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[549].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[554].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[561].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[566].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[567].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[592].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[600].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[601].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[982].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[983].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[988].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[995].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[1000].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[1001].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[1026].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[1034].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[1035].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_submission_validation.json</code></td><td><code>checks[1166].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_url_writeback_dry_run.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_url_writeback_dry_run.json</code></td><td><code>failed_count</code></td><td><code>3</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_url_writeback_dry_run.json</code></td><td><code>checks[0].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_url_writeback_dry_run.json</code></td><td><code>checks[2].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_url_writeback_dry_run.json</code></td><td><code>checks[23].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_user_approval_brief_ja.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_user_approval_brief_ja.json</code></td><td><code>failed_count</code></td><td><code>12</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_user_approval_brief_ja.json</code></td><td><code>release_zip.smoke_status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_dry_run.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_dry_run.json</code></td><td><code>failed_count</code></td><td><code>4</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_dry_run.json</code></td><td><code>checks[23].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_dry_run.json</code></td><td><code>checks[24].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_dry_run.json</code></td><td><code>checks[25].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_dry_run.json</code></td><td><code>checks[26].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_recording_preview.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_recording_preview.json</code></td><td><code>failed_count</code></td><td><code>1</code></td><td>nonzero failed count</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_recording_preview.json</code></td><td><code>checks[10].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>workspace</td><td><code>reports/latest_video_recording_preview.json</code></td><td><code>public_video_safe_readback.status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>failed_count</code></td><td><code>3</code></td><td>nonzero failed count</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[0].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[1].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_approval_consistency_audit.json</code></td><td><code>checks[15].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>release_integrity_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>eligibility_compliance_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_judge_quickstart.json</code></td><td><code>approval_consistency_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_repo.publication_preflight_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>public_repo.publication_preflight_gate_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>failed_count</code></td><td><code>5</code></td><td>nonzero failed count</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[1].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[2].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[3].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[4].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_launch_snapshot.json</code></td><td><code>checks[10].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>failed_count</code></td><td><code>4</code></td><td>nonzero failed count</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[7].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[8].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[9].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_public_repo_dry_run.json</code></td><td><code>checks[10].status</code></td><td><code>fail</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>release_integrity_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>eligibility_compliance_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr>
+<tr><td>public_candidate</td><td><code>reports/latest_submission_review_index.json</code></td><td><code>approval_consistency_status</code></td><td><code>needs_more_evidence</code></td><td>concerning status value</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Resolved Stale Validator Reports</h2>
+      <table>
+        <thead><tr><th>Scope</th><th>Report</th><th>Resolved By</th></tr></thead>
+        <tbody><tr><td colspan="3">none</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Critical Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Evidence</th><th>Expected</th></tr></thead>
+        <tbody><tr><td>workspace full validator status</td><td class="fail">fail</td><td>reports/latest_submission_validation.json:overall_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace full validator failed count</td><td class="fail">fail</td><td>reports/latest_submission_validation.json:failed_count=29</td><td>0</td></tr>
+<tr><td>workspace final submit stays gated</td><td class="ready">pass</td><td>reports/latest_submission_validation.json:final_submit_ready=False</td><td>False</td></tr>
+<tr><td>workspace final Go/No-Go status</td><td class="fail">fail</td><td>reports/latest_final_go_no_go.json:status=&#x27;ready_to_submit_after_user_approval&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace final Go/No-Go final submit gate</td><td class="fail">fail</td><td>reports/latest_final_go_no_go.json:final_submit_ready=True</td><td>False</td></tr>
+<tr><td>workspace release integrity status</td><td class="fail">fail</td><td>reports/latest_release_integrity_manifest.json:status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace release validation snapshot</td><td class="fail">fail</td><td>reports/latest_release_integrity_manifest.json:validation_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace release validation failed count</td><td class="fail">fail</td><td>reports/latest_release_integrity_manifest.json:validation_failed_count=29</td><td>0</td></tr>
+<tr><td>workspace release integrity failed count</td><td class="fail">fail</td><td>reports/latest_release_integrity_manifest.json:failed_count=7</td><td>0</td></tr>
+<tr><td>workspace release integrity missing artifacts</td><td class="ready">pass</td><td>reports/latest_release_integrity_manifest.json:missing_artifacts=[]</td><td>[]</td></tr>
+<tr><td>workspace approval consistency status</td><td class="fail">fail</td><td>reports/latest_approval_consistency_audit.json:status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace approval consistency failed count</td><td class="fail">fail</td><td>reports/latest_approval_consistency_audit.json:failed_count=6</td><td>0</td></tr>
+<tr><td>workspace public launch snapshot status</td><td class="fail">fail</td><td>reports/latest_public_launch_snapshot.json:status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace public launch snapshot failed count</td><td class="fail">fail</td><td>reports/latest_public_launch_snapshot.json:failed_count=12</td><td>0</td></tr>
+<tr><td>workspace next packet local status</td><td class="fail">fail</td><td>reports/latest_next_approval_packet.json:local_submission_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace next packet local failed count</td><td class="fail">fail</td><td>reports/latest_next_approval_packet.json:local_submission_failed_count=29</td><td>0</td></tr>
+<tr><td>workspace review index status</td><td class="ready">pass</td><td>reports/latest_submission_review_index.json:status=&#x27;ready_for_user_review&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace review index local status</td><td class="fail">fail</td><td>reports/latest_submission_review_index.json:local_submission_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace review index validation failed count</td><td class="fail">fail</td><td>reports/latest_submission_review_index.json:validation_failed_count=29</td><td>0</td></tr>
+<tr><td>workspace review index release integrity status</td><td class="fail">fail</td><td>reports/latest_submission_review_index.json:release_integrity_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>workspace review index approval consistency status</td><td class="fail">fail</td><td>reports/latest_submission_review_index.json:approval_consistency_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate full validator status</td><td class="ready">pass</td><td>validator report not yet bundled; final Go/No-Go snapshot is ready</td><td>ready validator report or ready final Go/No-Go snapshot</td></tr>
+<tr><td>public_candidate full validator failed count</td><td class="ready">pass</td><td>validator report not yet bundled; final Go/No-Go snapshot is ready</td><td>ready validator report or ready final Go/No-Go snapshot</td></tr>
+<tr><td>public_candidate final submit stays gated</td><td class="ready">pass</td><td>validator report not yet bundled; final Go/No-Go snapshot is ready</td><td>ready validator report or ready final Go/No-Go snapshot</td></tr>
+<tr><td>public_candidate final Go/No-Go status</td><td class="ready">pass</td><td>reports/latest_final_go_no_go.json:status=&#x27;ready_for_user_review&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate final Go/No-Go final submit gate</td><td class="ready">pass</td><td>reports/latest_final_go_no_go.json:final_submit_ready=False</td><td>False</td></tr>
+<tr><td>public_candidate release integrity status</td><td class="ready">pass</td><td>reports/latest_release_integrity_manifest.json:status=&#x27;ready_for_user_review&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate release validation snapshot</td><td class="ready">pass</td><td>reports/latest_release_integrity_manifest.json:validation_status=&#x27;ready_for_user_review&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate release validation failed count</td><td class="ready">pass</td><td>reports/latest_release_integrity_manifest.json:validation_failed_count=0</td><td>0</td></tr>
+<tr><td>public_candidate release integrity failed count</td><td class="ready">pass</td><td>reports/latest_release_integrity_manifest.json:failed_count=0</td><td>0</td></tr>
+<tr><td>public_candidate release integrity missing artifacts</td><td class="ready">pass</td><td>reports/latest_release_integrity_manifest.json:missing_artifacts=[]</td><td>[]</td></tr>
+<tr><td>public_candidate approval consistency status</td><td class="fail">fail</td><td>reports/latest_approval_consistency_audit.json:status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate approval consistency failed count</td><td class="fail">fail</td><td>reports/latest_approval_consistency_audit.json:failed_count=3</td><td>0</td></tr>
+<tr><td>public_candidate public launch snapshot status</td><td class="fail">fail</td><td>reports/latest_public_launch_snapshot.json:status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate public launch snapshot failed count</td><td class="fail">fail</td><td>reports/latest_public_launch_snapshot.json:failed_count=5</td><td>0</td></tr>
+<tr><td>public_candidate next packet local status</td><td class="ready">pass</td><td>reports/latest_next_approval_packet.json:local_submission_status=&#x27;ready_for_user_review&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate next packet local failed count</td><td class="ready">pass</td><td>reports/latest_next_approval_packet.json:local_submission_failed_count=0</td><td>0</td></tr>
+<tr><td>public_candidate review index status</td><td class="ready">pass</td><td>reports/latest_submission_review_index.json:status=&#x27;ready_for_user_review&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate review index local status</td><td class="ready">pass</td><td>reports/latest_submission_review_index.json:local_submission_status=&#x27;not_bundled_public_candidate_root&#x27;</td><td>ready_for_user_review or not_bundled_public_candidate_root</td></tr>
+<tr><td>public_candidate review index validation failed count</td><td class="ready">pass</td><td>reports/latest_submission_review_index.json:validation_failed_count=&#x27;not_applicable_public_candidate_root&#x27;</td><td>0 or not_applicable_public_candidate_root</td></tr>
+<tr><td>public_candidate review index release integrity status</td><td class="fail">fail</td><td>reports/latest_submission_review_index.json:release_integrity_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr>
+<tr><td>public_candidate review index approval consistency status</td><td class="fail">fail</td><td>reports/latest_submission_review_index.json:approval_consistency_status=&#x27;needs_more_evidence&#x27;</td><td>&#x27;ready_for_user_review&#x27;</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,1502 @@
+{
+  "generated_at_utc": "2026-06-10T02:37:50+00:00",
+  "status": "needs_more_evidence",
+  "root_type": "workspace",
+  "scan_scopes": [
+    {
+      "label": "workspace",
+      "root": "splunk_agentic_ops_control_tower",
+      "reports_dir": "reports",
+      "json_file_count": 56
+    },
+    {
+      "label": "public_candidate",
+      "root": "agentops-control-tower",
+      "reports_dir": "reports",
+      "json_file_count": 48
+    }
+  ],
+  "json_files_scanned": 104,
+  "conflict_count": 171,
+  "critical_check_failed_count": 24,
+  "failed_count": 195,
+  "conflicts": [
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "failed_count",
+      "value": 6,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[0].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[1].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[4].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[9].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[15].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[16].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_claim_evidence_matrix.json",
+      "field": "validation_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_claim_evidence_matrix.json",
+      "field": "validation_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_devpost_copy_audit.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_devpost_copy_audit.json",
+      "field": "checks[2].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_eligibility_compliance_audit.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_eligibility_compliance_audit.json",
+      "field": "failed_count",
+      "value": 1,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_eligibility_compliance_audit.json",
+      "field": "checks[1].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_external_approval_packet.json",
+      "field": "local_submission_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "local_submission_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "validation_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "release_integrity_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "eligibility_compliance_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "approval_consistency_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_scorecard.json",
+      "field": "local_submission_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_judge_scorecard.json",
+      "field": "validation_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_next_approval_packet.json",
+      "field": "eligibility_compliance_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_next_approval_packet.json",
+      "field": "local_submission_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_next_approval_packet.json",
+      "field": "local_submission_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_artifact_url_readback.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_artifact_url_readback.json",
+      "field": "failed_count",
+      "value": 1,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_artifact_url_readback.json",
+      "field": "checks[4].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_artifact_url_readback.json",
+      "field": "public_safe_readback.status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_artifact_url_readback.json",
+      "field": "public_safe_readback.failed_count",
+      "value": 1,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "validation_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "validation_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "release_zip.smoke_status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_repo.publication_preflight_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_repo.publication_preflight_gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_video.upload_preflight_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_video.upload_preflight_gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_video.dry_run_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "url_writeback_dry_run.status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "url_writeback_dry_run.failed_count",
+      "value": 3,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "failed_count",
+      "value": 12,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[1].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[2].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[3].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[4].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[6].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[8].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[9].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[10].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[13].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[15].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[16].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[18].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "failed_count",
+      "value": 4,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[7].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[8].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[9].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[10].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_publication_preflight.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_publication_preflight.json",
+      "field": "gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_publication_preflight.json",
+      "field": "public_repo_publication_safe_readback.gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_repo_publish_brief.json",
+      "field": "zip.smoke_status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_video_upload_preflight.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_video_upload_preflight.json",
+      "field": "gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_public_video_upload_preflight.json",
+      "field": "public_video_upload_safe_readback.gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "validation_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "validation_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "release_zip.smoke_status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "failed_count",
+      "value": 7,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[6].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[8].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[9].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[10].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[12].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[13].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_integrity_manifest.json",
+      "field": "checks[14].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "failed_count",
+      "value": 6,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "checks[5].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "checks[9].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "checks[12].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "checks[22].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "checks[34].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_release_zip_smoke_test.json",
+      "field": "checks[36].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_deadline_burndown.json",
+      "field": "local_submission_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_deadline_burndown.json",
+      "field": "failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "local_submission_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "validation_failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "release_zip_status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "release_integrity_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "eligibility_compliance_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "approval_consistency_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "overall_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "failed_count",
+      "value": 29,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[189].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[190].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[195].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[202].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[207].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[208].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[233].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[241].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[242].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[334].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[548].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[549].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[554].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[561].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[566].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[567].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[592].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[600].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[601].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[982].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[983].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[988].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[995].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[1000].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[1001].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[1026].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[1034].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[1035].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_submission_validation.json",
+      "field": "checks[1166].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_url_writeback_dry_run.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_url_writeback_dry_run.json",
+      "field": "failed_count",
+      "value": 3,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_url_writeback_dry_run.json",
+      "field": "checks[0].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_url_writeback_dry_run.json",
+      "field": "checks[2].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_url_writeback_dry_run.json",
+      "field": "checks[23].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_user_approval_brief_ja.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_user_approval_brief_ja.json",
+      "field": "failed_count",
+      "value": 12,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_user_approval_brief_ja.json",
+      "field": "release_zip.smoke_status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_dry_run.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_dry_run.json",
+      "field": "failed_count",
+      "value": 4,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_dry_run.json",
+      "field": "checks[23].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_dry_run.json",
+      "field": "checks[24].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_dry_run.json",
+      "field": "checks[25].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_dry_run.json",
+      "field": "checks[26].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_recording_preview.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_recording_preview.json",
+      "field": "failed_count",
+      "value": 1,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_recording_preview.json",
+      "field": "checks[10].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "workspace",
+      "report": "reports/latest_video_recording_preview.json",
+      "field": "public_video_safe_readback.status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "failed_count",
+      "value": 3,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[0].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[1].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_approval_consistency_audit.json",
+      "field": "checks[15].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "release_integrity_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "eligibility_compliance_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_judge_quickstart.json",
+      "field": "approval_consistency_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_repo.publication_preflight_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_repo.publication_preflight_gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "failed_count",
+      "value": 5,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[1].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[2].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[3].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[4].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "checks[10].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "failed_count",
+      "value": 4,
+      "reason": "nonzero failed count"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[7].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[8].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[9].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_repo_dry_run.json",
+      "field": "checks[10].status",
+      "value": "fail",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "release_integrity_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "eligibility_compliance_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_submission_review_index.json",
+      "field": "approval_consistency_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    }
+  ],
+  "expected_public_candidate_pending": [
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_video.upload_preflight_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    },
+    {
+      "scope": "public_candidate",
+      "report": "reports/latest_public_launch_snapshot.json",
+      "field": "public_video.upload_preflight_gate_status",
+      "value": "needs_more_evidence",
+      "reason": "concerning status value"
+    }
+  ],
+  "checks": [
+    {
+      "key": "workspace full validator status",
+      "status": "fail",
+      "evidence": "reports/latest_submission_validation.json:overall_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace full validator failed count",
+      "status": "fail",
+      "evidence": "reports/latest_submission_validation.json:failed_count=29",
+      "expected": "0"
+    },
+    {
+      "key": "workspace final submit stays gated",
+      "status": "pass",
+      "evidence": "reports/latest_submission_validation.json:final_submit_ready=False",
+      "expected": "False"
+    },
+    {
+      "key": "workspace final Go/No-Go status",
+      "status": "fail",
+      "evidence": "reports/latest_final_go_no_go.json:status='ready_to_submit_after_user_approval'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace final Go/No-Go final submit gate",
+      "status": "fail",
+      "evidence": "reports/latest_final_go_no_go.json:final_submit_ready=True",
+      "expected": "False"
+    },
+    {
+      "key": "workspace release integrity status",
+      "status": "fail",
+      "evidence": "reports/latest_release_integrity_manifest.json:status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace release validation snapshot",
+      "status": "fail",
+      "evidence": "reports/latest_release_integrity_manifest.json:validation_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace release validation failed count",
+      "status": "fail",
+      "evidence": "reports/latest_release_integrity_manifest.json:validation_failed_count=29",
+      "expected": "0"
+    },
+    {
+      "key": "workspace release integrity failed count",
+      "status": "fail",
+      "evidence": "reports/latest_release_integrity_manifest.json:failed_count=7",
+      "expected": "0"
+    },
+    {
+      "key": "workspace release integrity missing artifacts",
+      "status": "pass",
+      "evidence": "reports/latest_release_integrity_manifest.json:missing_artifacts=[]",
+      "expected": "[]"
+    },
+    {
+      "key": "workspace approval consistency status",
+      "status": "fail",
+      "evidence": "reports/latest_approval_consistency_audit.json:status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace approval consistency failed count",
+      "status": "fail",
+      "evidence": "reports/latest_approval_consistency_audit.json:failed_count=6",
+      "expected": "0"
+    },
+    {
+      "key": "workspace public launch snapshot status",
+      "status": "fail",
+      "evidence": "reports/latest_public_launch_snapshot.json:status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace public launch snapshot failed count",
+      "status": "fail",
+      "evidence": "reports/latest_public_launch_snapshot.json:failed_count=12",
+      "expected": "0"
+    },
+    {
+      "key": "workspace next packet local status",
+      "status": "fail",
+      "evidence": "reports/latest_next_approval_packet.json:local_submission_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace next packet local failed count",
+      "status": "fail",
+      "evidence": "reports/latest_next_approval_packet.json:local_submission_failed_count=29",
+      "expected": "0"
+    },
+    {
+      "key": "workspace review index status",
+      "status": "pass",
+      "evidence": "reports/latest_submission_review_index.json:status='ready_for_user_review'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace review index local status",
+      "status": "fail",
+      "evidence": "reports/latest_submission_review_index.json:local_submission_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace review index validation failed count",
+      "status": "fail",
+      "evidence": "reports/latest_submission_review_index.json:validation_failed_count=29",
+      "expected": "0"
+    },
+    {
+      "key": "workspace review index release integrity status",
+      "status": "fail",
+      "evidence": "reports/latest_submission_review_index.json:release_integrity_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "workspace review index approval consistency status",
+      "status": "fail",
+      "evidence": "reports/latest_submission_review_index.json:approval_consistency_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate full validator status",
+      "status": "pass",
+      "evidence": "validator report not yet bundled; final Go/No-Go snapshot is ready",
+      "expected": "ready validator report or ready final Go/No-Go snapshot"
+    },
+    {
+      "key": "public_candidate full validator failed count",
+      "status": "pass",
+      "evidence": "validator report not yet bundled; final Go/No-Go snapshot is ready",
+      "expected": "ready validator report or ready final Go/No-Go snapshot"
+    },
+    {
+      "key": "public_candidate final submit stays gated",
+      "status": "pass",
+      "evidence": "validator report not yet bundled; final Go/No-Go snapshot is ready",
+      "expected": "ready validator report or ready final Go/No-Go snapshot"
+    },
+    {
+      "key": "public_candidate final Go/No-Go status",
+      "status": "pass",
+      "evidence": "reports/latest_final_go_no_go.json:status='ready_for_user_review'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate final Go/No-Go final submit gate",
+      "status": "pass",
+      "evidence": "reports/latest_final_go_no_go.json:final_submit_ready=False",
+      "expected": "False"
+    },
+    {
+      "key": "public_candidate release integrity status",
+      "status": "pass",
+      "evidence": "reports/latest_release_integrity_manifest.json:status='ready_for_user_review'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate release validation snapshot",
+      "status": "pass",
+      "evidence": "reports/latest_release_integrity_manifest.json:validation_status='ready_for_user_review'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate release validation failed count",
+      "status": "pass",
+      "evidence": "reports/latest_release_integrity_manifest.json:validation_failed_count=0",
+      "expected": "0"
+    },
+    {
+      "key": "public_candidate release integrity failed count",
+      "status": "pass",
+      "evidence": "reports/latest_release_integrity_manifest.json:failed_count=0",
+      "expected": "0"
+    },
+    {
+      "key": "public_candidate release integrity missing artifacts",
+      "status": "pass",
+      "evidence": "reports/latest_release_integrity_manifest.json:missing_artifacts=[]",
+      "expected": "[]"
+    },
+    {
+      "key": "public_candidate approval consistency status",
+      "status": "fail",
+      "evidence": "reports/latest_approval_consistency_audit.json:status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate approval consistency failed count",
+      "status": "fail",
+      "evidence": "reports/latest_approval_consistency_audit.json:failed_count=3",
+      "expected": "0"
+    },
+    {
+      "key": "public_candidate public launch snapshot status",
+      "status": "fail",
+      "evidence": "reports/latest_public_launch_snapshot.json:status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate public launch snapshot failed count",
+      "status": "fail",
+      "evidence": "reports/latest_public_launch_snapshot.json:failed_count=5",
+      "expected": "0"
+    },
+    {
+      "key": "public_candidate next packet local status",
+      "status": "pass",
+      "evidence": "reports/latest_next_approval_packet.json:local_submission_status='ready_for_user_review'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate next packet local failed count",
+      "status": "pass",
+      "evidence": "reports/latest_next_approval_packet.json:local_submission_failed_count=0",
+      "expected": "0"
+    },
+    {
+      "key": "public_candidate review index status",
+      "status": "pass",
+      "evidence": "reports/latest_submission_review_index.json:status='ready_for_user_review'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate review index local status",
+      "status": "pass",
+      "evidence": "reports/latest_submission_review_index.json:local_submission_status='not_bundled_public_candidate_root'",
+      "expected": "ready_for_user_review or not_bundled_public_candidate_root"
+    },
+    {
+      "key": "public_candidate review index validation failed count",
+      "status": "pass",
+      "evidence": "reports/latest_submission_review_index.json:validation_failed_count='not_applicable_public_candidate_root'",
+      "expected": "0 or not_applicable_public_candidate_root"
+    },
+    {
+      "key": "public_candidate review index release integrity status",
+      "status": "fail",
+      "evidence": "reports/latest_submission_review_index.json:release_integrity_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    },
+    {
+      "key": "public_candidate review index approval consistency status",
+      "status": "fail",
+      "evidence": "reports/latest_submission_review_index.json:approval_consistency_status='needs_more_evidence'",
+      "expected": "'ready_for_user_review'"
+    }
+  ],
+  "resolved_stale_validator_reports": [],
+  "ignored_expected_gate_statuses": [
+    "blocked_by_public_repo_approval_gate",
+    "blocked_by_video_approval_gate",
+    "blocked_until_final_submit_ready",
+    "waiting_for_external_urls",
+    "pending_user_approval"
+  ],
+  "boundary": "This status conflict audit is local readback evidence only. It does not publish, upload, connect to Splunk, configure MCP, write approved URLs, update Devpost, or submit anything.",
+  "recommended_next_step": "Use this report as a final local sanity check before approving public repo, public video, URL writeback, or Devpost final submission."
+}

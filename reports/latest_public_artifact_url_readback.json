@@ -1,0 +1,113 @@
+{
+  "generated_at_utc": "2026-06-10T02:39:10+00:00",
+  "producer": "verify_public_artifact_urls.py",
+  "status": "ready_for_url_writeback_after_user_approval",
+  "repository_url": "https://github.com/kei99-web3/agentops-control-tower",
+  "demo_video_url": "https://youtu.be/6hed52sP_XU",
+  "pending_urls": [],
+  "url_shape_final_submit_ready": true,
+  "live_readback_requested": true,
+  "live_readback_attempted": true,
+  "ready_for_url_writeback": true,
+  "approved_public_urls_exists": false,
+  "github_repo_readback": {
+    "slug": "kei99-web3/agentops-control-tower",
+    "readback": {
+      "isPrivate": false,
+      "nameWithOwner": "kei99-web3/agentops-control-tower",
+      "url": "https://github.com/kei99-web3/agentops-control-tower",
+      "visibility": "PUBLIC"
+    },
+    "returncode": 0
+  },
+  "demo_video_readback": {
+    "method": "HEAD",
+    "status_code": 200,
+    "final_url": "https://www.youtube.com/watch?v=6hed52sP_XU&feature=youtu.be",
+    "content_type": "text/html; charset=utf-8",
+    "error": ""
+  },
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "shape: repository URL",
+      "status": "pass",
+      "detail": "valid public repository URL shape"
+    },
+    {
+      "name": "shape: demo video URL",
+      "status": "pass",
+      "detail": "valid public video URL shape"
+    },
+    {
+      "name": "shape: repository approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "shape: video approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "approved URL file remains absent",
+      "status": "pass",
+      "detail": "approved_public_urls.json absent"
+    },
+    {
+      "name": "GitHub repository URL path",
+      "status": "pass",
+      "detail": "kei99-web3/agentops-control-tower"
+    },
+    {
+      "name": "GitHub repository readback",
+      "status": "pass",
+      "detail": "{\"isPrivate\":false,\"nameWithOwner\":\"kei99-web3/agentops-control-tower\",\"url\":\"https://github.com/kei99-web3/agentops-control-tower\",\"visibility\":\"PUBLIC\"}"
+    },
+    {
+      "name": "GitHub repository visibility public",
+      "status": "pass",
+      "detail": "{\"isPrivate\": false, \"nameWithOwner\": \"kei99-web3/agentops-control-tower\", \"url\": \"https://github.com/kei99-web3/agentops-control-tower\", \"visibility\": \"PUBLIC\"}"
+    },
+    {
+      "name": "Demo video URL HTTP readback",
+      "status": "pass",
+      "detail": "{\"method\": \"HEAD\", \"status_code\": 200, \"final_url\": \"https://www.youtube.com/watch?v=6hed52sP_XU&feature=youtu.be\", \"content_type\": \"text/html; charset=utf-8\", \"error\": \"\"}"
+    },
+    {
+      "name": "Demo video URL remains on allowed host",
+      "status": "pass",
+      "detail": "www.youtube.com"
+    }
+  ],
+  "boundary": "This public artifact URL readback is a verification aid only. Default mode does not perform network readback when URLs are still pending. It does not publish, upload, write approved URLs, update Devpost, or submit anything.",
+  "next_required_external_approval": "approved_url_writeback",
+  "public_safe_readback": {
+    "action_key": "approved_url_writeback",
+    "status": "ready_for_url_writeback_after_user_approval",
+    "repository": {
+      "url": "https://github.com/kei99-web3/agentops-control-tower",
+      "slug": "kei99-web3/agentops-control-tower",
+      "visibility": "PUBLIC",
+      "is_private": false,
+      "name_with_owner": "kei99-web3/agentops-control-tower"
+    },
+    "demo_video": {
+      "url": "https://youtu.be/6hed52sP_XU",
+      "final_url": "https://www.youtube.com/watch?v=6hed52sP_XU&feature=youtu.be",
+      "host": "www.youtube.com",
+      "http_status": 200,
+      "method": "HEAD",
+      "content_type": "text/html; charset=utf-8",
+      "error_present": false
+    },
+    "pending_urls": [],
+    "live_readback_attempted": true,
+    "ready_for_url_writeback": true,
+    "approved_public_urls_exists": false,
+    "failed_count": 0,
+    "evidence_note_target": "submission/post_action_evidence/YYYY-MM-DD_approved_url_writeback_readback.md",
+    "copy_policy": "Use this public_safe_readback block for post-action evidence. Do not copy raw command output, credentials, tokens, account screenshots, browser tabs, or local absolute paths.",
+    "next_required_external_approval": "approved_url_writeback"
+  }
+}

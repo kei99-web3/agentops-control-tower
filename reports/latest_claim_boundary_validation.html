@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgentOps Claim Boundary Validation</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; }
+    header { background: #17202a; color: #fff; padding: 28px 36px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 18px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; }
+    th { color: #5f6d7c; }
+    .pass { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AgentOps Claim Boundary Validation</h1>
+    <p>Status: <span class="pass">pass</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Scope</h2>
+      <p>Checks public-facing submission copy for unqualified live Splunk or live MCP claims before external proof is approved.</p>
+    </section>
+    <section>
+      <h2>Overclaim Findings</h2>
+      <table>
+        <thead><tr><th>File</th><th>Line</th><th>Phrase</th><th>Text</th></tr></thead>
+        <tbody><tr><td colspan="4">No unqualified overclaim phrases found.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Boundary Text Checks</h2>
+      <table>
+        <thead><tr><th>File</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>submission/DEVPOST_FIELD_MAP.md</td><td>pass</td><td>all boundary text present</td></tr>
+<tr><td>submission/VIDEO_RECORDING_RUNBOOK.md</td><td>pass</td><td>all boundary text present</td></tr>
+<tr><td>submission/SUBMISSION_LAUNCH_RUNBOOK.md</td><td>pass</td><td>all boundary text present</td></tr>
+<tr><td>submission/SUBMISSION_REVIEW_QA.md</td><td>pass</td><td>all boundary text present</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

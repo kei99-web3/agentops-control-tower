@@ -1,0 +1,124 @@
+# Devpost Submission Draft
+
+## Project Name
+
+Agentic Incident Command Center
+
+## Tagline
+
+Not another alert view: an AI incident commander that proves every claim in Splunk and asks before it acts.
+
+## Short Description
+
+Agentic Incident Command Center is an AI incident commander grounded in Splunk through the official Splunk MCP Server proof path: it asks Splunk, cites event evidence, ranks root cause and blast radius, then queues risky remediation for human approval. The core innovation is the MCP Remediation Ledger, where every proposed rollback, WAF watch, ticket, stakeholder update, or credential-boundary block is tied to evidence and an explicit approval state.
+
+## Inspiration
+
+During a serious incident, the hardest part is rarely a lack of logs. It is the time lost stitching together deployment context, application errors, traces, database pressure, edge health, security noise, and proposed remediation. AI agents can help, but only if they are grounded in trusted operational data and cannot quietly execute risky actions.
+
+Splunk is the right evidence layer for this. Splunk MCP Server can let an AI assistant investigate operational context, but the final response should still cite events, show confidence, and preserve human approval for rollback, security rule changes, customer communications, and credential-adjacent tool calls.
+
+## What It Does
+
+AI asks Splunk, cites evidence, and queues risky remediation for humans instead of silently acting. The package proves that flow through:
+
+- A local command-center dashboard for incident summary, ranked root cause, blast radius, approval queue, SPL queries, and MCP investigation preview.
+- Splunk-ready synthetic checkout-incident data across deployment, application, APM, database, identity/security, edge network, WAF, AI correlation, remediation, communications, ticketing, and MCP runtime domains.
+- An MCP Remediation Ledger for rollback, WAF watch, stakeholder update, ticket creation, and blocked credential-boundary attempts.
+- SPL examples, local SPL-equivalent proof results, and a Splunk app candidate with dashboard panels and saved searches.
+- Official Splunk MCP Server verification in a reproducible local Splunk Enterprise Docker proof environment using synthetic data only.
+
+## How We Built It
+
+The local prototype uses Python standard library tooling to keep the demo portable and auditable:
+
+- JSONL synthetic incident event generation
+- Splunk-ready CSV export
+- deterministic risk scoring and approval-state modeling
+- root-cause evidence scoring
+- blast-radius grouping by service and signal domain
+- remediation ledger extraction
+- HTML dashboard rendering
+- SPL query examples for Splunk ingestion
+- local SPL-equivalent query emulation over the generated CSV
+- Splunk app candidate files for dashboard and saved search setup
+
+The architecture uses Splunk as the evidence layer and Splunk MCP Server as the agent access boundary: indexed incident events become the evidence source an AI incident commander can query, while the human reviewer retains final control over high-impact remediation.
+
+## Splunk Usage
+
+The current package includes a Splunk-ready CSV, SPL examples, a recorded local Splunk Enterprise Docker proof/readback, and an official Splunk MCP Server proof in a reproducible local Splunk Enterprise Docker environment. The proof uses synthetic checkout outage data so judges can safely reproduce the full flow without private logs, credentials, customer data, or external actions.
+
+Verified proof: the official Splunk MCP Server was installed locally as `Splunk_MCP_Server`, connected through `mcp-remote`, exposed 10 Splunk tools, and used `splunk_run_query` to return five synthetic `agentops_events` rows with event IDs, evidence references, risk scores, and approval states. This does not claim production Splunk Cloud deployment.
+
+Boundary phrase for all public materials: Local Splunk Enterprise Docker proof with synthetic data; production Splunk Cloud deployment is not claimed.
+
+The same SPL query shape and MCP read pattern are designed to run against a Splunk deployment containing the corresponding operational data. The intended Splunk flow is:
+
+1. Index `data/splunk_agentops_events.csv` into `agentops_events`.
+2. Use SPL queries to retrieve the incident timeline, root-cause evidence, remediation approval ledger, MCP investigation context, and blast radius.
+3. Use the official Splunk MCP Server through an MCP client so an AI assistant can answer questions such as:
+
+```text
+What likely caused the checkout incident, which services are affected, and which remediation needs human approval first?
+```
+
+For reviewer reproducibility, the repository includes a local query proof pack at `reports/latest_local_spl_query_results.html` and the official MCP readback evidence at `submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md`.
+
+Every claim links to evidence a judge can inspect: root cause maps to SPL timeline and evidence rows, blast radius maps to service grouping, remediation maps to the MCP Remediation Ledger approval states, and official MCP usage maps to the `splunk_run_query` readback. The impact is decision compression: scattered operational signals become one auditable path from evidence to ranked cause to approval-ready action.
+
+## Tracks
+
+Primary track:
+
+- Observability
+
+Bonus target:
+
+- Best Use of Splunk MCP Server
+
+Secondary relevance:
+
+- Platform & Developer Experience
+- Security
+
+## What Makes It Different
+
+Most AI incident demos either summarize logs or jump straight to automation. Agentic Incident Command Center focuses on the hard middle: making the next human decision faster, safer, and backed by Splunk evidence. Splunk becomes the evidence layer for agentic operations, and MCP becomes the governed investigation boundary: MCP reads the truth, the app proposes the next step, and humans approve the change.
+
+This is an independent hackathon project and is not an official Splunk product. Splunk and related marks belong to their respective owners.
+
+## Judging Alignment
+
+- Technological Implementation: deterministic event generation, Splunk-ready CSV, root-cause scoring, local SPL-equivalent query proof, recorded local Splunk Enterprise Docker proof/readback, official Splunk MCP Server proof, tests, and submission validation.
+- Design: a dashboard built around incident command decisions, not raw log browsing.
+- Potential Impact: a reusable pattern for teams adopting AI-assisted operations without losing approval control.
+- Potential Impact: compresses incident command from scattered signals into one Splunk-grounded review flow: evidence, ranked cause, blast radius, and approval-ready action.
+- Quality of the Idea: Splunk MCP Server becomes an evidence gateway for agentic incident investigation, while human approval remains the final gate.
+
+## Challenges
+
+The main challenge is balancing a compelling incident story with safe public evidence. The demo must feel operationally real without using private logs, credentials, accounts, customer data, or real external actions. The current implementation solves this with synthetic but realistic cross-domain incident events.
+
+## Accomplishments
+
+- A complete local event-to-dashboard incident command pipeline.
+- Root-cause ranking and blast-radius outputs grounded in evidence fields.
+- A reusable MCP Remediation Ledger for human-approved incident actions.
+- Splunk-ready event exports and SPL examples.
+- Official Splunk MCP Server verification in a local Splunk Enterprise Docker proof environment, using synthetic incident data only, with `splunk_run_query` returning event IDs, evidence references, risk scores, and approval states.
+- Local SPL-equivalent query results that prove the CSV supports the intended searches.
+- A recording-friendly demo tour that keeps the public video focused and safe.
+- A Splunk app candidate with dashboard XML and saved searches.
+- Submission-ready architecture, demo script, and judge-alignment materials.
+
+## New During Hackathon
+
+This project was created during the Splunk Agentic Ops Hackathon submission period. The local implementation, synthetic incident event model, dashboard, query pack, public repository candidate, and submission materials were assembled for this hackathon entry.
+
+## What Is Next
+
+- Extend the local Splunk Enterprise proof to Splunk Cloud after admin access and app-install permissions are available.
+- Add richer Splunk dashboards and MCP tool guardrails for least-privilege production-style roles.
+- Publish the public repository and public demo video URL after readback validation.
+- Submit the final Devpost entry only after the final submit action is explicitly approved.

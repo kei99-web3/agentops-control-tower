@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-06-10T02:39:11+00:00",
+  "status": "ready_to_submit_after_user_approval",
+  "final_submit_ready": true,
+  "pending_urls": [],
+  "repository_url": "https://github.com/kei99-web3/agentops-control-tower",
+  "demo_video_url": "https://youtu.be/6hed52sP_XU",
+  "checks": [
+    {
+      "name": "repository URL",
+      "status": "pass",
+      "detail": "valid public repository URL shape"
+    },
+    {
+      "name": "demo video URL",
+      "status": "pass",
+      "detail": "valid public video URL shape"
+    },
+    {
+      "name": "repository approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "video approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    }
+  ],
+  "boundary": "This script validates URL shape only. It does not publish, upload, submit, or update Devpost.",
+  "root": "splunk_agentic_ops_control_tower"
+}

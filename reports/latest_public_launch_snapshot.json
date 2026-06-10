@@ -1,0 +1,277 @@
+{
+  "generated_at_utc": "2026-06-10T02:37:49+00:00",
+  "status": "needs_more_evidence",
+  "root_type": "workspace",
+  "validation_status": "needs_more_evidence",
+  "validation_failed_count": 29,
+  "validation_source": "reports/latest_submission_validation.json",
+  "next_approval_target": "approved_url_writeback",
+  "ready_now": [
+    "approved_url_writeback",
+    "devpost_final_submission"
+  ],
+  "expected_order": [
+    "public_github_repository",
+    "public_demo_video",
+    "approved_url_writeback",
+    "devpost_final_submission"
+  ],
+  "approval_phrases": {
+    "public_github_repository": "Approve public GitHub publication for the clean agentops-control-tower candidate.",
+    "public_demo_video": "Approve recording and public upload of the Agentic Incident Command Center demo video.",
+    "optional_live_splunk_mcp_proof": "Approve optional live Splunk and Splunk MCP proof using synthetic data only.",
+    "approved_url_writeback": "Approve writing the verified public repository and demo video URLs into local submission artifacts.",
+    "devpost_final_submission": "Approve final Devpost submission for Agentic Incident Command Center."
+  },
+  "release_zip": {
+    "path": "release/agentops-control-tower-public-candidate.zip",
+    "exists": true,
+    "size_bytes": 803352,
+    "sha256": "769db8778a993757aed1600062dde25a9daff8280ede4097aaf8554c5cea0ea9",
+    "file_count": 250,
+    "smoke_status": "fail"
+  },
+  "public_repo": {
+    "repo_name": "agentops-control-tower",
+    "candidate_path": "public_repo_candidate/agentops-control-tower",
+    "approval_ready": false,
+    "publication_preflight_status": "needs_more_evidence",
+    "publication_preflight_gate_status": "needs_more_evidence",
+    "publication_preflight_allowed": false,
+    "status": "hold"
+  },
+  "public_video": {
+    "status": "ready_for_recording_review",
+    "upload_preflight_status": "needs_more_evidence",
+    "upload_preflight_gate_status": "needs_more_evidence",
+    "upload_preflight_allowed": false,
+    "dry_run_status": "needs_more_evidence",
+    "dry_run_failed_count": 4,
+    "duration_seconds": 180,
+    "scene_count": 6,
+    "final_public_video_ready": false
+  },
+  "final_submit_ready": true,
+  "approved_public_urls_exists": true,
+  "url_writeback_dry_run": {
+    "status": "needs_more_evidence",
+    "failed_count": 3,
+    "final_submit_ready_in_temp": true,
+    "working_tree_write_guard": false
+  },
+  "pending_urls": [],
+  "post_action_evidence_ready": true,
+  "official_splunk_mcp_proof": {
+    "completed": true,
+    "evidence": "submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md",
+    "claim_boundary": "local Splunk Enterprise Docker with synthetic data; production Splunk Cloud deployment is not claimed"
+  },
+  "evidence": [
+    {
+      "path": "public_repo_candidate/agentops-control-tower/PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+      "role": "clean public candidate folder boundary",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_release_zip_smoke_test.html",
+      "role": "extract-and-test proof for the release ZIP",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_candidate_zip_manifest.html",
+      "role": "release ZIP file list",
+      "exists": true
+    },
+    {
+      "path": "release/agentops-control-tower-public-candidate.zip",
+      "role": "local release ZIP for user review",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_dry_run.html",
+      "role": "isolated TEMP staging git-init/commit rehearsal for the clean public candidate",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_dry_run.html",
+      "role": "local recording rehearsal and screen-safety scan",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_url_writeback_dry_run.html",
+      "role": "temporary-copy rehearsal for approved URL writeback",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_next_approval_packet.html",
+      "role": "copy-paste approval phrases and human confirmations",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_publish_brief.html",
+      "role": "public repo approval boundary and ZIP evidence",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_publication_preflight.html",
+      "role": "public repo approval phrase and manual publication gate",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_readiness.html",
+      "role": "screen-safe recording readiness",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_command_plan.html",
+      "role": "post-approval recording/upload plan",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_video_upload_preflight.html",
+      "role": "public video approval phrase and manual confirmation gate",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_cue_sheet.html",
+      "role": "under-3-minute scene timing",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_approval_consistency_audit.html",
+      "role": "approval order consistency",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_release_integrity_manifest.html",
+      "role": "artifact hashes and no-publish boundary",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_content_rights_audit.html",
+      "role": "license, media, and screen safety",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_validation.html",
+      "role": "pending public URL gates",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_post_action_evidence_brief.html",
+      "role": "readback plan after approved external actions",
+      "exists": true
+    },
+    {
+      "path": "submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md",
+      "role": "local evidence log template",
+      "exists": true
+    }
+  ],
+  "boundary": "This public launch snapshot is local approval evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or mark the submission complete.",
+  "recommended_next_step": "Review this snapshot, then use reports/latest_next_approval_packet.html before any public repo or demo video approval.",
+  "failed_count": 12,
+  "checks": [
+    {
+      "name": "required evidence present",
+      "status": "pass",
+      "detail": "all required evidence present"
+    },
+    {
+      "name": "next approval target is public repo",
+      "status": "fail",
+      "detail": "approved_url_writeback"
+    },
+    {
+      "name": "public repo and video are ready now",
+      "status": "fail",
+      "detail": "approved_url_writeback, devpost_final_submission"
+    },
+    {
+      "name": "public repo approval ready",
+      "status": "fail",
+      "detail": "False"
+    },
+    {
+      "name": "public repo publication preflight ready and blocked",
+      "status": "fail",
+      "detail": "status=needs_more_evidence allowed=False gate=needs_more_evidence"
+    },
+    {
+      "name": "video recording review ready",
+      "status": "pass",
+      "detail": "ready_for_recording_review"
+    },
+    {
+      "name": "public video upload preflight ready and blocked",
+      "status": "fail",
+      "detail": "status=needs_more_evidence allowed=False gate=needs_more_evidence"
+    },
+    {
+      "name": "video cue under three minutes",
+      "status": "pass",
+      "detail": "180"
+    },
+    {
+      "name": "video dry run ready",
+      "status": "fail",
+      "detail": "status=needs_more_evidence failed=4"
+    },
+    {
+      "name": "URL writeback dry run ready",
+      "status": "fail",
+      "detail": "status=needs_more_evidence failed=3 wrote=True"
+    },
+    {
+      "name": "approval order matches expected",
+      "status": "fail",
+      "detail": "public_github_repository, public_demo_video, approved_url_writeback, devpost_final_submission"
+    },
+    {
+      "name": "official Splunk MCP proof completed",
+      "status": "pass",
+      "detail": "submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md"
+    },
+    {
+      "name": "release ZIP exists",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "release ZIP smoke passed",
+      "status": "fail",
+      "detail": "fail"
+    },
+    {
+      "name": "release ZIP SHA256 present",
+      "status": "pass",
+      "detail": "769db8778a993757aed1600062dde25a9daff8280ede4097aaf8554c5cea0ea9"
+    },
+    {
+      "name": "approved public URLs not written",
+      "status": "fail",
+      "detail": "True"
+    },
+    {
+      "name": "final submit remains false",
+      "status": "fail",
+      "detail": "True"
+    },
+    {
+      "name": "content rights ready",
+      "status": "pass",
+      "detail": "ready_for_user_review"
+    },
+    {
+      "name": "post-action evidence remains incomplete before externals",
+      "status": "fail",
+      "detail": "True"
+    },
+    {
+      "name": "no external action boundary",
+      "status": "pass",
+      "detail": "This public launch snapshot is local approval evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or mark the submission complete."
+    }
+  ],
+  "missing_evidence": []
+}

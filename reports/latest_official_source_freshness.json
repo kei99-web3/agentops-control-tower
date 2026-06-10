@@ -1,0 +1,238 @@
+{
+  "generated_at_utc": "2026-06-10T02:36:51+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "workspace",
+  "source_checked_at_jst": "2026-06-04 JST",
+  "source_urls": [
+    {
+      "name": "Devpost overview",
+      "url": "https://splunk.devpost.com/",
+      "local_relevance": "Deadline, challenge scope, tracks, requirements, prizes, judges, and judging criteria."
+    },
+    {
+      "name": "Devpost official rules",
+      "url": "https://splunk.devpost.com/rules",
+      "local_relevance": "Registration/submission periods, modification rules, eligibility, and staged judging process."
+    },
+    {
+      "name": "Devpost challenge update",
+      "url": "https://splunk.devpost.com/updates/43765-the-challenge-is-live-and-so-are-the-prizes",
+      "local_relevance": "Challenge launch and prize context."
+    }
+  ],
+  "requirements": [
+    {
+      "key": "deadline",
+      "official_value": "Jun 15, 2026 @ 9:00am PDT / 2026-06-16 01:00 JST",
+      "local_evidence": [
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "2026-06-15 09:00 PDT",
+        "2026-06-16 01:00 JST"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "track",
+      "official_value": "Observability, Security, or Platform & Developer Experience",
+      "local_evidence": [
+        {
+          "path": "submission/DEVPOST_SUBMISSION_DRAFT.md",
+          "exists": true
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Observability"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "demo_video",
+      "official_value": "Demo video under 3 minutes showing the project, AI usage, problem, and value.",
+      "local_evidence": [
+        {
+          "path": "reports/latest_video_readiness.html",
+          "exists": true
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Demo video under 3 minutes",
+        "publicly upload"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "public_repo",
+      "official_value": "Public open-source repository with license, code, assets, setup/run instructions, dependencies/configs/datasets.",
+      "local_evidence": [
+        {
+          "path": "reports/latest_public_repo_publish_brief.html",
+          "exists": true
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Public open-source code repository",
+        "Open-source license"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "architecture_diagram",
+      "official_value": "Architecture diagram in the repo root showing Splunk interaction, AI/agent integration, and data flow.",
+      "local_evidence": [
+        {
+          "path": "architecture_diagram.md",
+          "exists": true
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Root architecture diagram",
+        "Splunk interaction"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "judging",
+      "official_value": "Technological Implementation, Design, Potential Impact, and Quality of the Idea.",
+      "local_evidence": [
+        {
+          "path": "reports/latest_judge_scorecard.html",
+          "exists": true
+        },
+        {
+          "path": "submission/JUDGING_ALIGNMENT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Technological Implementation",
+        "Design",
+        "Potential Impact",
+        "Quality of the Idea"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "bonus",
+      "official_value": "Best Use of Splunk MCP Server is a bonus prize category.",
+      "local_evidence": [
+        {
+          "path": "reports/latest_splunk_mcp_proof_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_prompt_pack.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_capture_manifest.html",
+          "exists": true
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Best Use of Splunk MCP Server",
+        "Splunk MCP Server bonus"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    },
+    {
+      "key": "eligibility_compliance",
+      "official_value": "Eligibility, team representation, ownership/IP, language, testing access, and conflict rules require entrant confirmation and local evidence.",
+      "local_evidence": [
+        {
+          "path": "reports/latest_eligibility_compliance_audit.html",
+          "exists": true
+        },
+        {
+          "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+          "exists": true
+        }
+      ],
+      "required_terms": [
+        "Eligibility and compliance",
+        "Human confirmation"
+      ],
+      "missing_terms": [],
+      "missing_evidence": [],
+      "ready": true
+    }
+  ],
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "official audit file present",
+      "status": "pass",
+      "detail": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md"
+    },
+    {
+      "name": "official source URLs present",
+      "status": "pass",
+      "detail": "overview/rules/update URLs"
+    },
+    {
+      "name": "official source freshness date present",
+      "status": "pass",
+      "detail": "2026-06-04 JST"
+    },
+    {
+      "name": "review evidence files present",
+      "status": "pass",
+      "detail": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md, submission/JUDGING_ALIGNMENT.md, reports/latest_judge_scorecard.html, reports/latest_launch_decision_brief.html, reports/latest_release_integrity_manifest.html"
+    },
+    {
+      "name": "official requirement terms mapped",
+      "status": "pass",
+      "detail": "all mapped"
+    },
+    {
+      "name": "external gates remain explicit",
+      "status": "pass",
+      "detail": "user approval and not-submitted wording checked"
+    },
+    {
+      "name": "boundary text",
+      "status": "pass",
+      "detail": "This source freshness report is local review evidence only. It records the latest manual official-source check used by the packet. It does not log in to Devpost, save a draft, publish a repository, upload a video, write approved URLs, update Devpost, or submit anything."
+    }
+  ],
+  "boundary": "This source freshness report is local review evidence only. It records the latest manual official-source check used by the packet. It does not log in to Devpost, save a draft, publish a repository, upload a video, write approved URLs, update Devpost, or submit anything.",
+  "recommended_next_step": "Before final approval, reopen the Devpost overview and official rules pages and confirm the same deadline, required artifacts, and judging criteria still apply."
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Splunk Incident Command Proof</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Live Splunk Incident Command Proof</h1>
+    <p>Status: <span class="ready">live_splunk_verified_official_mcp_verified</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Proof Summary</h2>
+      <p>Live Splunk verified: <strong>True</strong></p>
+      <p>Official Splunk MCP Server verified: <strong>True</strong></p>
+      <p>Local MCP SDK adapter verified: <strong>True</strong></p>
+      <p>Synthetic rows: <strong>13</strong>; Indexed rows: <strong>13</strong></p>
+      <p class="pending">Approved proof used an ephemeral local Docker Splunk runtime and only generated synthetic CSV data. Production Splunk Cloud deployment is not claimed. No tokens, passwords, private workspace logs, public repo publication, video upload, URL writeback, Devpost update, or Devpost submission is included in this report.</p>
+    </section>
+    <section>
+      <h2>Query Results</h2>
+      <table>
+        <thead><tr><th>Key</th><th>Status</th><th>Rows</th><th>SPL</th></tr></thead>
+        <tbody><tr><td>incident_timeline</td><td class="ready">pass</td><td>13</td><td><code>search index=agentops_events incident_id=&quot;inc-checkout-20260603-0900&quot; | sort _time | table _time event_id signal_domain service event_type risk_score evidence_ref message</code></td></tr>
+<tr><td>root_cause_ranking</td><td class="ready">pass</td><td>4</td><td><code>search index=agentops_events incident_id=&quot;inc-checkout-20260603-0900&quot; root_cause_candidate!=&quot;incident_response_coordination&quot; root_cause_candidate!=&quot;governance_control&quot; root_cause_candidate!=&quot;investigation_context&quot; | stats sum(root_cause_weight) as evidence_score values(signal_domain) as domains values(service) as services values(evidence_ref) as evidence by root_cause_candidate | sort -evidence_score</code></td></tr>
+<tr><td>approval_queue</td><td class="ready">pass</td><td>4</td><td><code>search index=agentops_events requires_human_approval=&quot;True&quot; OR policy_decision=&quot;deny&quot; | sort -risk_score | table _time event_id service external_action risk_score approval_state policy_decision runbook_action evidence_ref recommended_human_action</code></td></tr>
+<tr><td>mcp_investigation_context</td><td class="ready">pass</td><td>3</td><td><code>search index=agentops_events mcp_tool!=&quot;none&quot; OR signal_domain=&quot;ai_correlation&quot; | table _time event_id component mcp_tool event_type evidence_ref recommended_human_action</code></td></tr>
+<tr><td>blast_radius_by_service</td><td class="ready">pass</td><td>6</td><td><code>search index=agentops_events incident_id=&quot;inc-checkout-20260603-0900&quot; | stats count max(risk_score) as max_risk values(signal_domain) as domains by service | sort -max_risk</code></td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Official Splunk MCP Server Proof</h2>
+      <p>Status: <strong>official_splunk_mcp_server_captured</strong></p>
+      <p>Evidence: <code>submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md</code></p>
+      <p>Supported claim: Official Splunk MCP Server was installed and verified in a reproducible local Splunk Enterprise Docker proof environment against synthetic incident data.</p>
+      <p class="pending">Production Splunk Cloud deployment is not claimed. Token values, password, login screens, account pages, and non-synthetic data are not included.</p>
+    </section>
+  </main>
+</body>
+</html>

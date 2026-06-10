@@ -1,0 +1,148 @@
+{
+  "generated_at_utc": "2026-06-10T02:39:12+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "workspace",
+  "local_ready": true,
+  "final_submit_ready": true,
+  "pending_urls": [],
+  "submission_url_validation_status": "ready_to_submit_after_user_approval",
+  "go_no_go_status": "ready_to_submit_after_user_approval",
+  "missing_evidence": [],
+  "evidence": [
+    {
+      "path": "reports/latest_devpost_submission_packet.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_submission_packet.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_final_copy.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_final_copy.md",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_final_copy.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_final_submit_preflight.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_devpost_final_submit_preflight.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_validation.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_validation.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_apply_plan.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_final_go_no_go.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_final_go_no_go.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_external_approval_packet.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_video_command_plan.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_publication_command_plan.html",
+      "exists": true
+    },
+    {
+      "path": "submission/DEVPOST_FIELD_MAP.md",
+      "exists": true
+    },
+    {
+      "path": "submission/FINAL_SUBMISSION_CHECKLIST.md",
+      "exists": true
+    },
+    {
+      "path": "submission/OFFICIAL_REQUIREMENTS_AUDIT.md",
+      "exists": true
+    },
+    {
+      "path": "submission/SUBMISSION_LAUNCH_RUNBOOK.md",
+      "exists": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "Refresh Devpost packet",
+      "command": "python scripts\\build_devpost_submission_packet.py",
+      "purpose": "Regenerate local Devpost field evidence before copying anything into Devpost."
+    },
+    {
+      "name": "Refresh final copy",
+      "command": "python scripts\\export_devpost_final_copy.py",
+      "purpose": "Regenerate copy/paste text and character checks."
+    },
+    {
+      "name": "Validate public URLs",
+      "command": "python scripts\\validate_submission_urls.py",
+      "purpose": "Confirm repository and video URLs are either still pending or valid approved public URLs."
+    },
+    {
+      "name": "Refresh Go/No-Go",
+      "command": "python scripts\\build_final_go_no_go_report.py",
+      "purpose": "Confirm whether the package is local-ready and whether final submit is still blocked by external gates."
+    },
+    {
+      "name": "Final local validation",
+      "command": "python scripts\\validate_submission_packet.py",
+      "purpose": "Re-run the full local submission validator before touching the Devpost form."
+    },
+    {
+      "name": "Open final review artifacts",
+      "command": "start reports\\latest_devpost_final_copy.html && start reports\\latest_final_go_no_go.html && start reports\\latest_submission_url_validation.html",
+      "purpose": "Review fields, URL state, claim boundaries, and final gate before any Devpost session."
+    },
+    {
+      "name": "Fill Devpost form after approval",
+      "command": "manual: copy fields from reports\\latest_devpost_final_copy.md into Devpost; select Observability as the primary track; attach architecture_diagram.md; use only approved public repo/video URLs",
+      "purpose": "Populate the form only after account/session use is approved."
+    },
+    {
+      "name": "Pre-submit human review",
+      "command": "manual: compare Devpost screen against submission\\DEVPOST_FIELD_MAP.md and reports\\latest_devpost_final_copy.md",
+      "purpose": "Hold submission if pending URLs, unsafe Splunk MCP claims, wrong track, or missing architecture evidence remain."
+    },
+    {
+      "name": "Final submit preflight gate",
+      "command": "python scripts\\verify_devpost_final_submit_gate.py --final-approval-phrase \"Approve final Devpost submission for Agentic Incident Command Center.\" --field-map-readback-confirmed --human-confirmations-completed --video-screen-safety-confirmed --post-action-evidence-plan-reviewed",
+      "purpose": "Require final_submit_ready, exact final approval phrase, and manual readback confirmations before the submit button is pressed."
+    },
+    {
+      "name": "Submit after explicit final approval",
+      "command": "manual: press the Devpost submit button only after explicit final user approval",
+      "purpose": "Complete the external submission only when the final approval gate is satisfied."
+    },
+    {
+      "name": "Post-submit readback",
+      "command": "manual: capture the Devpost submitted URL/status and save local evidence after submission",
+      "purpose": "Create a local audit trail after the external submit action has actually completed."
+    }
+  ],
+  "boundary": "This command plan is advisory only. It does not log in, save a draft, press submit, update Devpost, publish, upload, write URLs, or submit anything.",
+  "approval_required": "Explicit user approval is required before using a Devpost account/session, saving a Devpost draft, or pressing the final submit button."
+}

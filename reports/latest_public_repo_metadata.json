@@ -1,0 +1,106 @@
+{
+  "generated_at_utc": "2026-06-10T02:36:37+00:00",
+  "status": "ready_for_user_review",
+  "root_type": "workspace",
+  "repo_name": "agentops-control-tower",
+  "visibility_after_approval": "public",
+  "description": "Splunk-grounded AI incident commander with human-approved remediation.",
+  "license": "Apache-2.0",
+  "default_branch": "main",
+  "topics": [
+    "splunk",
+    "agentops",
+    "ai-agents",
+    "observability",
+    "mcp",
+    "safety",
+    "incident-response",
+    "splunk-mcp",
+    "autonomous-agents",
+    "hackathon"
+  ],
+  "candidate_path": "public_repo_candidate/agentops-control-tower",
+  "approval_phrase": "Approve public GitHub publication for the clean agentops-control-tower candidate.",
+  "public_repo_approval_ready": false,
+  "final_submit_ready": false,
+  "approved_public_urls_exists": false,
+  "commands_after_approval": [
+    {
+      "name": "create_public_repository",
+      "command": "gh repo create agentops-control-tower --public --source . --remote origin --description \"Splunk-grounded AI incident commander with human-approved remediation.\"",
+      "purpose": "Create a public GitHub repository from isolated TEMP staging after explicit approval."
+    },
+    {
+      "name": "apply_topics",
+      "command": "gh repo edit <owner>/agentops-control-tower --add-topic splunk --add-topic agentops --add-topic ai-agents --add-topic observability --add-topic mcp --add-topic safety --add-topic incident-response --add-topic splunk-mcp --add-topic autonomous-agents --add-topic hackathon",
+      "purpose": "Apply discoverability topics after the repository exists."
+    },
+    {
+      "name": "readback_metadata",
+      "command": "gh repo view <owner>/agentops-control-tower --json nameWithOwner,visibility,url,description,defaultBranchRef,licenseInfo,repositoryTopics,isPrivate",
+      "purpose": "Read back visibility, URL, description, default branch, license, and topics."
+    }
+  ],
+  "expected_readback": {
+    "visibility": "PUBLIC",
+    "isPrivate": false,
+    "description": "Splunk-grounded AI incident commander with human-approved remediation.",
+    "defaultBranchRef": "main",
+    "licenseInfo": "Apache-2.0",
+    "topics": [
+      "splunk",
+      "agentops",
+      "ai-agents",
+      "observability",
+      "mcp",
+      "safety",
+      "incident-response",
+      "splunk-mcp",
+      "autonomous-agents",
+      "hackathon"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "public_repo_candidate/agentops-control-tower/PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+      "exists": true
+    },
+    {
+      "path": "public_repo_candidate/agentops-control-tower/README.md",
+      "exists": true
+    },
+    {
+      "path": "public_repo_candidate/agentops-control-tower/LICENSE",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_publish_brief.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_dry_run.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_launch_snapshot.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_release_integrity_manifest.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_release_zip_smoke_test.html",
+      "exists": true
+    }
+  ],
+  "missing_evidence": [],
+  "stop_conditions": [
+    "Do not create or edit a GitHub repository without the exact public GitHub approval phrase.",
+    "Do not publish from the private workspace root.",
+    "Do not publish if public candidate scans, release integrity, or ZIP smoke checks fail.",
+    "Do not write approved URLs until public repository and public demo video URLs are both verified.",
+    "Do not update Devpost or press submit from this step."
+  ],
+  "boundary": "This metadata packet is local publication setup evidence only. It does not create a repository, edit GitHub metadata, push commits, publish files, write approved URLs, update Devpost, or submit anything."
+}

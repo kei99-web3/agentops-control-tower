@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Splunk MCP Proof Capture Manifest</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; width: 220px; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Splunk MCP Proof Capture Manifest</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Gate State</h2>
+      <table><tbody>
+        <tr><th>Approval phrase</th><td><code>Approve optional live Splunk and Splunk MCP proof using synthetic data only.</code></td></tr>
+        <tr><th>Live Splunk MCP verified</th><td class="pending">True</td></tr>
+        <tr><th>Live Splunk verified</th><td class="ready">True</td></tr>
+        <tr><th>Local MCP SDK adapter verified</th><td class="ready">True</td></tr>
+        <tr><th>Official Splunk MCP Server verified</th><td class="pending">True</td></tr>
+        <tr><th>Captured evidence status</th><td class="pending">official_splunk_mcp_server_captured</td></tr>
+        <tr><th>Claim upgrade ready</th><td class="pending">True</td></tr>
+        <tr><th>Live proof status</th><td>live_splunk_verified_official_mcp_verified</td></tr>
+        <tr><th>Rows</th><td>13 indexed / 13 synthetic</td></tr>
+        <tr><th>Failed live SPL queries</th><td>0</td></tr>
+      </tbody></table>
+    </section>
+    <section>
+      <h2>Capture Slots</h2>
+      <table>
+        <thead><tr><th>Slot</th><th>Status</th><th>Required Readback</th><th>Safe Artifact</th></tr></thead>
+        <tbody><tr>
+          <td>approved_scope</td>
+          <td class="pending">captured_ephemeral_docker_terms_scope</td>
+          <td><ul><li>Explicit approval phrase is present.</li><li>Splunk General Terms flag is used only for the temporary Docker proof.</li><li>Data source is limited to data/splunk_agentops_events.csv.</li><li>MCP scope is read-only for the synthetic agentops_events index.</li></ul></td>
+          <td>Local note in post-action evidence log; no credential or account screenshots.</td>
+        </tr>
+<tr>
+          <td>synthetic_import</td>
+          <td class="pending">captured_live_splunk_docker</td>
+          <td><ul><li>agentops_events index exists.</li><li>Imported rows match the generated synthetic CSV row count.</li><li>Sourcetype is agentops:events or equivalent documented mapping.</li></ul></td>
+          <td>reports/latest_live_splunk_docker_proof.*</td>
+        </tr>
+<tr>
+          <td>live_spl_queries</td>
+          <td class="pending">captured_live_splunk_docker</td>
+          <td><ul><li>Incident timeline query returns signal domains, services, risk scores, and evidence refs.</li><li>Root-cause evidence query ranks checkout-api release regression first.</li><li>MCP Remediation Ledger query returns pending/blocked human-review items.</li><li>Blast-radius query returns affected services and max risk.</li></ul></td>
+          <td>reports/latest_live_splunk_docker_proof.json query_results.</td>
+        </tr>
+<tr>
+          <td>splunk_app_dashboard</td>
+          <td class="pending">pending_dashboard_ui_capture</td>
+          <td><ul><li>Agentic Incident Command Center dashboard opens against the synthetic index.</li><li>KPI, incident summary, root-cause ranking, blast radius, and remediation ledger sections render.</li><li>No private workspace paths, real accounts, or credentials are visible.</li></ul></td>
+          <td>Dashboard screenshot or recording segment after screen-safety review.</td>
+        </tr>
+<tr>
+          <td>mcp_assisted_answer</td>
+          <td class="pending">captured_official_splunk_mcp_server</td>
+          <td><ul><li>MCP answer cites event IDs and evidence refs.</li><li>MCP answer does not perform external actions.</li><li>MCP answer stays within read-only synthetic data scope.</li><li>Official Splunk MCP Server app is verified only in local Splunk Enterprise Docker with synthetic data.</li></ul></td>
+          <td>submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md.</td>
+        </tr>
+<tr>
+          <td>claim_upgrade_validation</td>
+          <td class="pending">ready_for_claim_review</td>
+          <td><ul><li>Claim wording is updated only after live SPL and official Splunk MCP Server evidence are reviewed.</li><li>validate_claim_boundaries.py passes.</li><li>validate_submission_packet.py passes.</li></ul></td>
+          <td>Validation JSON/HTML after approved proof capture and wording update.</td>
+        </tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Expected Final Readback</h2>
+      <table><tbody><tr><th>synthetic_index</th><td>agentops_events contains only generated synthetic rows</td></tr>
+<tr><th>live_spl_queries</th><td>required SPL result tables cite event IDs and evidence refs</td></tr>
+<tr><th>mcp_answer</th><td>local read-only MCP SDK adapter cites event IDs and evidence refs without external action</td></tr>
+<tr><th>official_mcp</th><td>official Splunk MCP Server verified only in local Splunk Enterprise Docker with synthetic data</td></tr>
+<tr><th>screen_safety</th><td>no credentials, account pages, private paths, or secrets are visible</td></tr>
+<tr><th>claim_validation</th><td>claim and submission validators pass after any wording change</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_splunk_mcp_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_proof_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_prompt_pack.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_app_package_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_claim_boundary_validation.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_claim_boundary_validation.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_artifact_url_readback.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_post_action_evidence_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_RUNBOOK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_PROMPT_PACK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPL_QUERIES.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>data/splunk_agentops_events.csv</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/indexes.conf</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/props.conf</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/savedsearches.conf</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_submission_validation.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_release_zip_smoke_test.html</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Stop Conditions</h2>
+      <ul><li>Stop if Splunk account, license, cost, credential, or MCP scope is not explicitly approved.</li><li>Stop if any data source is real private workspace data, customer data, local paths, or credentials.</li><li>Stop if screenshots or recordings show account settings, billing pages, tokens, hostnames, terminals with secrets, or unrelated private files.</li><li>Stop if MCP can mutate data, send notifications, publish, trade, deploy, or access outside the approved synthetic index.</li><li>Stop if event IDs and evidence refs cannot be cited from the live proof.</li><li>Stop if claim-boundary validation fails after any wording change.</li></ul>
+      <p class="pending">This proof capture manifest is local evidence aggregation only. The manifest builder does not create accounts, configure credentials, import data, install apps, connect MCP, capture screenshots, record video, update claims, publish, upload, write approved URLs, update Devpost, or submit anything. When a live proof artifact is present, it is limited to the approved ephemeral Docker Splunk runtime, synthetic data, and read-only local MCP SDK adapter evidence.</p>
+    </section>
+  </main>
+</body>
+</html>

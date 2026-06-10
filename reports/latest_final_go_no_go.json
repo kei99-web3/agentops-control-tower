@@ -1,0 +1,36 @@
+{
+  "status": "ready_to_submit_after_user_approval",
+  "local_ready": true,
+  "final_submit_ready": true,
+  "missing_local_evidence": [],
+  "missing_public_candidate_evidence": [],
+  "pending_urls": {
+    "repository_url": "https://github.com/kei99-web3/agentops-control-tower",
+    "demo_video_url": "https://youtu.be/6hed52sP_XU"
+  },
+  "external_gates_pending": [
+    "Public GitHub repository URL",
+    "Public demo video URL",
+    "Optional Splunk account/license and MCP Server setup for live proof",
+    "Approved URL writeback after verified public URLs",
+    "Devpost account/session and final submit approval"
+  ],
+  "recommended_order": [
+    "Approve or hold public GitHub repository publication.",
+    "Record and approve public demo video upload.",
+    "Optionally approve Splunk account/license and MCP setup for live bonus proof.",
+    "Replace pending URL placeholders in the Devpost field map only after both public URLs are verified and approved.",
+    "Re-run python scripts\\validate_submission_packet.py.",
+    "Get explicit final Devpost submit approval."
+  ],
+  "public_candidate_evidence_paths": [
+    "public_repo_candidate/agentops-control-tower/README.md",
+    "public_repo_candidate/agentops-control-tower/LICENSE",
+    "public_repo_candidate/agentops-control-tower/architecture_diagram.md",
+    "public_repo_candidate/agentops-control-tower/PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+    "public_repo_candidate/agentops-control-tower/reports/latest_demo_tour.html",
+    "public_repo_candidate/agentops-control-tower/reports/latest_video_readiness.html",
+    "public_repo_candidate/agentops-control-tower/reports/latest_devpost_submission_packet.html",
+    "public_repo_candidate/agentops-control-tower/splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml"
+  ]
+}

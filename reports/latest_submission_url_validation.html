@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submission URL Validation</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; }
+    header { background: #17202a; color: #fff; padding: 28px 36px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1040px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 18px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    .pass { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Submission URL Validation</h1>
+    <p>Status: <span class="pass">ready_to_submit_after_user_approval</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>URLs</h2>
+      <table>
+        <tbody>
+          <tr><th>Repository URL</th><td>https://github.com/kei99-web3/agentops-control-tower</td></tr>
+          <tr><th>Demo video URL</th><td>https://youtu.be/6hed52sP_XU</td></tr>
+          <tr><th>Final submit ready</th><td class="pass">True</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>repository URL</td><td>pass</td><td>valid public repository URL shape</td></tr>
+<tr><td>demo video URL</td><td>pass</td><td>valid public video URL shape</td></tr>
+<tr><td>repository approval gate</td><td>pass</td><td>pending or approved URL supplied</td></tr>
+<tr><td>video approval gate</td><td>pass</td><td>pending or approved URL supplied</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Boundary</h2>
+      <p>This script validates URL shape only. It does not publish, upload, submit, or update Devpost.</p>
+    </section>
+  </main>
+</body>
+</html>

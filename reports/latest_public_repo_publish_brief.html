@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Repo Publish Brief</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Public Repo Publish Brief</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Decision</h2>
+      <p>Approval phrase: <strong>Approve public GitHub publication for the clean agentops-control-tower candidate.</strong></p>
+      <p>Candidate: <code>public_repo_candidate/agentops-control-tower</code></p>
+      <p class="pending">This brief is local publication decision support only. It does not create a public repo, push commits, publish files, write approved URLs, upload video, update Devpost, or submit anything.</p>
+    </section>
+    <section>
+      <h2>ZIP Evidence</h2>
+      <table>
+        <tbody>
+          <tr><th>Path</th><td><code>release/agentops-control-tower-public-candidate.zip</code></td></tr>
+          <tr><th>File count</th><td>250</td></tr>
+          <tr><th>Smoke status</th><td>fail</td></tr>
+          <tr><th>SHA256</th><td><code>769db8778a993757aed1600062dde25a9daff8280ede4097aaf8554c5cea0ea9</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>public_repo_candidate/agentops-control-tower/README.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>public_repo_candidate/agentops-control-tower/LICENSE</code></td><td class="ready">present</td></tr>
+<tr><td><code>public_repo_candidate/agentops-control-tower/PUBLIC_REPO_CANDIDATE_MANIFEST.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>public_repo_candidate/agentops-control-tower/reports/latest_judge_quickstart.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>public_repo_candidate/agentops-control-tower/reports/latest_launch_decision_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_artifact_url_readback.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_publication_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_repo_dry_run.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_release_zip_smoke_test.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_public_candidate_zip_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>release/agentops-control-tower-public-candidate.zip</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Publish Steps After Approval</h2>
+      <table>
+        <thead><tr><th>#</th><th>Step</th><th>Command</th><th>Verification</th></tr></thead>
+        <tbody><tr><td>1</td><td>Review source folder</td><td><code>manual: review public_repo_candidate/agentops-control-tower</code></td><td>Confirm this is the clean public candidate, not the private workspace root.</td></tr>
+<tr><td>2</td><td>Run guarded publication rehearsal</td><td><code>python scripts\publish_public_repo_after_approval.py</code></td><td>The helper validates an isolated audit copy, scans a clean publish copy, creates a local commit, and leaves no remote configured.</td></tr>
+<tr><td>3</td><td>Run public repository publication preflight</td><td><code>python scripts\verify_public_repo_publication_gate.py --approval-phrase &quot;Approve public GitHub publication for the clean agentops-control-tower candidate.&quot; --source-folder-reviewed --isolated-staging-confirmed --secret-scan-confirmed --public-visibility-confirmed --public-git-identity-confirmed --git-user-name &quot;&lt;approved-public-git-name&gt;&quot; --git-user-email &quot;&lt;approved-public-git-email&gt;&quot;</code></td><td>Preflight must show ready_for_manual_public_repo_publication before any public repository creation.</td></tr>
+<tr><td>4</td><td>Check public repository namespace</td><td><code>gh repo view &lt;owner&gt;/agentops-control-tower --json nameWithOwner,visibility,url,isPrivate</code></td><td>If this resolves to an existing repository, stop and choose a new approved repo name or remove the stale repository before running the guarded helper.</td></tr>
+<tr><td>5</td><td>Execute guarded public GitHub publication after explicit approval</td><td><code>python scripts\publish_public_repo_after_approval.py --execute --approval-phrase &quot;Approve public GitHub publication for the clean agentops-control-tower candidate.&quot; --repo-name agentops-control-tower --git-user-name &quot;&lt;approved-public-git-name&gt;&quot; --git-user-email &quot;&lt;approved-public-git-email&gt;&quot;</code></td><td>The helper accepts the exact approval phrase, creates the public repository, pushes main, and prints GitHub readback.</td></tr>
+<tr><td>6</td><td>Read back public repository URL</td><td><code>gh repo view &lt;owner&gt;/agentops-control-tower --json nameWithOwner,visibility,url</code></td><td>Visibility is PUBLIC and the URL opens without authentication.</td></tr>
+<tr><td>7</td><td>Verify public artifact URLs after repo and video are public</td><td><code>python scripts\verify_public_artifact_urls.py --repository-url &lt;public-repo-url&gt; --demo-video-url &lt;public-video-url&gt; --live-readback</code></td><td>URL readback confirms the GitHub repository is PUBLIC and the public video URL is reachable.</td></tr>
+<tr><td>8</td><td>Hold URL writeback until video URL also exists</td><td><code>manual: do not run prepare_submission_urls.py until both public repo and public video URLs are approved</code></td><td>submission/approved_public_urls.json remains absent until both URLs are approved.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Stop Conditions</h2>
+      <ul><li>Do not publish if the source path is not the clean public candidate.</li>
+<li>Do not publish from a git repository initialized inside the private workspace.</li>
+<li>Do not publish if internal path or secret-like scans fail.</li>
+<li>Do not write approved URLs until both public repository and public demo video URLs are verified.</li>
+<li>Do not press Devpost submit from this step.</li></ul>
+    </section>
+  </main>
+</body>
+</html>
