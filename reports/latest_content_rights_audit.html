@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content Rights And Asset Safety Audit</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Content Rights And Asset Safety Audit</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Snapshot</h2>
+      <p>License: <strong>Apache-2.0</strong></p>
+      <p>Public video ready: <strong>False</strong></p>
+      <p>Splunk and Devpost names are used only to describe the hackathon, platform fit, and interoperability target. No sponsor logo, third-party music, stock footage, or account screenshots are bundled in the local package.</p>
+      <p class="pending">Before public video upload, watch the final recording end to end and confirm no private tabs, accounts, copyrighted music, unlicensed third-party marks, or unrelated media appear.</p>
+      <p class="pending">This content rights audit is local review evidence only. It does not publish a repository, record or upload video, write approved URLs, update Devpost, request trademark permission, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Assets</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Size</th><th>Role</th></tr></thead>
+        <tbody><tr><td><code>assets/dashboard_preview.png</code></td><td>75210</td><td>Dashboard screenshot generated from the local synthetic-data demo.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Bundled Audio/Video Media</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Type</th><th>Size</th></tr></thead>
+        <tbody><tr><td colspan="3">none</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Screen Safety Sources</h2>
+      <table>
+        <thead><tr><th>Path</th></tr></thead>
+        <tbody><tr><td><code>submission/VIDEO_RECORDING_RUNBOOK.md</code></td></tr>
+<tr><td><code>submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md</code></td></tr>
+<tr><td><code>reports/latest_video_readiness.html</code></td></tr>
+<tr><td><code>reports/latest_video_cue_sheet.html</code></td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>Apache-2.0 license present</td><td class="ready">pass</td><td>LICENSE</td></tr>
+<tr><td>dashboard preview PNG present</td><td class="ready">pass</td><td>assets/dashboard_preview.png</td></tr>
+<tr><td>asset inventory limited</td><td class="ready">pass</td><td>assets/dashboard_preview.png</td></tr>
+<tr><td>no bundled audio or video media</td><td class="ready">pass</td><td>no audio/video files bundled</td></tr>
+<tr><td>video runbook synthetic-data boundary</td><td class="ready">pass</td><td>synthetic-data screen safety</td></tr>
+<tr><td>video runbook account/privacy boundary</td><td class="ready">pass</td><td>account screen safety</td></tr>
+<tr><td>video screen checklist pending review</td><td class="ready">pass</td><td>screen safety checklist stays gated</td></tr>
+<tr><td>video screen checklist privacy boundary</td><td class="ready">pass</td><td>secret screen safety</td></tr>
+<tr><td>video readiness not final public video</td><td class="ready">pass</td><td>public video still requires approval/upload</td></tr>
+<tr><td>official audit content rights note</td><td class="ready">pass</td><td>official requirements audit rights note</td></tr>
+<tr><td>public wording rights scan</td><td class="ready">pass</td><td>no suspicious media-license terms</td></tr>
+<tr><td>boundary text</td><td class="ready">pass</td><td>This content rights audit is local review evidence only. It does not publish a repository, record or upload video, write approved URLs, update Devpost, request trademark permission, or submit anything.</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

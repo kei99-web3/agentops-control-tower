@@ -1,0 +1,35 @@
+{
+  "generated_at_utc": "2026-06-10T02:08:51+00:00",
+  "status": "waiting_for_external_urls",
+  "final_submit_ready": false,
+  "pending_urls": [
+    "repository_url",
+    "demo_video_url"
+  ],
+  "repository_url": "PENDING_USER_APPROVAL_PUBLIC_REPO_URL",
+  "demo_video_url": "PENDING_USER_APPROVAL_PUBLIC_VIDEO_URL",
+  "checks": [
+    {
+      "name": "repository URL",
+      "status": "pass",
+      "detail": "pending user-approved URL"
+    },
+    {
+      "name": "demo video URL",
+      "status": "pass",
+      "detail": "pending user-approved URL"
+    },
+    {
+      "name": "repository approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    },
+    {
+      "name": "video approval gate",
+      "status": "pass",
+      "detail": "pending or approved URL supplied"
+    }
+  ],
+  "boundary": "This script validates URL shape only. It does not publish, upload, submit, or update Devpost.",
+  "root": "agentops-control-tower"
+}

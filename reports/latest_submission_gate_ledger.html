@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submission Gate Ledger</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; width: 190px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Submission Gate Ledger</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Submission Boundary</h2>
+      <p>Local ready: <span class="ready">True</span></p>
+      <p>Final submit ready: <span class="pending">False</span></p>
+      <p class="pending">This ledger is advisory only. It does not create a repo, upload a video, create accounts, configure credentials, write approved URLs, update Devpost, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Public GitHub Repository</h2>
+      <p>Status: <span class="ready">ready_for_user_decision</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval required</th><td>Explicit approval is required before creating a public repository or pushing files.</td></tr>
+          <tr><th>Next safe action</th><td>Review the publication command plan and hold until the public repository decision is explicit.</td></tr>
+          <tr><th>Verification</th><td>After approval, confirm the public URL opens, then rerun URL validation and the submission packet validator.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>PUBLIC_REPO_CANDIDATE_MANIFEST.md</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_external_approval_packet.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_publication_command_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_apply_plan.html</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Public Demo Video</h2>
+      <p>Status: <span class="ready">ready_for_user_decision</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval required</th><td>Explicit approval is required before recording, uploading, or making the video public.</td></tr>
+          <tr><th>Next safe action</th><td>Review the video readiness report and command plan, then record only after the screen safety check is complete.</td></tr>
+          <tr><th>Verification</th><td>Confirm the uploaded video is public, under 3 minutes, and does not expose private screens or overclaim live Splunk MCP proof.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_demo_tour.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_readiness.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_video_command_plan.html</td><td class="ready">present</td></tr>
+<tr><td>submission/VIDEO_RECORDING_RUNBOOK.md</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Optional Live Splunk / MCP Proof</h2>
+      <p>Status: <span class="pending">live_splunk_mcp_verified</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval required</th><td>Completed for local official-MCP proof. Further production/Cloud proof would require separate explicit approval.</td></tr>
+          <tr><th>Next safe action</th><td>Use the completed readback in the video and Devpost copy, bounded to local Splunk Enterprise Docker with synthetic data.</td></tr>
+          <tr><th>Verification</th><td>Review the official MCP readback file and rerun claim-boundary validation.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_splunk_mcp_command_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_splunk_mcp_proof_brief.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_splunk_mcp_prompt_pack.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_splunk_mcp_proof_capture_manifest.html</td><td class="ready">present</td></tr>
+<tr><td>submission/SPLUNK_MCP_RUNBOOK.md</td><td class="ready">present</td></tr>
+<tr><td>submission/SPLUNK_MCP_PROMPT_PACK.md</td><td class="ready">present</td></tr>
+<tr><td>submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md</td><td class="ready">present</td></tr>
+<tr><td>submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md</td><td class="ready">present</td></tr>
+<tr><td>submission/SPL_QUERIES.md</td><td class="ready">present</td></tr>
+<tr><td>data/splunk_agentops_events.csv</td><td class="ready">present</td></tr>
+<tr><td>splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Approved URL Writeback</h2>
+      <p>Status: <span class="pending">blocked_until_public_urls</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval required</th><td>Explicit approval is required before writing verified public URLs into local submission artifacts.</td></tr>
+          <tr><th>Next safe action</th><td>Wait until the public repository and demo video URLs are real, public, and read back.</td></tr>
+          <tr><th>Verification</th><td>Run prepare_submission_urls.py with both approved URLs, then rerun URL validation and final copy export.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_submission_url_validation.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_apply_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_final_copy.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_final_go_no_go.html</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Devpost Final Submission</h2>
+      <p>Status: <span class="pending">blocked_until_public_urls</span></p>
+      <table>
+        <tbody>
+          <tr><th>Approval required</th><td>Explicit final approval is required before using a Devpost session, saving a draft, or pressing submit.</td></tr>
+          <tr><th>Next safe action</th><td>Wait for public repo and video URLs, write approved URL evidence only after approval, then review final copy.</td></tr>
+          <tr><th>Verification</th><td>Confirm approved public URLs, safe claim wording, selected track, architecture evidence, and final submit readback.</td></tr>
+        </tbody>
+      </table>
+      <h3>Evidence</h3>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_devpost_final_copy.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_submit_command_plan.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_manual_fill_brief.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_post_action_evidence_brief.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_validation.html</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_final_go_no_go.html</td><td class="ready">present</td></tr>
+<tr><td>submission/DEVPOST_FIELD_MAP.md</td><td class="ready">present</td></tr>
+<tr><td>submission/SUBMISSION_LAUNCH_RUNBOOK.md</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Recommended Order</h2>
+      <ol><li>Review this Submission Gate Ledger and the External Approval Packet.</li><li>Approve or hold public GitHub publication.</li><li>Approve or hold public demo video recording/upload.</li><li>Optionally approve live Splunk/MCP proof if the bonus path is worth the account and credential work.</li><li>After public URLs are approved, write approved URL evidence locally and rerun validation.</li><li>Only then request final Devpost submit approval.</li></ol>
+    </section>
+  </main>
+</body>
+</html>

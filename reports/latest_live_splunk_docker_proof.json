@@ -1,0 +1,480 @@
+{
+  "generated_at_utc": "2026-06-10T02:06:58+00:00",
+  "status": "live_splunk_verified_official_mcp_verified",
+  "root_type": "workspace",
+  "live_splunk_verified": true,
+  "official_splunk_mcp_server_verified": true,
+  "mcp_protocol_adapter_verified": true,
+  "synthetic_data_only": true,
+  "synthetic_source": "data/splunk_agentops_events.csv",
+  "synthetic_row_count": 13,
+  "indexed_row_count": 13,
+  "index": "agentops_events",
+  "sourcetype": "agentops:events",
+  "splunk_runtime": {
+    "mode": "docker_ephemeral",
+    "image": "splunk/splunk:latest",
+    "container_name": "agentic-incident-command-splunk-proof",
+    "web_port": 18000,
+    "management_port": 18089,
+    "cleanup_status": "kept_running"
+  },
+  "query_results": [
+    {
+      "key": "incident_timeline",
+      "status": "pass",
+      "spl": "search index=agentops_events incident_id=\"inc-checkout-20260603-0900\" | sort _time | table _time event_id signal_domain service event_type risk_score evidence_ref message",
+      "row_count": 13,
+      "required_event_ids": [
+        "evt-0001",
+        "evt-0002",
+        "evt-0009",
+        "evt-0010",
+        "evt-0012"
+      ],
+      "missing_event_ids": [],
+      "sample_rows": [
+        {
+          "_time": "2026-06-03 00:00:00.000 GMT",
+          "event_id": "evt-0001",
+          "signal_domain": "deployment",
+          "service": "checkout-api",
+          "event_type": "deploy_completed",
+          "risk_score": "45",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0001",
+          "message": "Checkout API release 2026.06.03.1 completed 11 minutes before the error spike."
+        },
+        {
+          "_time": "2026-06-03 00:08:00.000 GMT",
+          "event_id": "evt-0002",
+          "signal_domain": "application",
+          "service": "checkout-api",
+          "event_type": "error_rate_spike",
+          "risk_score": "100",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0002",
+          "message": "Checkout API 5xx rate jumped from 0.2% to 14.8% after the release."
+        },
+        {
+          "_time": "2026-06-03 00:10:00.000 GMT",
+          "event_id": "evt-0003",
+          "signal_domain": "apm",
+          "service": "checkout-api",
+          "event_type": "latency_regression",
+          "risk_score": "80",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0003",
+          "message": "p95 latency increased from 240ms to 2.8s for POST /checkout."
+        },
+        {
+          "_time": "2026-06-03 00:11:00.000 GMT",
+          "event_id": "evt-0004",
+          "signal_domain": "database",
+          "service": "payments-db",
+          "event_type": "connection_pool_pressure",
+          "risk_score": "70",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0004",
+          "message": "Payments DB connection pool saturation rose to 92% during the checkout error spike."
+        },
+        {
+          "_time": "2026-06-03 00:12:00.000 GMT",
+          "event_id": "evt-0005",
+          "signal_domain": "security",
+          "service": "auth-gateway",
+          "event_type": "auth_failure_burst",
+          "risk_score": "45",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0005",
+          "message": "Auth failures increased from a single ASN but did not align with checkout error start."
+        },
+        {
+          "_time": "2026-06-03 00:13:00.000 GMT",
+          "event_id": "evt-0006",
+          "signal_domain": "network",
+          "service": "edge-us-west",
+          "event_type": "packet_loss_warning",
+          "risk_score": "45",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0006",
+          "message": "Edge packet loss reached 2.2% in one region after the checkout regression was already visible."
+        },
+        {
+          "_time": "2026-06-03 00:14:00.000 GMT",
+          "event_id": "evt-0007",
+          "signal_domain": "security",
+          "service": "edge-waf",
+          "event_type": "waf_probe_detected",
+          "risk_score": "100",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+          "message": "WAF detected probing against checkout paths without a matching exploit signature."
+        },
+        {
+          "_time": "2026-06-03 00:15:00.000 GMT",
+          "event_id": "evt-0008",
+          "signal_domain": "mcp",
+          "service": "incident-command",
+          "event_type": "spl_query_requested",
+          "risk_score": "20",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0008",
+          "message": "AI incident commander requested Splunk context for timeline, blast radius, and root-cause ranking."
+        }
+      ]
+    },
+    {
+      "key": "root_cause_ranking",
+      "status": "pass",
+      "spl": "search index=agentops_events incident_id=\"inc-checkout-20260603-0900\" root_cause_candidate!=\"incident_response_coordination\" root_cause_candidate!=\"governance_control\" root_cause_candidate!=\"investigation_context\" | stats sum(root_cause_weight) as evidence_score values(signal_domain) as domains values(service) as services values(evidence_ref) as evidence by root_cause_candidate | sort -evidence_score",
+      "row_count": 4,
+      "required_event_ids": [],
+      "missing_event_ids": [],
+      "sample_rows": [
+        {
+          "root_cause_candidate": "checkout-api release regression",
+          "evidence_score": "132",
+          "domains": [
+            "ai_correlation",
+            "apm",
+            "application",
+            "deployment",
+            "remediation"
+          ],
+          "services": [
+            "checkout-api",
+            "incident-command"
+          ],
+          "evidence": [
+            "splunk://agentops_events/inc-checkout-20260603-0900/0001",
+            "splunk://agentops_events/inc-checkout-20260603-0900/0002",
+            "splunk://agentops_events/inc-checkout-20260603-0900/0003",
+            "splunk://agentops_events/inc-checkout-20260603-0900/0009",
+            "splunk://agentops_events/inc-checkout-20260603-0900/0010"
+          ]
+        },
+        {
+          "root_cause_candidate": "database pool saturation",
+          "evidence_score": "18",
+          "domains": "database",
+          "services": "payments-db",
+          "evidence": "splunk://agentops_events/inc-checkout-20260603-0900/0004"
+        },
+        {
+          "root_cause_candidate": "credential attack distraction",
+          "evidence_score": "16",
+          "domains": "security",
+          "services": [
+            "auth-gateway",
+            "edge-waf"
+          ],
+          "evidence": [
+            "splunk://agentops_events/inc-checkout-20260603-0900/0005",
+            "splunk://agentops_events/inc-checkout-20260603-0900/0007"
+          ]
+        },
+        {
+          "root_cause_candidate": "regional network degradation",
+          "evidence_score": "6",
+          "domains": "network",
+          "services": "edge-us-west",
+          "evidence": "splunk://agentops_events/inc-checkout-20260603-0900/0006"
+        }
+      ]
+    },
+    {
+      "key": "approval_queue",
+      "status": "pass",
+      "spl": "search index=agentops_events requires_human_approval=\"True\" OR policy_decision=\"deny\" | sort -risk_score | table _time event_id service external_action risk_score approval_state policy_decision runbook_action evidence_ref recommended_human_action",
+      "row_count": 4,
+      "required_event_ids": [
+        "evt-0007",
+        "evt-0010",
+        "evt-0011",
+        "evt-0012"
+      ],
+      "missing_event_ids": [],
+      "sample_rows": [
+        {
+          "_time": "2026-06-03 00:19:00.000 GMT",
+          "event_id": "evt-0012",
+          "service": "incident-command",
+          "external_action": "none",
+          "risk_score": "100",
+          "approval_state": "blocked_by_policy",
+          "policy_decision": "deny",
+          "runbook_action": "Preserve redacted audit event; do not expose credentials.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+          "recommended_human_action": "Keep the tool call blocked and cite redacted evidence only."
+        },
+        {
+          "_time": "2026-06-03 00:17:00.000 GMT",
+          "event_id": "evt-0010",
+          "service": "checkout-api",
+          "external_action": "cloud_rollback",
+          "risk_score": "100",
+          "approval_state": "pending_user",
+          "policy_decision": "review",
+          "runbook_action": "Rollback checkout-api to 2026.06.02.4.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+          "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and DB pool status."
+        },
+        {
+          "_time": "2026-06-03 00:14:00.000 GMT",
+          "event_id": "evt-0007",
+          "service": "edge-waf",
+          "external_action": "security_rule_change",
+          "risk_score": "100",
+          "approval_state": "pending_user",
+          "policy_decision": "review",
+          "runbook_action": "Prepare temporary WAF watch rule, not a hard block.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+          "recommended_human_action": "Approve a temporary WAF watch rule only after confirming it will not block valid checkout traffic."
+        },
+        {
+          "_time": "2026-06-03 00:18:00.000 GMT",
+          "event_id": "evt-0011",
+          "service": "incident-command",
+          "external_action": "stakeholder_notify",
+          "risk_score": "95",
+          "approval_state": "pending_user",
+          "policy_decision": "review",
+          "runbook_action": "Send concise incident update to support and engineering leads.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0011",
+          "recommended_human_action": "Review wording and send only after incident commander confirms customer impact."
+        }
+      ]
+    },
+    {
+      "key": "mcp_investigation_context",
+      "status": "pass",
+      "spl": "search index=agentops_events mcp_tool!=\"none\" OR signal_domain=\"ai_correlation\" | table _time event_id component mcp_tool event_type evidence_ref recommended_human_action",
+      "row_count": 3,
+      "required_event_ids": [
+        "evt-0008",
+        "evt-0009",
+        "evt-0012"
+      ],
+      "missing_event_ids": [],
+      "sample_rows": [
+        {
+          "_time": "2026-06-03 00:19:00.000 GMT",
+          "event_id": "evt-0012",
+          "component": "mcp_runtime_guard",
+          "mcp_tool": "filesystem_read",
+          "event_type": "credential_boundary_blocked",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+          "recommended_human_action": "Keep the tool call blocked and cite redacted evidence only."
+        },
+        {
+          "_time": "2026-06-03 00:16:00.000 GMT",
+          "event_id": "evt-0009",
+          "component": "ai_incident_commander",
+          "mcp_tool": "none",
+          "event_type": "root_cause_ranked",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0009",
+          "recommended_human_action": "Review the rollback recommendation and confirm a human owner before action."
+        },
+        {
+          "_time": "2026-06-03 00:15:00.000 GMT",
+          "event_id": "evt-0008",
+          "component": "splunk_mcp_investigator",
+          "mcp_tool": "splunk_search",
+          "event_type": "spl_query_requested",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0008",
+          "recommended_human_action": "Use Splunk evidence citations before taking remediation action."
+        }
+      ]
+    },
+    {
+      "key": "blast_radius_by_service",
+      "status": "pass",
+      "spl": "search index=agentops_events incident_id=\"inc-checkout-20260603-0900\" | stats count max(risk_score) as max_risk values(signal_domain) as domains by service | sort -max_risk",
+      "row_count": 6,
+      "required_event_ids": [],
+      "missing_event_ids": [],
+      "sample_rows": [
+        {
+          "service": "checkout-api",
+          "count": "4",
+          "max_risk": "100",
+          "domains": [
+            "apm",
+            "application",
+            "deployment",
+            "remediation"
+          ]
+        },
+        {
+          "service": "edge-waf",
+          "count": "1",
+          "max_risk": "100",
+          "domains": "security"
+        },
+        {
+          "service": "incident-command",
+          "count": "5",
+          "max_risk": "100",
+          "domains": [
+            "ai_correlation",
+            "communications",
+            "mcp",
+            "mcp_security",
+            "platform"
+          ]
+        },
+        {
+          "service": "payments-db",
+          "count": "1",
+          "max_risk": "70",
+          "domains": "database"
+        },
+        {
+          "service": "auth-gateway",
+          "count": "1",
+          "max_risk": "45",
+          "domains": "security"
+        },
+        {
+          "service": "edge-us-west",
+          "count": "1",
+          "max_risk": "45",
+          "domains": "network"
+        }
+      ]
+    }
+  ],
+  "failed_query_count": 0,
+  "mcp_style_answer": {
+    "status": "read_only_splunk_rest_answer_captured",
+    "official_splunk_mcp_server_verified": false,
+    "mcp_protocol_adapter_verified": false,
+    "answer": "The incident commander should prioritize the checkout rollback decision, keep the WAF watch rule as a secondary approval item, and keep the credential-boundary tool call blocked. The live Splunk synthetic index cites evt-0010 for rollback, evt-0007 for the WAF watch rule, evt-0011 for the stakeholder update, and evt-0012 for the blocked credential-boundary MCP event.",
+    "citations": [
+      {
+        "event_id": "evt-0012",
+        "risk_score": "100",
+        "policy_decision": "deny",
+        "approval_state": "blocked_by_policy",
+        "runbook_action": "Preserve redacted audit event; do not expose credentials.",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012"
+      },
+      {
+        "event_id": "evt-0010",
+        "risk_score": "100",
+        "policy_decision": "review",
+        "approval_state": "pending_user",
+        "runbook_action": "Rollback checkout-api to 2026.06.02.4.",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010"
+      },
+      {
+        "event_id": "evt-0007",
+        "risk_score": "100",
+        "policy_decision": "review",
+        "approval_state": "pending_user",
+        "runbook_action": "Prepare temporary WAF watch rule, not a hard block.",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007"
+      },
+      {
+        "event_id": "evt-0011",
+        "risk_score": "95",
+        "policy_decision": "review",
+        "approval_state": "pending_user",
+        "runbook_action": "Send concise incident update to support and engineering leads.",
+        "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0011"
+      }
+    ],
+    "boundary": "This is a read-only live Splunk REST readback, not an official Splunk MCP Server run. Official Splunk MCP Server verification remains blocked until the Splunkbase app can be downloaded/installed with approved credentials."
+  },
+  "mcp_adapter_proof": {
+    "status": "local_mcp_sdk_adapter_verified",
+    "verified": true,
+    "official_splunk_mcp_server_verified": false,
+    "tools": [
+      "approval_priority"
+    ],
+    "tool_result": {
+      "answer": "No remediation should execute automatically. The approval-priority evidence is the checkout-api rollback proposal, the secondary WAF watch rule, the stakeholder update draft, and the blocked credential-boundary MCP event, all cited from the live synthetic Splunk index.",
+      "citations": [
+        {
+          "event_id": "evt-0012",
+          "service": "incident-command",
+          "external_action": "none",
+          "risk_score": "100",
+          "approval_state": "blocked_by_policy",
+          "policy_decision": "deny",
+          "runbook_action": "Preserve redacted audit event; do not expose credentials.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0012",
+          "recommended_human_action": "Keep the tool call blocked and cite redacted evidence only."
+        },
+        {
+          "event_id": "evt-0010",
+          "service": "checkout-api",
+          "external_action": "cloud_rollback",
+          "risk_score": "100",
+          "approval_state": "pending_user",
+          "policy_decision": "review",
+          "runbook_action": "Rollback checkout-api to 2026.06.02.4.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0010",
+          "recommended_human_action": "Approve or reject rollback after checking deploy owner, current traffic, and DB pool status."
+        },
+        {
+          "event_id": "evt-0007",
+          "service": "edge-waf",
+          "external_action": "security_rule_change",
+          "risk_score": "100",
+          "approval_state": "pending_user",
+          "policy_decision": "review",
+          "runbook_action": "Prepare temporary WAF watch rule, not a hard block.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0007",
+          "recommended_human_action": "Approve a temporary WAF watch rule only after confirming it will not block valid checkout traffic."
+        },
+        {
+          "event_id": "evt-0011",
+          "service": "incident-command",
+          "external_action": "stakeholder_notify",
+          "risk_score": "95",
+          "approval_state": "pending_user",
+          "policy_decision": "review",
+          "runbook_action": "Send concise incident update to support and engineering leads.",
+          "evidence_ref": "splunk://agentops_events/inc-checkout-20260603-0900/0011",
+          "recommended_human_action": "Review wording and send only after incident commander confirms customer impact."
+        }
+      ],
+      "external_actions_performed": false,
+      "synthetic_index": "agentops_events"
+    },
+    "raw_content": [
+      {
+        "type": "list",
+        "text": "",
+        "repr": "[TextContent(type='text', text='{\\n  \"answer\": \"No remediation should execute automatically. The approval-priority evidence is the checkout-api rollback proposal, the secondary WAF watch rule, the stakeholder update draft, and the blocked credential-boundary MCP event, all cited from the live synthetic Splunk index.\",\\n  \"citations\": [\\n    {\\n      \"event_id\": \"evt-0012\",\\n      \"service\": \"incident-command\",\\n      \"external_action\": \"none\",\\n      \"risk_score\": \"100\",\\n      \"approval_state\":"
+      },
+      {
+        "type": "dict",
+        "text": "",
+        "repr": "{'answer': 'No remediation should execute automatically. The approval-priority evidence is the checkout-api rollback proposal, the secondary WAF watch rule, the stakeholder update draft, and the blocked credential-boundary MCP event, all cited from the live synthetic Splunk index.', 'citations': [{'event_id': 'evt-0012', 'service': 'incident-command', 'external_action': 'none', 'risk_score': '100', 'approval_state': 'blocked_by_policy', 'policy_decision': 'deny', 'runbook_action': 'Preserve reda"
+      }
+    ],
+    "boundary": "This is a local MCP SDK read-only adapter backed by the live synthetic Splunk index. It is not the official Splunk MCP Server app from Splunkbase."
+  },
+  "commands": [
+    {
+      "name": "start Splunk Docker container",
+      "returncode": 0,
+      "stdout_tail": "793a8bc824123260e8cdcc90a7a3f6c32293228de708edc519ecd0e7a081380e\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "copy synthetic CSV into container",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "add synthetic CSV oneshot via REST",
+      "returncode": 0,
+      "stdout_tail": "HTTP 201: /data/inputs/oneshot\",\"updated\":\"2026-06-09T14:20:15+00:00\",\"generator\":{\"build\":\"f798d4d49089\",\"version\":\"10.4.0\"},\"entry\":[{\"name\":\"/tmp/splunk_agentops_events.csv\",\"id\":\"https://localhost:18089/services/data/inputs/oneshot/%252Ftmp%252Fsplunk_agentops_events.csv\",\"updated\":\"1970-01-01T00:00:00+00:00\",\"links\":{\"alternate\":\"/services/data/inputs/oneshot/%252Ftmp%252Fsplunk_agentops_events.csv\",\"list\":\"/services/data/inputs/oneshot/%252Ftmp%252Fsplunk_agentops_events.csv\"},\"author\":\"system\",\"acl\":{\"app\":\"\",\"can_list\":true,\"can_write\":true,\"modifiable\":false,\"owner\":\"system\",\"perms\":{\"read\":[\"_spl_role_for_sidecar_edge\",\"_spl_role_for_sidecar_topology\",\"admin\",\"data_management_admin\",\"power\",\"splunk-system-role\",\"user\"],\"write\":[\"admin\",\"splunk-system-role\"]},\"removable\":false,\"sharing\":\"system\"},\"content\":{\"Bytes Indexed\":0,\"Offset\":0,\"Size\":8368,\"Sources Indexed\":0,\"Spool Time\":\"Tue Jun  9 14:20:15 UTC 2026\",\"eai:acl\":null}}],\"paging\":{\"total\":1,\"perPage\":30,\"offset\":0},\"messages\":[]}",
+      "stderr_tail": ""
+    }
+  ],
+  "boundary": "Approved proof used an ephemeral local Docker Splunk runtime and only generated synthetic CSV data. Production Splunk Cloud deployment is not claimed. No tokens, passwords, private workspace logs, public repo publication, video upload, URL writeback, Devpost update, or Devpost submission is included in this report.",
+  "official_mcp_blocker": "none_local_official_mcp_verified",
+  "live_splunk_mcp_verified": true,
+  "official_mcp_status": "official_splunk_mcp_server_captured",
+  "official_mcp_evidence": "submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md",
+  "mcp_boundary": "Official Splunk MCP Server proof is bounded to local Splunk Enterprise Docker, synthetic agentops_events data, Streamable HTTP via mcp-remote, and read-only query evidence."
+}

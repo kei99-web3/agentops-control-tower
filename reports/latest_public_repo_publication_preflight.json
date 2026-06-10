@@ -1,0 +1,137 @@
+{
+  "generated_at_utc": "2026-06-10T02:09:10+00:00",
+  "status": "ready_for_user_review",
+  "gate_status": "blocked_by_public_repo_approval_gate",
+  "root_type": "public_candidate",
+  "local_ready": true,
+  "public_repo_publication_allowed": false,
+  "approval_phrase_accepted": false,
+  "approval_phrase_required": "Approve public GitHub publication for the clean agentops-control-tower candidate.",
+  "manual_confirmations": {
+    "source_folder_reviewed": false,
+    "isolated_staging_confirmed": false,
+    "secret_scan_confirmed": false,
+    "public_visibility_confirmed": false,
+    "public_git_identity_confirmed": false
+  },
+  "missing_manual_confirmations": [
+    "source_folder_reviewed",
+    "isolated_staging_confirmed",
+    "secret_scan_confirmed",
+    "public_visibility_confirmed",
+    "public_git_identity_confirmed"
+  ],
+  "invalid_git_identity": [],
+  "missing_evidence": [],
+  "gate_issues": [
+    "approval phrase is required before public repository publication",
+    "manual source, staging, scan, visibility, and git identity confirmations are required"
+  ],
+  "evidence": [
+    {
+      "path": ".gitattributes",
+      "exists": true
+    },
+    {
+      "path": "README.md",
+      "exists": true
+    },
+    {
+      "path": "LICENSE",
+      "exists": true
+    },
+    {
+      "path": "PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_publication_command_plan.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_publication_command_plan.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_metadata.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_metadata.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_publish_brief.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_repo_publish_brief.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_validation.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_submission_url_validation.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_artifact_url_readback.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_public_artifact_url_readback.json",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_final_go_no_go.html",
+      "exists": true
+    },
+    {
+      "path": "reports/latest_final_go_no_go.json",
+      "exists": true
+    },
+    {
+      "path": "scripts/publish_public_repo_after_approval.py",
+      "exists": true
+    },
+    {
+      "path": "submission/PUBLIC_REPO_METADATA.md",
+      "exists": true
+    },
+    {
+      "path": "submission/USER_APPROVAL_GATES.md",
+      "exists": true
+    }
+  ],
+  "external_actions_attempted": false,
+  "external_actions_completed": false,
+  "public_repo_publication_safe_readback": {
+    "action_key": "public_github_repository",
+    "gate_status": "blocked_by_public_repo_approval_gate",
+    "public_repo_publication_allowed": false,
+    "approval_phrase_accepted": false,
+    "ready_for_publication": false,
+    "repo_name": "agentops-control-tower",
+    "expected_visibility": "PUBLIC",
+    "candidate_path": ".",
+    "preflight_command": "python scripts\\verify_public_repo_publication_gate.py --approval-phrase \"Approve public GitHub publication for the clean agentops-control-tower candidate.\" --source-folder-reviewed --isolated-staging-confirmed --secret-scan-confirmed --public-visibility-confirmed --public-git-identity-confirmed --git-user-name \"<approved-public-git-name>\" --git-user-email \"<approved-public-git-email>\"",
+    "execute_command": "python scripts\\publish_public_repo_after_approval.py --execute --approval-phrase \"Approve public GitHub publication for the clean agentops-control-tower candidate.\" --repo-name agentops-control-tower --git-user-name \"<approved-public-git-name>\" --git-user-email \"<approved-public-git-email>\"",
+    "evidence_note_target": "submission/post_action_evidence/YYYY-MM-DD_public_github_repository_readback.md",
+    "repository_url": "PENDING_USER_APPROVAL_PUBLIC_REPO_URL",
+    "external_actions_attempted": false,
+    "external_actions_completed": false,
+    "forbidden_content": [
+      "credentials",
+      "tokens",
+      "local absolute paths",
+      "private workspace material",
+      "private logs",
+      "customer data",
+      "private Devpost/account pages"
+    ],
+    "copy_policy": "Use this pre-publication safe readback plus the guarded helper safe_readback after publication. Do not copy stage_root, audit_stage, publish_stage, raw command output, credentials, tokens, or local absolute paths."
+  },
+  "boundary": "This public repository publication gate is a local preflight only. It does not create a repository, push commits, publish files, write approved URLs, upload video, update Devpost, press submit, or submit anything."
+}

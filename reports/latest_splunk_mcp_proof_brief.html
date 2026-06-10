@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Splunk/MCP Proof Brief</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Live Splunk/MCP Proof Brief</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Decision</h2>
+      <p>Approval phrase: <strong>Approve optional live Splunk and Splunk MCP proof using synthetic data only.</strong></p>
+      <p>Live Splunk MCP verified: <span class="pending">True</span></p>
+      <p>Live Splunk verified: <span class="ready">True</span></p>
+      <p>Local MCP SDK adapter verified: <span class="ready">True</span></p>
+      <p>Official Splunk MCP Server verified: <span class="pending">True</span></p>
+      <p>Live proof status: <code>live_splunk_verified_official_mcp_verified</code>; rows: 13/13; failed queries: 0</p>
+      <p>The live Docker proof strengthens the Splunk data story, the local MCP SDK adapter demonstrates read-only cited investigation behavior, and the official Splunk MCP Server readback confirms the bonus proof in a reproducible local Splunk Enterprise Docker environment using synthetic data only. Production Splunk Cloud deployment is not claimed.</p>
+      <p class="pending">This brief is local proof-decision support only. The brief builder does not create accounts, configure credentials, import data, install apps, connect MCP, capture screenshots, publish, upload, update claims, write approved URLs, update Devpost, or submit anything. When live proof evidence exists, it is limited to approved ephemeral Docker Splunk, synthetic data, and a local read-only MCP SDK adapter unless the official Splunk MCP Server field says otherwise.</p>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_splunk_mcp_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_app_package_manifest.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_claim_boundary_validation.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_claim_boundary_validation.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_mcp_investigation.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_RUNBOOK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPL_QUERIES.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>data/splunk_agentops_events.csv</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/savedsearches.conf</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Proof Success Criteria</h2>
+      <table>
+        <thead><tr><th>Criterion</th><th>Evidence</th><th>Acceptance</th></tr></thead>
+        <tbody><tr><td>Synthetic data isolation</td><td>Only data/splunk_agentops_events.csv is imported into the approved agentops_events index.</td><td>No real workspace logs, customer data, local paths, credentials, or account pages are shown.</td></tr>
+<tr><td>Live SPL query proof</td><td>Incident timeline, root-cause evidence, MCP Remediation Ledger, Splunk MCP investigation context, and blast-radius SPL queries return rows.</td><td>Returned rows include incident IDs, services, risk scores, root-cause candidates, policy decisions, approval states, and evidence refs.</td></tr>
+<tr><td>Splunk app proof</td><td>The local Splunk app candidate or copied dashboard shows the Agentic Incident Command Center view.</td><td>The dashboard points only at the approved synthetic index and mirrors the local proof story.</td></tr>
+<tr><td>MCP-assisted investigation proof</td><td>Splunk MCP Server answers the approval-priority question from indexed synthetic events.</td><td>The answer cites event IDs and evidence refs instead of making unsupported recommendations.</td></tr>
+<tr><td>Claim boundary upgrade</td><td>Claim validation and submission validation pass after any wording changes.</td><td>Live Splunk/MCP wording is used only after the live evidence above is captured and reviewed.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Approval Steps</h2>
+      <table>
+        <thead><tr><th>#</th><th>Step</th><th>Owner</th><th>Action</th><th>Verification</th></tr></thead>
+        <tbody><tr><td>1</td><td>Approve live proof scope</td><td>User</td><td>Approve optional live Splunk and Splunk MCP proof using synthetic data only.</td><td>Approval explicitly covers account/license use, synthetic import, read-only MCP scope, and proof capture.</td></tr>
+<tr><td>2</td><td>Prepare local proof inputs</td><td>Codex/local</td><td>Run the local demo, SPL-equivalent query pack, Splunk app validation, and package manifest.</td><td>latest_local_spl_query_results and latest_splunk_app_package_manifest are ready_for_user_review.</td></tr>
+<tr><td>3</td><td>Create approved Splunk scope</td><td>User/manual</td><td>Use approved Splunk access and create/import only the synthetic agentops_events dataset.</td><td>The index contains the expected synthetic rows and no private or account data.</td></tr>
+<tr><td>4</td><td>Capture SPL proof</td><td>User/manual</td><td>Run the SPL queries from submission/SPL_QUERIES.md.</td><td>Screenshots or recording show incident timeline, root-cause evidence, remediation ledger, MCP investigation context, and blast-radius rows.</td></tr>
+<tr><td>5</td><td>Configure Splunk MCP read-only proof</td><td>User/manual</td><td>Configure Splunk MCP Server with approved read-only scope for the synthetic index.</td><td>The MCP answer cites event IDs and evidence refs and does not perform external actions.</td></tr>
+<tr><td>6</td><td>Upgrade public claims only after proof</td><td>Codex/local</td><td>Update Devpost/video wording only if proof evidence is reviewed, then rerun validators.</td><td>validate_claim_boundaries.py and validate_submission_packet.py pass.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Screen Safety Checks</h2>
+      <ul><li>Show only the Splunk search/dashboard, local demo pages, and synthetic event evidence needed for the proof.</li>
+<li>Hide browser tabs, account settings, billing, tokens, hostnames, private paths, terminals with secrets, and personal data.</li>
+<li>Use synthetic event IDs and evidence refs as the narration anchor.</li>
+<li>Do not show credential setup screens or MCP configuration secrets in the video.</li>
+<li>Do not imply live Splunk/MCP verification unless the proof has actually been captured.</li></ul>
+    </section>
+    <section>
+      <h2>Stop Conditions</h2>
+      <ul><li>Stop if Splunk access, cost, license, or credential scope is not explicitly approved.</li>
+<li>Stop if the data source is anything other than the generated synthetic CSV.</li>
+<li>Stop if any screenshot or recording exposes credentials, account pages, local paths, or private data.</li>
+<li>Stop if MCP can access more than the approved read-only synthetic-data scope.</li>
+<li>Stop if claim-boundary validation fails after wording changes.</li>
+<li>Stop before public repo publication, video upload, URL writeback, or Devpost submit unless those separate gates are approved.</li></ul>
+    </section>
+    <section>
+      <h2>Claim Upgrade Rule</h2>
+      <p>Use verified-through-Splunk-MCP wording only when it is explicitly bounded to the local Splunk Enterprise Docker proof with synthetic data. Do not claim production Splunk Cloud deployment.</p>
+    </section>
+  </main>
+</body>
+</html>

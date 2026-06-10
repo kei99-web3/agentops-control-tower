@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eligibility And Compliance Audit</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eligibility And Compliance Audit</h1>
+    <p>Status: <span class="ready">ready_for_user_review</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Snapshot</h2>
+      <table><tbody>
+        <tr><th>Root type</th><td>public_candidate</td></tr>
+        <tr><th>Source checked at</th><td>2026-06-04 JST</td></tr>
+        <tr><th>Human confirmations</th><td>5</td></tr>
+        <tr><th>Human confirmation checklist</th><td><code>submission/HUMAN_CONFIRMATION_CHECKLIST.md</code></td></tr>
+        <tr><th>Failed checks</th><td>0</td></tr>
+      </tbody></table>
+      <p class="pending">Before Devpost final submission, the entrant should confirm each human-confirmation item and record approval in the launch runbook or post-action evidence log.</p>
+      <p class="pending">This eligibility and compliance audit is local review evidence only. It does not determine legal eligibility, submit Devpost forms, create accounts, publish a repository, upload video, write approved URLs, configure Splunk, or submit anything.</p>
+    </section>
+    <section>
+      <h2>Official Sources</h2>
+      <table>
+        <thead><tr><th>Source</th><th>URL</th><th>Local relevance</th></tr></thead>
+        <tbody><tr><td>Devpost official rules</td><td><code>https://splunk.devpost.com/rules</code></td><td>Eligibility, project ownership, team representative, language, IP, testing, and submission rules.</td></tr>
+<tr><td>Devpost overview</td><td><code>https://splunk.devpost.com/</code></td><td>Challenge scope, deadline, tracks, and public submission entrypoint.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Automated Evidence</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Status</th><th>Evidence</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>new_or_significantly_updated_project</td><td class="ready">pass</td><td><code>submission/OFFICIAL_REQUIREMENTS_AUDIT.md</code></td><td>Local audit states the project was created locally on 2026-06-03 JST during the submission period.</td></tr>
+<tr><td>public_materials_in_english</td><td class="ready">pass</td><td><code>README.md, architecture_diagram.md, submission/DEVPOST_SUBMISSION_DRAFT.md, submission/DEVPOST_FIELD_MAP.md, submission/DEMO_VIDEO_SCRIPT.md, submission/VIDEO_RECORDING_RUNBOOK.md, submission/SUBMISSION_REVIEW_QA.md, submission/SUBMISSION_LAUNCH_RUNBOOK.md, submission/JUDGING_ALIGNMENT.md, submission/OFFICIAL_REQUIREMENTS_AUDIT.md</code></td><td>No Japanese characters found in key public submission materials.</td></tr>
+<tr><td>open_source_license_present</td><td class="ready">pass</td><td><code>LICENSE, reports/latest_content_rights_audit.html</code></td><td>Apache-2.0 license is present and included in the content rights audit.</td></tr>
+<tr><td>third_party_media_not_bundled</td><td class="ready">pass</td><td><code>reports/latest_content_rights_audit.html</code></td><td>No bundled audio/video media files are present in the local package.</td></tr>
+<tr><td>synthetic_data_boundary</td><td class="ready">pass</td><td><code>README.md, submission/OFFICIAL_REQUIREMENTS_AUDIT.md</code></td><td>The package describes demo data as synthetic and avoids private logs/customer data.</td></tr>
+<tr><td>unique_project_narrative</td><td class="ready">pass</td><td><code>submission/DEVPOST_SUBMISSION_DRAFT.md</code></td><td>The Devpost draft frames a distinct AI incident command and remediation-ledger story.</td></tr>
+<tr><td>testing_access_gated_by_public_urls</td><td class="ready">pass</td><td><code>reports/latest_submission_url_validation.html</code></td><td>Final submission remains blocked until public repo and public video URLs are approved and validated.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Human Confirmation Required</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Rule area</th><th>Confirm</th><th>Why Codex cannot confirm</th></tr></thead>
+        <tbody><tr><td>age_and_residence</td><td>Eligibility</td><td>Entrant is at least the age of majority where they reside and is not resident/domiciled in an excluded jurisdiction.</td><td>This depends on personal/legal facts and should be confirmed by the user before Devpost submission.</td></tr>
+<tr><td>no_excluded_role_or_conflict</td><td>Eligibility and conflict of interest</td><td>Entrant is not a judge, promotion entity, government/state-owned entity, excluded affiliate, household member, or otherwise conflicted participant.</td><td>This depends on employment, affiliation, household, and conflict facts outside the local packet.</td></tr>
+<tr><td>team_or_representative_authority</td><td>Team representation</td><td>If submitted as a team or organization, the submitter is authorized to act as the representative and the team size is within the rules.</td><td>The local packet does not know whether the Devpost entry will be individual, team, or organization.</td></tr>
+<tr><td>ownership_and_ip</td><td>Submission ownership and IP</td><td>The entrant owns the submitted work or has permission for every included component, and no third-party rights are violated.</td><td>The package can audit files and licenses, but final ownership representation belongs to the entrant.</td></tr>
+<tr><td>no_sponsor_support_conflict</td><td>Financial or preferential support</td><td>The project was not developed with prohibited financial or preferential support from Sponsor or Administrator.</td><td>This depends on external business, employment, funding, and contract facts.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Checks</h2>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody><tr><td>official rules source linked</td><td class="ready">pass</td><td>submission/OFFICIAL_REQUIREMENTS_AUDIT.md</td></tr>
+<tr><td>automated compliance evidence ready</td><td class="ready">pass</td><td>all automated evidence ready</td></tr>
+<tr><td>human confirmations enumerated</td><td class="ready">pass</td><td>age_and_residence, no_excluded_role_or_conflict, team_or_representative_authority, ownership_and_ip, no_sponsor_support_conflict</td></tr>
+<tr><td>external submit remains gated</td><td class="ready">pass</td><td>user approval and not-submitted wording checked</td></tr>
+<tr><td>boundary text</td><td class="ready">pass</td><td>This eligibility and compliance audit is local review evidence only. It does not determine legal eligibility, submit Devpost forms, create accounts, publish a repository, upload video, write approved URLs, configure Splunk, or submit anything.</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

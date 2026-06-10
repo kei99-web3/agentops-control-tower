@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devpost Final Submit Preflight</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    .ready { color: #127c76; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Devpost Final Submit Preflight</h1>
+    <p>Gate status: <span class="pending">blocked_until_final_submit_ready</span></p>
+  </header>
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <table>
+        <tbody>
+          <tr><th>Status</th><td>ready_for_user_review</td></tr>
+          <tr><th>Manual submit allowed</th><td>False</td></tr>
+          <tr><th>Final submit ready</th><td>False</td></tr>
+          <tr><th>Approval phrase accepted</th><td>False</td></tr>
+          <tr><th>Evidence note target</th><td>submission/post_action_evidence/YYYY-MM-DD_devpost_final_submission_readback.md</td></tr>
+        </tbody>
+      </table>
+      <p class="pending">This final submit gate is a local preflight only. It does not log in to Devpost, save a draft, press submit, update Devpost, publish, upload, write approved URLs, or mark the submission complete.</p>
+    </section>
+    <section>
+      <h2>Gate Issues</h2>
+      <ul><li>final_submit_ready must be true across validation, final copy, URL validation, and Go/No-Go</li>
+<li>final approval phrase is required before manual submit</li>
+<li>repository_url and demo_video_url must not be pending placeholders</li>
+<li>manual confirmations are required before manual submit</li></ul>
+    </section>
+    <section>
+      <h2>Manual Confirmations</h2>
+      <table><tbody><tr><td>field_map_readback_confirmed</td><td class="pending">False</td></tr>
+<tr><td>human_confirmations_completed</td><td class="pending">False</td></tr>
+<tr><td>video_screen_safety_confirmed</td><td class="pending">False</td></tr>
+<tr><td>post_action_evidence_plan_reviewed</td><td class="pending">False</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td>reports/latest_devpost_final_copy.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_manual_fill_brief.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_devpost_submit_command_plan.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_submission_url_validation.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_final_go_no_go.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_claim_boundary_validation.json</td><td class="ready">present</td></tr>
+<tr><td>reports/latest_post_action_evidence_brief.json</td><td class="ready">present</td></tr>
+<tr><td>submission/DEVPOST_FIELD_MAP.md</td><td class="ready">present</td></tr>
+<tr><td>submission/DEVPOST_FINAL_REVIEW_CHECKLIST.md</td><td class="ready">present</td></tr>
+<tr><td>submission/HUMAN_CONFIRMATION_CHECKLIST.md</td><td class="ready">present</td></tr>
+<tr><td>submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md</td><td class="ready">present</td></tr>
+<tr><td>submission/POST_ACTION_EVIDENCE_LOG_TEMPLATE.md</td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

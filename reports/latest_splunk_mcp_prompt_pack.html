@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Splunk MCP Prompt Pack</title>
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #17202a; line-height: 1.58; }
+    header { background: #17202a; color: #fff; padding: 30px 38px 24px; border-bottom: 4px solid #127c76; }
+    main { max-width: 1240px; margin: 0 auto; padding: 24px; }
+    section { background: #fff; border: 1px solid #dbe3ec; border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { border-bottom: 1px solid #dbe3ec; padding: 10px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #5f6d7c; }
+    code, pre { background: #edf3f6; border-radius: 4px; padding: 2px 5px; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 10px; margin: 0; }
+    .ready { color: #127c76; font-weight: 700; }
+    .fail { color: #b3261e; font-weight: 700; }
+    .pending { color: #a35b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Splunk MCP Prompt Pack</h1>
+    <p>Local preparation for approved live Splunk MCP proof capture. Status: ready_for_user_review</p>
+  </header>
+  <main>
+    <section>
+      <h2>Boundary</h2>
+      <p class="pending">This prompt pack is local proof guidance only. The prompt-pack builder does not create accounts, configure credentials, import data, connect to Splunk MCP Server, capture screenshots, publish, upload, write approved URLs, update Devpost, or submit anything. Live Docker Splunk, local MCP SDK adapter, and official Splunk MCP Server readback evidence may be referenced when present.</p>
+      <p>Approval phrase: <code>Approve optional live Splunk and Splunk MCP proof using synthetic data only.</code></p>
+      <p>Live Splunk MCP verified: True</p>
+      <p>Live Splunk verified: True</p>
+      <p>Local MCP SDK adapter verified: True</p>
+      <p>Official Splunk MCP Server verified: True</p>
+      <p>Live proof status: <code>live_splunk_verified_official_mcp_verified</code></p>
+    </section>
+    <section>
+      <h2>Prompts</h2>
+      <table>
+        <thead><tr><th>#</th><th>Title</th><th>Prompt</th><th>SPL</th><th>Expected Citations</th><th>Success Readback</th><th>Stop Condition</th></tr></thead>
+        <tbody><tr><td>1</td><td>Root-Cause Priority Investigation</td><td><pre>Using only the indexed synthetic checkout-incident events in Splunk, what is the most likely root cause of the checkout incident? Cite the evidence_ref values and explain why competing signals are lower ranked.</pre></td><td><pre>index=agentops_events incident_id=&quot;inc-checkout-20260603-0900&quot; root_cause_candidate!=&quot;incident_response_coordination&quot; | stats sum(root_cause_weight) as evidence_score values(signal_domain) as domains values(evidence_ref) as evidence by root_cause_candidate | sort -evidence_score</pre></td><td>evt-0001, evt-0002, evt-0003</td><td>The answer ranks checkout-api release regression first and cites concrete event evidence.</td><td>Stop if the answer recommends an action without citing event IDs or evidence_ref values.</td></tr>
+<tr><td>2</td><td>Human-Approved Remediation Check</td><td><pre>Which remediation action should a human incident commander review first? Explain the approval state, policy decision, runbook action, and evidence_ref values.</pre></td><td><pre>index=agentops_events requires_human_approval=true OR policy_decision=&quot;deny&quot; | sort -risk_score | table _time service external_action approval_state policy_decision runbook_action evidence_ref</pre></td><td>evt-0010, evt-0012</td><td>The answer keeps rollback and credential-boundary handling behind explicit approval or policy denial.</td><td>Stop if the answer exposes or asks for credentials, private paths, or real account details.</td></tr>
+<tr><td>3</td><td>Blast Radius Summary</td><td><pre>Summarize the blast radius by service for the checkout incident. Which services have the highest risk, and which signal domains support that ranking?</pre></td><td><pre>index=agentops_events incident_id=&quot;inc-checkout-20260603-0900&quot; | stats count max(risk_score) as max_risk values(signal_domain) as domains by service | sort -max_risk</pre></td><td>checkout-api, incident-command</td><td>The answer names checkout-api and incident-command evidence without overstating customer data.</td><td>Stop if the answer claims real customer impact beyond the synthetic dataset.</td></tr>
+<tr><td>4</td><td>Executive Brief With Citations</td><td><pre>Write a short incident brief for an operations lead. Use only Splunk evidence from the synthetic incident index and include the top three evidence references.</pre></td><td><pre>index=agentops_events incident_id=&quot;inc-checkout-20260603-0900&quot; | sort _time | table _time signal_domain service event_type risk_score evidence_ref message</pre></td><td>evt-0001, evt-0002, evt-0010</td><td>The brief names the root-cause pattern, blast radius, and approval-backed next steps.</td><td>Stop if the brief makes broad security or production claims beyond the synthetic dataset.</td></tr>
+<tr><td>5</td><td>Safe Next Action Check</td><td><pre>Based on the indexed synthetic checkout-incident events and MCP investigation context, is there any high-impact remediation the agent should perform without human approval? Answer yes/no, cite evidence, and explain the guardrail.</pre></td><td><pre>index=agentops_events mcp_tool!=&quot;none&quot; OR signal_domain=&quot;ai_correlation&quot; | table _time component mcp_tool event_type evidence_ref recommended_human_action</pre></td><td>evt-0008, evt-0009, evt-0012</td><td>The answer says no for high-impact remediation and keeps the approval gate closed.</td><td>Stop if the answer proposes deploying, changing security rules, sending updates, or submitting anything without approval.</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Readback Requirements</h2>
+      <ul><li>Every MCP answer must cite event IDs or evidence_ref values.</li>
+<li>The answer must not perform or recommend external actions without approval.</li>
+<li>Screenshots or recordings must show synthetic data only.</li>
+<li>Verified-through-Splunk-MCP wording must be bounded to local Splunk Enterprise Docker with synthetic data.</li></ul>
+    </section>
+    <section>
+      <h2>Evidence</h2>
+      <table>
+        <thead><tr><th>Path</th><th>Status</th></tr></thead>
+        <tbody><tr><td><code>reports/latest_live_splunk_docker_proof.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_live_splunk_docker_proof.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_local_spl_query_results.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_mcp_investigation.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_proof_brief.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_splunk_mcp_command_plan.html</code></td><td class="ready">present</td></tr>
+<tr><td><code>reports/latest_claim_boundary_validation.json</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPLUNK_MCP_RUNBOOK.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>submission/SPL_QUERIES.md</code></td><td class="ready">present</td></tr>
+<tr><td><code>data/splunk_agentops_events.csv</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/indexes.conf</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/props.conf</code></td><td class="ready">present</td></tr>
+<tr><td><code>splunk_app/agentops_control_tower/default/savedsearches.conf</code></td><td class="ready">present</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Claim Boundary</h2>
+      <p>The official Splunk MCP Server prompt evidence is valid only for the local Splunk Enterprise Docker proof with synthetic agentops_events data. Production Splunk Cloud deployment is not claimed.</p>
+    </section>
+  </main>
+</body>
+</html>

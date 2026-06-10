@@ -1,0 +1,124 @@
+{
+  "generated_at_utc": "2026-06-10T02:08:38+00:00",
+  "status": "ready_for_recording_review",
+  "final_public_video_ready": false,
+  "duration_seconds": 180,
+  "scene_count": 6,
+  "scenes": [
+    {
+      "start": "0:00",
+      "end": "0:20",
+      "start_seconds": 0,
+      "end_seconds": 20,
+      "duration_seconds": 20,
+      "label": "Problem"
+    },
+    {
+      "start": "0:20",
+      "end": "0:45",
+      "start_seconds": 20,
+      "end_seconds": 45,
+      "duration_seconds": 25,
+      "label": "Solution"
+    },
+    {
+      "start": "0:45",
+      "end": "1:20",
+      "start_seconds": 45,
+      "end_seconds": 80,
+      "duration_seconds": 35,
+      "label": "Synthetic Event Flow"
+    },
+    {
+      "start": "1:20",
+      "end": "2:10",
+      "start_seconds": 80,
+      "end_seconds": 130,
+      "duration_seconds": 50,
+      "label": "Dashboard"
+    },
+    {
+      "start": "2:10",
+      "end": "2:40",
+      "start_seconds": 130,
+      "end_seconds": 160,
+      "duration_seconds": 30,
+      "label": "Splunk/MCP Fit"
+    },
+    {
+      "start": "2:40",
+      "end": "3:00",
+      "start_seconds": 160,
+      "end_seconds": 180,
+      "duration_seconds": 20,
+      "label": "Close"
+    }
+  ],
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "demo video script exists",
+      "status": "pass",
+      "detail": "submission/DEMO_VIDEO_SCRIPT.md"
+    },
+    {
+      "name": "video recording runbook exists",
+      "status": "pass",
+      "detail": "submission/VIDEO_RECORDING_RUNBOOK.md"
+    },
+    {
+      "name": "video timeline ranges",
+      "status": "pass",
+      "detail": "6 ranges parsed"
+    },
+    {
+      "name": "under 3 minute target",
+      "status": "pass",
+      "detail": "end=180s target<=180s"
+    },
+    {
+      "name": "continuous recording timeline",
+      "status": "pass",
+      "detail": "no gaps or overlaps"
+    },
+    {
+      "name": "required video beats",
+      "status": "pass",
+      "detail": "all required beats present"
+    },
+    {
+      "name": "screen safety checklist",
+      "status": "pass",
+      "detail": "all screen safety items present"
+    },
+    {
+      "name": "video claim boundary",
+      "status": "pass",
+      "detail": "no unsafe live-claim phrases in script"
+    },
+    {
+      "name": "voiceover claim guidance",
+      "status": "pass",
+      "detail": "safe wording guidance present"
+    },
+    {
+      "name": "demo tour artifact",
+      "status": "pass",
+      "detail": "safe demo tour sections present"
+    },
+    {
+      "name": "dashboard preview image",
+      "status": "pass",
+      "detail": "bytes=75210"
+    }
+  ],
+  "external_gates_pending": [
+    "user review of video script",
+    "screen safety checklist completion",
+    "screen recording capture",
+    "public video upload approval",
+    "public video URL insertion"
+  ],
+  "screen_safety_checklist": "submission/VIDEO_SCREEN_SAFETY_CHECKLIST.md",
+  "publication_boundary": "This report prepares local recording review only. It does not record, upload, publish, or submit a video."
+}

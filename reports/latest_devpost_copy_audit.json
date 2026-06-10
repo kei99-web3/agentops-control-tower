@@ -1,0 +1,76 @@
+{
+  "generated_at_utc": "2026-06-10T02:09:00+00:00",
+  "status": "ready_for_user_review",
+  "final_submit_ready": false,
+  "pending_urls": [
+    "repository_url",
+    "demo_video_url"
+  ],
+  "built_with": [
+    "CSV",
+    "HTML",
+    "JSON",
+    "Python",
+    "SPL",
+    "Splunk",
+    "Splunk MCP Server"
+  ],
+  "checks": [
+    {
+      "name": "Devpost final copy ready",
+      "status": "pass",
+      "detail": "ready_for_user_review"
+    },
+    {
+      "name": "manual fill brief ready",
+      "status": "pass",
+      "detail": "ready_for_user_review"
+    },
+    {
+      "name": "pending URLs preserved",
+      "status": "pass",
+      "detail": "final_submit_ready=False pending=repository_url, demo_video_url"
+    },
+    {
+      "name": "Splunk MCP Server tag bounded",
+      "status": "pass",
+      "detail": "CSV, HTML, JSON, Python, SPL, Splunk, Splunk MCP Server"
+    },
+    {
+      "name": "local proof boundary stated",
+      "status": "pass",
+      "detail": "Splunk Usage section"
+    },
+    {
+      "name": "no public repo completion claim",
+      "status": "pass",
+      "detail": "no completion wording found"
+    },
+    {
+      "name": "no Devpost submitted claim",
+      "status": "pass",
+      "detail": "no submitted wording found"
+    },
+    {
+      "name": "field map project name aligned",
+      "status": "pass",
+      "detail": "project name present in field map"
+    },
+    {
+      "name": "field map track aligned",
+      "status": "pass",
+      "detail": "track present in field map"
+    },
+    {
+      "name": "field map URL placeholders aligned",
+      "status": "pass",
+      "detail": "pending placeholders present"
+    },
+    {
+      "name": "character checks pass",
+      "status": "pass",
+      "detail": "checks=27"
+    }
+  ],
+  "boundary": "This packet is local review evidence only. It does not publish a repository, record or upload video, connect to Splunk, configure MCP, write approved URLs, update Devpost, save a draft, press submit, or submit anything."
+}

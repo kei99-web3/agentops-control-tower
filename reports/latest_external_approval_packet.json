@@ -1,0 +1,171 @@
+{
+  "generated_at_utc": "2026-06-10T02:08:56+00:00",
+  "status": "ready_for_user_review",
+  "local_submission_status": "ready_for_user_review",
+  "local_checks_passed": false,
+  "ready_requests": [
+    "public_github_repository",
+    "public_demo_video"
+  ],
+  "missing_evidence": [],
+  "approval_requests": [
+    {
+      "key": "public_github_repository",
+      "title": "Public GitHub Repository",
+      "status": "ready_for_user_decision",
+      "purpose": "Make the clean Agentic Incident Command Center code package reviewable for Devpost judges.",
+      "exact_operation": "Run scripts/verify_public_repo_publication_gate.py with the exact approval phrase, public git identity, and manual safety confirmations, then use scripts/publish_public_repo_after_approval.py to create and push the public repository only after explicit approval.",
+      "benefit": "Satisfies the public open-source repository requirement and lets judges run the prototype, inspect the Splunk app candidate, and review local evidence.",
+      "main_risk": "Accidental disclosure of local paths, credentials, or private workspace material if the wrong folder is published or Git is initialized inside the private workspace.",
+      "verification": "Review reports/latest_public_repo_publication_preflight.html, run the guarded helper, confirm public candidate secret/internal scans and isolated staging dry run pass, open the public repository URL, then validate the URL before local URL writeback.",
+      "evidence": [
+        {
+          "path": "README.md",
+          "exists": true
+        },
+        {
+          "path": "PUBLIC_REPO_CANDIDATE_MANIFEST.md",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_public_repo_publication_preflight.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_public_repo_dry_run.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_demo_tour.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_video_readiness.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_devpost_submission_packet.html",
+          "exists": true
+        },
+        {
+          "path": "splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "public_demo_video",
+      "title": "Public Demo Video",
+      "status": "ready_for_user_decision",
+      "purpose": "Show the Agentic Incident Command Center flow in a concise Devpost-compatible demo.",
+      "exact_operation": "Run scripts/verify_public_video_upload_gate.py with the exact approval phrase and manual safety confirmations, record the browser walkthrough using reports/latest_demo_tour.html and submission/VIDEO_RECORDING_RUNBOOK.md, then upload publicly only after explicit approval.",
+      "benefit": "Gives judges a fast path through the problem, dashboard, local SPL proof, MCP Remediation Ledger, and Splunk MCP boundary.",
+      "main_risk": "The recording could expose private tabs, terminals, account pages, local paths, or overclaim live Splunk MCP verification before it exists.",
+      "verification": "Review reports/latest_public_video_upload_preflight.html and reports/latest_video_readiness.html, confirm the recording is under 3 minutes, watch the uploaded video while checking the screen safety list, then validate the public video URL.",
+      "evidence": [
+        {
+          "path": "reports/latest_demo_tour.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_video_readiness.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_public_video_upload_preflight.html",
+          "exists": true
+        },
+        {
+          "path": "submission/DEMO_VIDEO_SCRIPT.md",
+          "exists": true
+        },
+        {
+          "path": "submission/VIDEO_RECORDING_RUNBOOK.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "live_splunk_bonus_proof",
+      "title": "Optional Live Splunk / MCP Proof",
+      "status": "completed",
+      "purpose": "Completed: strengthen the Best Use of Splunk MCP Server bonus claim with local official-MCP proof using synthetic data only.",
+      "exact_operation": "No further external setup is needed for the local official-MCP proof; keep claims bounded to local Splunk Enterprise Docker with synthetic data.",
+      "benefit": "Improves technical implementation evidence and supports bounded wording: official Splunk MCP Server verified in local Splunk Enterprise Docker with synthetic data.",
+      "main_risk": "Overclaiming production Splunk Cloud deployment or exposing credentials in public video/screenshots.",
+      "verification": "Review submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md and rerun claim-boundary validation.",
+      "evidence": [
+        {
+          "path": "submission/SPLUNK_MCP_RUNBOOK.md",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_brief.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_prompt_pack.html",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_splunk_mcp_proof_capture_manifest.html",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_PROMPT_PACK.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SPLUNK_MCP_PROOF_CAPTURE_MANIFEST.md",
+          "exists": true
+        },
+        {
+          "path": "submission/post_action_evidence/2026-06-09_optional_live_splunk_mcp_proof_readback.md",
+          "exists": true
+        },
+        {
+          "path": "data/splunk_agentops_events.csv",
+          "exists": true
+        },
+        {
+          "path": "submission/SPL_QUERIES.md",
+          "exists": true
+        },
+        {
+          "path": "splunk_app/agentops_control_tower/default/data/ui/views/agentops_control_tower.xml",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "key": "devpost_final_submission",
+      "title": "Devpost Final Submission",
+      "status": "blocked_until_public_urls",
+      "purpose": "Submit the completed Splunk Agentic Ops Hackathon entry.",
+      "exact_operation": "After public repo and public video URLs are inserted and validation passes, review reports/latest_devpost_final_copy.md and press the Devpost submit button only with explicit final approval.",
+      "benefit": "Completes the hackathon submission with a locally verified code package, demo video, architecture diagram, and safe claim wording.",
+      "main_risk": "Submitting too early with pending URLs, overclaims, wrong track selection, or missing public artifacts.",
+      "verification": "Confirm reports/latest_submission_validation.html is ready_for_user_review, repository and video URLs are public, Devpost fields match submission/DEVPOST_FIELD_MAP.md, and final submit approval is explicit.",
+      "evidence": [
+        {
+          "path": "reports/latest_devpost_final_copy.md",
+          "exists": true
+        },
+        {
+          "path": "reports/latest_final_go_no_go.html",
+          "exists": true
+        },
+        {
+          "path": "submission/DEVPOST_FIELD_MAP.md",
+          "exists": true
+        },
+        {
+          "path": "submission/SUBMISSION_LAUNCH_RUNBOOK.md",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "non_action_boundary": "This packet does not publish, upload, submit, create accounts, configure credentials, or update Devpost.",
+  "recommended_next_decision": "Approve or hold public GitHub publication and demo video recording/upload."
+}
