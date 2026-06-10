@@ -1,9 +1,0 @@
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-venv/
-dist/*
-!dist/
-!dist/agentops-control-tower-splunk-app.spl
-build/
